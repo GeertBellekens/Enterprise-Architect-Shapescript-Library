@@ -1,0 +1,60 @@
+shape main
+{
+	layouttype="leftright";
+	fixedAspectRatio="true";
+	
+	defsize(153,51);
+	
+	AddSubShape("target",33,100);
+	AddSubShape("expression",67,100,3,3);
+	
+	shape expression
+	{
+		if (hastag("Target"))
+		{
+			println("Target: #TAG:Target#");
+		}
+		else
+		{
+			println("Target: Missing!");
+		}
+		if (hastag("Deviations"))
+		{
+			println("Deviations: #TAG:Deviations#");
+		}
+	}
+	
+	shape target
+	{
+		//concentric circles
+		SetFillColor(0,0,0);
+		Ellipse(7,7,93,93);
+		SetFillColor(GetUserFillColor());
+		Ellipse(14,14,86,86);
+		SetFillColor(0,0,0);
+		Ellipse(23,23,77,77);
+		SetFillColor(GetUserFillColor());
+		Ellipse(30,30,70,70);
+		SetFillColor(0,0,0);
+		Ellipse(39,39,61,61);
+		//cross
+		moveto(50,0);
+		lineto(50,100);
+		moveto(0,50);
+		lineto(100,50);
+	}
+	
+}
+//definition of a label
+shape label
+{
+ setOrigin("SW",0,0); 
+ println("#NAME#"); 
+}
+
+
+
+
+
+
+

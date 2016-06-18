@@ -1,0 +1,83 @@
+shape main
+{
+	DrawParentShape();
+}
+
+decoration directionOut
+{
+	orientation="SE";
+	If(HasTag("Direction","Out"))
+	{
+		//sourrounding box
+//		MoveTo(80,0);
+//		LineTo(0,0);
+//		lineto(0,100);
+//		lineto(80,100);
+		//arrow
+		setfillcolor(0, 0, 0);
+        startpath();  // Start to trace out a path
+		moveto(30,40);
+		lineto(60,40);
+		lineto(60,20);
+		lineto(100,50);
+		lineto(60,80);
+		lineto(60,60);
+		lineto(30,60);
+		lineto(30,40);
+		endpath();
+		FillAndStrokePath();
+	}
+
+}
+decoration directionIn
+{
+	orientation="SW";
+	If(HasTag("Direction","In"))
+	{
+				//sourrounding box
+//		MoveTo(20,0);
+//		LineTo(100,0);
+//		lineto(100,100);
+//		lineto(20,100);
+
+		//arrow
+		setfillcolor(0, 0, 0);
+        startpath();  // Start to trace out a path
+		moveto(0,40);
+		lineto(30,40);
+		lineto(30,20);
+		lineto(70,50);
+		lineto(30,80);
+		lineto(30,60);
+		lineto(0,60);
+		lineto(0,40);
+		endpath();
+		FillAndStrokePath();
+		
+	}
+
+}
+
+//decoration comp
+//{
+//     orientation="N";
+//     if(hasproperty("IsDrawCompositeLinkIcon","false"))
+//     {
+//		//triangle
+//		SetPenColor(0,0,0);
+//		setfillcolor(255,212,42);
+//		startpath();
+//		moveto(50,0);
+//		lineto(100,100);
+//		lineto(0,100);
+//		lineto(50,0);
+//		EndPath();
+//		FillAndStrokePath();
+//		
+//		//exclamation mark
+//		SetFillColor(0,0,0);
+//		RoundRect(44,29,57,68,1,1);
+//		Ellipse(43,72,57,86);
+//     }
+//}
+

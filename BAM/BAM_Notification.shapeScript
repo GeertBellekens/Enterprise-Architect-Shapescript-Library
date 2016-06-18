@@ -1,0 +1,92 @@
+shape main
+{
+	layouttype="leftright";
+	fixedAspectRatio="true";
+	
+	
+	if (hastag("Deviation"))
+	{
+		defsize(200,40);
+		AddSubShape("envelope",25,100);
+		AddSubShape("deviation",75,100,3,0);
+		AddSubshape("recipients", 75, 100, -72,25);
+		AddSubshape("bodyText", 75, 100, -147,50);
+	}
+	else
+	{
+		if (hastag("recipients"))
+		{
+			defsize(200,40);
+			AddSubShape("envelope",25,100);
+			AddSubShape("deviation",75,100,3,0);
+			AddSubshape("recipients", 75, 100, -72,25);
+			AddSubshape("bodyText", 75, 100, -147,50);
+		}
+		else
+		{
+			if (hastag("bodyText"))
+			{
+				defsize(200,40);
+				AddSubShape("envelope",25,100);
+				AddSubShape("deviation",75,100,3,0);
+				AddSubshape("recipients", 75, 100, -72,25);
+				AddSubshape("bodyText", 75, 100, -147,50);				
+			}
+			else
+			{
+				defsize(50,40);
+				AddSubShape("envelope",100,100);
+			}
+		}
+	}
+
+	
+	
+	shape deviation
+	{
+		if (hastag("Deviation"))
+		{
+			println("[Deviation: #TAG:Deviation#]");
+		}
+	}
+	shape recipients
+	{
+		if (hastag("recipients"))
+		{
+			println("To: #TAG:Recipients#");
+		}
+	}
+		
+	shape bodyText
+	{
+		if (hastag("Text"))
+		{
+			print("#TAG:Text#");
+		}
+	}
+	
+
+		
+	shape envelope
+	{
+		SetPenWidth(4);
+		Rectangle(0,0,100,100);
+		//two vertical lines with rectangles
+		setpenwidth(2);
+		lineto(50,57);
+		lineto(100,0);
+		moveto(0,100);	
+		lineto(37,44);
+		moveto(100,100);
+		lineto(63,44);
+	}
+
+}
+//definition of a label
+shape label
+{
+ setOrigin("SW",0,0); 
+ println("#NAME#"); 
+}
+
+

@@ -1,0 +1,79 @@
+shape main
+{
+	layouttype="leftright";
+	fixedAspectRatio="true";
+	
+	defsize(150,50);
+
+	AddSubShape("boxes",33,100);
+	AddSubShape("expression",66,100,3,0);
+	
+	shape expression
+	{
+		if (hastag("compositionExpression"))
+		{
+			print("#TAG:compositionExpression#");
+		}
+		else
+		{
+			PrintWrapped("Expression missing!");
+		}
+	}
+	
+	shape boxes
+	{
+		SetPenWidth(2);
+		//boxes
+		//topleft
+		RoundRect(0,0,48,48,5,5);
+		//topright
+		RoundRect(52,0,100,48,5,5);
+		//bottomleft
+		RoundRect(0,52,48,100,5,5);
+		//bottomright
+		RoundRect(52,52,100,100,5,5);
+		//plus
+		setfillcolor(0,0,0);
+		Rectangle(23,12,25,36);
+		Rectangle(12,23,36,25);
+		//minus
+		Rectangle(66,23,86,25);
+		//multiply
+		//topleft to bottomright
+		StartPath();
+		moveto(11,66);
+		lineto(13,64);
+		lineto(36,85);
+		lineto(34,87);
+		lineto(11,66);
+		EndPath();
+		FillAndStrokePath();
+		//topright to bottomleft
+		StartPath();
+		moveto(37,66);
+		lineto(35,64);
+		lineto(12,85);
+		lineto(14,87);
+		lineto(37,66);
+		EndPath();
+		FillAndStrokePath();
+		//divide
+		//minus
+		Rectangle(64,75,88,77);
+		Ellipse(74,64,78,68);
+		Ellipse(74,84,78,88);
+	}
+
+}
+
+
+//definition of a label
+shape label
+{
+ setOrigin("SW",3,0); 
+ println("#NAME#"); 
+}
+
+
+
+

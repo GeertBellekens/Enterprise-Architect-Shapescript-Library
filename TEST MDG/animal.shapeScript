@@ -1,0 +1,29 @@
+shape main{
+	// Ears
+	ellipse(25,-50,40,30);
+	ellipse(60,-50,75,30);
+	SetFillColor(236,196,228);
+	SetPenColor(236,196,228);
+	ellipse(30,-40,35,25);
+	ellipse(65,-40,70,25);
+	SetFillColor(GetUserFillColor());
+	SetPenColor(GetUserBorderColor());
+	
+	// Original Element
+	drawnativeshape();
+	
+	// Whiskers
+	moveto(11,45);
+	lineto(-25,40);
+	moveto(10,50);
+	lineto(-30,50);
+	moveto(11,55);
+	lineto(-25,60);
+	
+	moveto(89,45);
+	lineto(125,40);
+	moveto(90,50);
+	lineto(130,50);
+	moveto(89,55);
+	lineto(125,60);
+}

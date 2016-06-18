@@ -1,0 +1,42 @@
+shape main
+{
+	layouttype="leftright";
+	fixedAspectRatio="true";
+	
+	if (hastag("Deviation"))
+	{
+		defsize(120,30);
+		AddSubShape("box",25,100);
+		AddSubShape("deviation",75,100,3,0);
+	}
+	else
+	{
+		defsize(30,30);
+		AddSubShape("box",100,100);
+	}
+
+	
+	
+	shape deviation
+	{
+		if (hastag("Deviation"))
+		{
+			print("[Deviation: #TAG:Deviation#]");
+		}
+	}
+	
+	shape box
+	{
+		SetPenWidth(4);
+		Rectangle(0,0,100,100);
+		//two vertical lines with rectangles
+		setpenwidth(1);
+		setfillcolor(0,0,0);
+		rectangle(30,22,44,78);
+		rectangle(56,22,70,78);
+	}
+
+}
+
+
+

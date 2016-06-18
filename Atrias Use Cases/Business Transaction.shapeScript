@@ -1,0 +1,35 @@
+shape main
+{
+	DrawNativeShape();
+}
+
+decoration businessTransaction
+{
+	orientation="SW";
+	//sourrounding box
+	SetFillColor(255,255,255); //white
+	Rectangle(16,16,84,70);
+	//graph
+	SetPenColor(236,16,24); //red
+	MoveTo(22,61);
+	lineto(39,43);
+	lineto(53,57);
+	lineto(69,41);
+	lineto(65,37);
+	lineto(78,33);
+	lineto(74,45);
+	lineto(69,41);
+	SetPenColor(0,0,0); //Black again
+	//top part
+	setfillcolor(0, 0, 0);
+	Rectangle(5,10,95,20);
+	moveto(50,0);
+	lineto(50,10);
+	//supports
+	moveto(43,72);
+	lineto(29,96);
+	moveto(57,72);
+	lineto(71,96);
+}
+
+

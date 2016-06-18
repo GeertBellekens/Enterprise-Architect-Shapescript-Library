@@ -1,0 +1,95 @@
+shape main
+{
+ // Initialisation Attributes - these must be
+// before drawing commands
+ noshadow = "true";
+ h_align = "left";
+ DefSize(340,140);
+ Rectangle(0,0,100,100);
+ AddSubShape("nameCompartment",90,20,3,0);
+ AddSubShape("translations",90,20,3,0);
+ //setPen(128,0,0);
+ //SetFillColor(128,0,0);
+ rectangle(-10,0,-1,100);
+ 
+	
+ shape nameCompartment
+ {
+	h_align = "center";
+	editablefield = "name";
+	SetFontColor(128,0,0);
+	println("[#name#]");
+  }
+ shape translations
+  {
+	println("[NL]: #TAG:Title NL#");
+	println("[FR]: #TAG:Title FR#");
+  }
+ shape borderblock { 
+  rectangle(-10,0,-1,100);
+ } 
+}
+
+decoration process
+{
+	orientation="ne";
+	if (HasTag("CustomDevelopment", "True"))
+	{
+	setfillcolor(128,0,0);
+	SetPenColor(128,0,0);
+	
+	//top of the wrench
+	startpath();
+	Moveto(	18,35);
+	ArcTo(5,5,47,47,4,22,28,45);
+	LineTo(47,29);
+	ArcTo(5,5,47,47,47,29,22,4);
+	lineto(36,18);
+	lineto(18,35);
+	EndPath();
+	
+	fillandstrokepath();
+	//handle
+	startpath();
+	moveto(28,46);
+	lineto(79,97);
+	ArcTo(66,66,97,97,79,97,97,79);
+	lineto(46,28);
+	EndPath();
+	
+	fillandstrokepath();
+	//screwdriver handle
+	startpath();
+	Moveto(70,44);
+	LineTo(97,15);	
+	Lineto(85,3);
+	Lineto(55,29);
+	Lineto(58,32);
+	Lineto(84,8);
+//	Lineto(86,10);
+//	Lineto(61,35);
+//	Lineto(65,39);
+	Lineto(90,14);
+	Lineto(92,16);
+	Lineto(67,41);
+	Lineto(70,44);
+	EndPath();
+	fillandstrokepath();
+	//screwdriver point
+	startpath();
+	MoveTo(35,59);
+	LineTo(21,74);
+	LineTo(15,75);
+	LineTo(4,92);
+	LineTo(8,96);
+	LineTo(25,85);
+	LineTo(25,79);
+	LineTo(40,65);
+	LineTo(35,59);
+	EndPath();
+	
+	fillandstrokepath();
+	}
+}
+ 
+ 

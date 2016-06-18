@@ -1,0 +1,64 @@
+shape main
+{
+	layouttype="leftright";
+	fixedAspectRatio="true";
+	
+	if (hastag("Deviation"))
+	{
+		defsize(120,30);
+		AddSubShape("box",25,100);
+		AddSubShape("deviation",75,100,3,0);
+	}
+	else
+	{
+		defsize(30,30);
+		AddSubShape("box",100,100);
+	}
+
+	
+	
+	shape deviation
+	{
+		if (hastag("Deviation"))
+		{
+			print("[Deviation: #TAG:Deviation#]");
+		}
+	}
+	
+	shape box
+	{
+		SetPenWidth(4);
+		Rectangle(0,0,100,100);
+		//Cross with path
+//		SetPenWidth(1);
+//		StartPath();
+//		moveto(30,21);
+//		lineto(50,41);
+//		lineto(70,21);
+//		lineto(79,30);
+//		lineto(59,50);
+//		lineto(79,70);
+//		lineto(70,79);
+//		lineto(50,59);
+//		lineto(30,79);
+//		lineto(21,70);
+//		lineto(41,50);
+//		lineto(21,30);
+//		lineto(30,21);
+//		EndPath();
+//		SetFillColor(0,0,0);
+//		FillAndStrokePath();
+		
+		//Cross with lines
+		SetPenWidth(4);
+		moveto(26,26);
+		lineto(74,74);
+		moveto(74,26);
+		lineto(26,74);
+		
+	}
+
+}
+
+
+

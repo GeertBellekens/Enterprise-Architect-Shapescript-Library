@@ -1,0 +1,116 @@
+shape main
+{
+	layouttype="leftright";
+	fixedAspectRatio="true";
+	
+	if(hastag("includeIdleTime","True"))
+	{
+		defsize(100,50);
+		AddSubShape("clock",50,100);
+		AddSubShape("durationTags",45,100,7,0);
+	}
+	else
+	{
+		if(hastag("includeProcessingTime","True"))
+		{
+			defsize(100,50);
+			AddSubShape("clock",50,100);
+			AddSubShape("durationTags",45,100,7,0);
+		}
+		else
+		{
+			if(hastag("includeSuspendedTime","True"))
+			{
+				defsize(100,50);
+				AddSubShape("clock",50,100);
+				AddSubShape("durationTags",45,100,7,0);
+			}
+			else
+			//no tags so the clock can fill the whole thing
+			{
+				defsize(50,50);
+				AddSubShape("clock",100,100);
+			}
+		}
+	}
+
+	
+	shape durationTags
+	{
+		if(hastag("includeSuspendedTime","True"))
+		{
+			Println("SuspendedTime");
+		}
+		if(hastag("includeIdleTime","True"))
+		{
+			Println("IdleTime");
+		}
+		if(hastag("includeProcessingTime","True"))
+		{
+			Println("ProcessingTime");
+		}
+	}
+	shape clock	
+	{
+	SetPenWidth(4);
+	ellipse	(0,0,100,100);
+	SetPenWidth(2);
+	//12
+	MoveTo(50,0);
+	LineTo(50,13);
+	//1
+	MoveTo(74,7);
+	LineTo(67,19);
+	//2
+	MoveTo(93,24);
+	LineTo(80,32);
+	//3
+	MoveTo(100,50);
+	LineTo(87,50);	
+	//4
+	MoveTo(94,74);
+	LineTo(82,67);	
+	//5
+	MoveTo(77,92);
+	LineTo(68,80);	
+	//6
+	MoveTo(50,100);
+	LineTo(50,87);	
+	//7
+	MoveTo(24,93);
+	LineTo(34,79);		
+	//8
+	MoveTo(6,74);
+	LineTo(20,65);	
+	//9
+	MoveTo(0,50);
+	LineTo(13,50);	
+	//10
+	MoveTo(7,24);
+	LineTo(21,34);	
+	//11
+	MoveTo(24,7);
+	LineTo(34,21);	
+	//middle circle
+	StartPath();
+	ellipse	(44,44,56,56);
+	EndPath();
+	SetFillColor(0,0,0);
+	FillAndStrokePath();
+	//hand
+	SetPenWidth(3);
+	MoveTo(42,56);
+	LineTo(76,22);
+	}
+}
+
+
+//definition of a label
+shape label
+{
+ setOrigin("S",0,0); 
+ println("#NAME#"); 
+}
+
+
+

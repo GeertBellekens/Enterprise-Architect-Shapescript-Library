@@ -1,0 +1,73 @@
+shape main
+{
+	layouttype="leftright";
+	fixedAspectRatio="true";
+	
+	defsize(100,50);
+
+	AddSubShape("table",40,100);
+	AddSubShape("expression",60,100,3,0);
+
+	shape expression
+	{
+		if (hastag("Data Property"))
+		{
+			print("#TAG:Data Property#");
+		}
+		else
+		{
+			PrintWrapped("Data Property missing!");
+		}
+	}
+	
+	shape table
+	{
+		
+		//table
+		//big rectangle
+		Rectangle(0,0,100,100);
+		
+		//Horizontal line
+		moveto (0,75);
+		lineto(100,75);
+
+		//the slightly darker box
+		StartPath();
+		moveTo(0,25);
+		lineto(0,50);
+		lineTo(100,50);
+		lineto(100,25);
+		lineto(0,25);
+		EndPath();
+		SetFillColor(243,207,152);
+		FillAndStrokePath();
+
+		//vertical line
+		moveto(33,0);
+		lineto(33,100);
+		//go over the outer lines again
+		SetPenWidth(2);
+		moveto(0,0);
+		lineto(0,100);
+		lineto(100,100);
+		lineto(100,0);
+		lineto(0,0);
+		
+		
+
+		
+	}
+
+}
+
+
+//definition of a label
+shape label
+{
+ setOrigin("SW",3,0); 
+ println("#NAME#"); 
+}
+
+
+
+

@@ -1,0 +1,39 @@
+shape main
+{
+	layouttype="leftright";
+	fixedAspectRatio="true";
+	
+	defsize(25,25);
+
+	AddSubShape("questionbox",100,100);
+
+	shape questionbox
+	{
+		
+		//big rectangle
+		SetPenWidth(3);
+		Rectangle(0,0,100,100);
+		
+		//question mark top
+		SetPenWidth(2);
+		Arc(33,23,62,50,49,49,38,29);
+		moveto(48,49);
+		lineto(48,57);
+		SetFillColor(0,0,0);
+		Ellipse(46,67,51,73);
+						
+	}
+
+}
+
+
+//definition of a label
+shape label
+{
+ setOrigin("NE",3,0); 
+ println("#NAME#"); 
+}
+
+
+
+

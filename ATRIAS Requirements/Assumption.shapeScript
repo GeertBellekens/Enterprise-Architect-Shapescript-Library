@@ -1,0 +1,44 @@
+shape main
+{
+ // Initialisation Attributes - these must be
+// before drawing commands
+ noshadow = "true";
+ h_align = "center";
+ setfontcolor(getuserbordercolor());
+ 
+ //drawing commands (Methods)
+ rectangle(0,0,100,100);
+ println("<<#keywords#>>");
+ println("#NAME#");
+
+ addsubshape("borderblock", 100, 100);
+ 
+ shape borderblock { 
+  rectangle(-10,0,-1,100);
+ }
+}
+//definition of a label
+shape label
+{
+// setOrigin("SW",0,0);
+// println("Object: #NAME#");
+}
+ 
+ 
+//definition of a Decoration
+decoration reqBorder
+{
+ 
+ // Draw a triangle for the decoration
+ startpath();
+ //rectangle(0,0,9,100);
+ //moveto(0,0);
+ //lineto(9,0);
+ //lineto(9,100);
+ //lineto(0,100);
+ 
+ endpath();
+ //setfillcolor(153,204,255);
+ fillandstrokepath();
+ 
+}

@@ -1,0 +1,57 @@
+shape main
+{
+	layouttype="border";
+	v_align="center";
+	h_align="center";
+
+	defsize(105,70);
+	roundrect(0,0,100,100,20,20);
+	addsubshape("padding","n");
+	addsubshape("name","center");
+	
+	shape padding
+	{
+		preferredheight=20;
+	}
+
+	shape name
+	{
+		h_align="center";
+		print("#name#");
+	}
+	
+}
+
+
+
+decoration process
+{
+	orientation="ne";
+	startpath(); 
+	moveto(0,40);
+	lineto(50,40);
+	lineto(50,5);
+	lineto(85,50);
+	lineto(50,95);
+	lineto(50,60);
+	lineto(0,60);
+	lineto(0,40);
+	endpath();
+	
+	setfillcolor(0,0,0);
+	fillandstrokepath();
+}
+
+
+decoration composite
+{
+	orientation="SE";
+	if(hasproperty("iscomposite","true"))
+	{
+		ellipse(0,40,40,60);
+		ellipse(60,40,100,60);
+		moveto(30,50);
+		lineto(70,50);
+	}
+}
+

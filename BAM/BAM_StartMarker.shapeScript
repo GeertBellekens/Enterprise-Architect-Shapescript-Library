@@ -1,0 +1,47 @@
+shape main
+{
+	layouttype="leftright";
+	fixedAspectRatio="true";
+	
+	defsize(30,30);
+	hidelabel("label");
+	
+	if (HasTag("Orientation","horizontal"))
+	{
+		AddSubShape("horizontal",100,100);
+	}else
+	{
+		AddSubShape("vertical",100,100);
+	}
+	
+	shape horizontal
+	{
+	SetPenWidth(2);
+	Ellipse(0,0,100,100);
+	SetPenWidth(1);
+	SetFillColor(0,0,0);
+	Rectangle(30,20,36,80);
+	moveto(45,20);
+	startpath();
+	lineto(45,80);
+	lineto(87,50);
+	lineto(45,20);
+	EndPath();
+	FillAndStrokePath();
+	}
+	shape vertical
+	{
+	SetPenWidth(2);
+	Ellipse(0,0,100,100);
+	SetPenWidth(1);
+	SetFillColor(0,0,0);
+	Rectangle(20,30,80,36);
+	moveto(20,45);
+	startpath();
+	lineto(80,45);
+	lineto(50,87);
+	lineto(20,45);
+	EndPath();
+	FillAndStrokePath();
+	}
+}

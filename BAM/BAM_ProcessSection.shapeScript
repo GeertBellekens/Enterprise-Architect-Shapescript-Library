@@ -1,0 +1,45 @@
+shape main
+{
+	layouttype="leftright";
+	defsize(85,50);
+	//outline round rectangle
+	SetPenWidth(2);
+	RoundRect(0,0,100,100,15,15);
+	//small rounded rectangles
+	SetPenWidth(1);
+	//bottom left
+	RoundRect(10,58,30,82,7,7);
+	//bottom right
+	RoundRect(70,58,90,82,7,7);
+	//top middle
+	SetFillColor(243,207,152);
+	RoundRect(40,18,60,42,7,7);
+	//topright
+	RoundRect(70,18,90,42,7,7);
+	//bottom middle
+	RoundRect(40,58,60,82,7,7);
+	//lines between small rectangles
+	//bl to bm
+	MoveTo(29,70);
+	lineto(40,70);
+	//bm to tm
+	MoveTo(50,42);
+	lineto(50,57);
+	//tm to tr
+	MoveTo(59,30);
+	lineto(69,30);
+	//bm to br
+	MoveTo(59,70);
+	lineto(69,70);
+}
+
+
+//definition of a label
+shape label
+{
+ setOrigin("S",0,0); 
+ println("#NAME#"); 
+}
+
+
+

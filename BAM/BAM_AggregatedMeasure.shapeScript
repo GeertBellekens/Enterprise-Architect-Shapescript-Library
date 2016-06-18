@@ -1,0 +1,64 @@
+shape main
+{
+	layouttype="leftright";
+	fixedAspectRatio="true";
+	
+	defsize(60,40);
+
+	AddSubShape("aggregate",100,100);
+
+	shape aggregate
+	{
+		
+		//A
+		SetPenWidth(2);
+		MoveTo(1,60);
+		lineto(8,31);
+		lineto(14,60);
+		moveto(12,50);
+		lineto(3,50);
+		//V
+		moveto(19,31);
+		lineto(26,60);
+		lineto(32,31);
+		//G
+		Arc(35,31,52,60,49,35,48,56);
+		moveto(49,56);
+		lineto(49,46);
+		lineto(43,46);
+		//Aggregate
+		SetPenWidth(1);
+		SetFillColor(0,0,0);
+		StartPath();
+
+		moveto(100,0);
+		lineto(58,0);
+		lineto(58,16);
+		lineto(72,50);
+		lineto(58,84);
+		lineto(58,100);
+		lineto(100,100);
+		lineto(100,84);
+		lineto(71,84);
+		lineto(86,50);
+		lineto(71,16);
+		lineto(100,16);
+		lineto(100,0);
+		endpath();
+		FillAndStrokePath();
+							
+	}
+}
+//definition of a label
+shape label
+{
+ setOrigin("S",0,0); 
+ println("#NAME#"); 
+}
+
+
+
+
+
+
+

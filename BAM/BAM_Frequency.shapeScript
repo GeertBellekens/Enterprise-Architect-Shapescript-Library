@@ -1,0 +1,68 @@
+shape main
+{
+	layouttype="leftright";
+	fixedAspectRatio="true";
+	
+	defsize(70,37);
+
+	AddSubShape("numbers",100,100);
+
+
+	shape numbers
+	{
+		
+		//big rectangle
+		SetPenWidth(3);
+		Rectangle(0,0,100,100);
+		
+		//Vertical lines
+		moveto (33,0);
+		lineto(33,100);
+		moveto (66,0);
+		lineto(66,100);
+		
+		//zero
+		Ellipse(10,28,23,72);
+		
+		//one
+		moveto(42,36);
+		lineto(50,28);
+		lineto(50,72);
+		moveto(43,72);
+		lineto(56,72);
+		
+		//two
+		Arc(77,26,91,50,88,44,77,36);
+		moveto(89,46);
+		lineto(77,72);
+		lineto(91,72);
+		
+		//thin horizontal line
+		SetPenWidth(1);
+		moveto(0,50);
+		lineto(100,50);
+		
+		//small boxes
+		setfillcolor(0,0,0);
+		rectangle(0,44,4,56);
+		rectangle(29,44,36,56);
+		rectangle(62,44,69,56);
+		rectangle(96,44,100,56);
+		
+		
+						
+	}
+
+}
+
+
+//definition of a label
+shape label
+{
+ setOrigin("S",3,0); 
+ println("#NAME#"); 
+}
+
+
+
+

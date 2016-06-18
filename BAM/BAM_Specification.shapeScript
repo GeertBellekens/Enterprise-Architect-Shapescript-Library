@@ -1,0 +1,12 @@
+shape main
+{
+	DefSize(36,24);
+	SetPenWidth(1);
+	Rectangle(0,0,100,100);
+	image("BAM icon_dial",2,3,98,97);
+}
+
+
+
+
+

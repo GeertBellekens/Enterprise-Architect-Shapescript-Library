@@ -1,0 +1,6 @@
+shape main{
+	// set fill color to light yellow
+	SetFillColor(255,255,206);
+	// draw native shape
+	DrawNativeShape();
+}
