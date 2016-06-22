@@ -1,0 +1,29 @@
+
+shape main
+{
+	layouttype="leftright";
+	
+	defsize(300,200);
+	
+	
+	addSubShape("border",100,100);
+	addSubShape("namePart",90,10,-95,-5);
+	
+	shape namePart
+	{
+		h_align = "left";
+		v_align = "center";
+		editablefield = "name";
+		println("#name#");
+	}
+	shape border
+	{
+		//border
+		SetPenColor(255,255,255);	
+		SetFillColor(225,225,225);
+		RoundRect(0, 0, 100, 100,10,10);
+
+	}
+}
+
+

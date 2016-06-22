@@ -1,0 +1,47 @@
+
+shape main
+{
+	layouttype="leftright";
+	
+	defsize(120,50);
+	
+	
+	addSubShape("Header",100,50);
+	addSubShape("namePart",100,50,-100,0);
+	AddSubShape("gridpart",100,50,-200,52);
+	
+	shape namePart
+	{
+		h_align = "center";
+		v_align = "center";
+		editablefield = "name";
+		println("#name#");
+	}
+	shape Header
+	{
+		//border
+		SetPenColor(153,153,153);	
+		SetFillColor(255,255,255);
+		rectangle(0, 0, 100, 100);
+		//darker bit
+		SetPenColor(245,246,248);	
+		SetFillColor(245,246,248);	
+		rectangle(2, 50, 98, 95);
+	}
+	shape gridpart
+	{
+		SetPenColor(153,153,153);
+		Moveto(100,0);
+		lineto(100,100);
+		moveto(100,90);
+		lineto(0,90);
+		moveto(0,100);
+		lineto(0,0);
+		moveto(0,45);
+		lineto(100,45);
+		
+	}
+
+	
+}
+

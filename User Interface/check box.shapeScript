@@ -1,0 +1,43 @@
+
+shape main
+{
+	layouttype="leftright";
+	fixedAspectRatio="true";
+	
+	defsize(15,15);
+	
+	AddSubShape("checkbox",100,100);
+	
+
+	
+	shape checkbox
+	{
+		//borders
+		SetPenColor(142,143,143);	
+		SetFillColor(244,244,244);
+		Rectangle(0,0,100,100);
+		SetPenColor(174,179,185);	
+		SetFillColor(203,207,213);
+		Rectangle(15,15,85,85);
+		//check mark
+		SetPenColor(69,90,146);	
+		SetFillColor(69,90,146);
+		StartPath();
+		moveTo(22,59);
+		lineto(42,81);
+		lineto(50,81);
+		lineto(79,27);
+		lineto(72,17);
+		lineto(45,65);
+		lineTo(28,51);
+		EndPath();
+		FillAndStrokePath();
+	}
+	
+}
+//definition of a label
+shape label
+{
+ setOrigin("E",0,0); 
+ println("#NAME#"); 
+}

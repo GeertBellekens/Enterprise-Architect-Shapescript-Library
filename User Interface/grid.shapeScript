@@ -1,0 +1,47 @@
+
+shape main
+{
+	layouttype="leftright";
+	
+	defsize(250,50);
+	
+
+	AddSubShape("gridpart",100,100);
+
+	
+	shape gridpart
+	{
+		SetPenColor(153,153,153);
+		//border
+		Moveto(0,0);
+		lineto(100,0);
+		lineto(100,100);
+		lineto(0,100);
+		lineto(0,0);
+//		// horizontal lines
+//		Moveto(0,20);
+//		lineto(100,20);
+//		Moveto(0,40);
+//		lineto(100,40);
+//		Moveto(0,60);
+//		lineto(100,60);
+//		Moveto(0,80);
+//		lineto(100,80);
+//		// vertical lines
+//		moveto(25,0);
+//		lineto(25,100);
+//		moveto(50,0);
+//		lineto(50,100);
+//		moveto(75,0);
+//		lineto(75,100);
+	}
+
+	
+}
+
+//definition of a label
+shape label
+{
+ setOrigin("N",0,0); 
+ println("#NAME#"); 
+}

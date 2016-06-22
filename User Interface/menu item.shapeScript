@@ -1,0 +1,36 @@
+
+shape main
+{
+	layouttype="leftright";
+	
+	defsize(120,20);
+	
+	
+	addSubShape("box",20,100);
+	addSubShape("lightbox",80,100);
+	addSubShape("namePart",80,100, -75,0);
+	
+	shape lightbox
+	{
+		SetPenColor(251,251,251);	
+		SetFillColor(251,251,251);	
+		rectangle(0, 0, 100, 100);
+	}
+	shape namePart
+	{
+		h_align = "left";
+		v_align = "center";
+		editablefield = "name";
+
+		println("#name#");
+	}
+	shape box
+	{
+		//border
+		SetPenColor(235,235,235);	
+		SetFillColor(235,235,235);	
+		rectangle(0, 0, 100, 100);
+
+	}
+}
+

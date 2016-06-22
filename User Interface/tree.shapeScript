@@ -1,0 +1,46 @@
+
+shape main
+{
+	layouttype="leftright";
+	
+	defsize(150,200);
+	
+	
+	addSubShape("border",100,100);
+	addSubShape("namePart",90,10,-90,0);
+	addSubShape("tree",20,20,-190,0);
+	
+	shape namePart
+	{
+		h_align = "center";
+		v_align = "center";
+		editablefield = "name";
+		println("#name#");
+	}
+	shape border
+	{
+		//border
+		SetPenColor(153,153,153);	
+		SetFillColor(255,255,255);
+		rectangle(0, 0, 100, 100);
+
+	}
+	shape tree
+	{
+
+		//border
+		SetPenColor(153,153,153);
+		SetFillColor(255,255,255);
+		rectangle(10,10,25,25);
+		rectangle(50,35,65,50);
+		Rectangle(50,60,65,75);
+		moveto(17,25);
+		lineto(17,67);
+		lineto(50,67);
+		moveto(17,42);
+		lineto(50,42);
+	}
+	
+}
+
+

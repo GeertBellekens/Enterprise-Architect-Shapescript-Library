@@ -1,0 +1,31 @@
+
+shape main
+{
+	layouttype="leftright";
+	fixedAspectRatio="true";
+	
+	defsize(15,15);
+	AddSubShape("radio",100,100);
+		
+	shape radio
+	{
+		//borders
+		SetPenColor(145,145,1145);	
+		SetFillColor(244,244,244);
+		Ellipse(0,0,100,100);
+		SetPenColor(142,154,164);	
+		SetFillColor(20,64,92);
+		Ellipse(15,15,85,85);
+		SetPenColor(93,206,221);	
+		SetFillColor(93,206,221);	
+		Ellipse(31,31,69,69);
+		
+	}
+	
+}
+//definition of a label
+shape label
+{
+ setOrigin("E",0,0); 
+ println("#NAME#"); 
+}

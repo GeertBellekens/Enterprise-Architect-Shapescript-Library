@@ -1,0 +1,25 @@
+shape main
+{
+	
+	h_align = "center";
+	v_align = "center";
+    editablefield = "name";
+	DefSize(100,30);
+	SetPenColor(112,112,112);
+	SetFillColor(243,243,243);
+	RoundRect(0, 0, 100, 100,5,5);
+	SetPenWidth(2);
+	SetPenColor(243,243,243);
+    //RoundRect(2, 2, 98, 98,5,5);
+	SetPenWidth(1);
+	// top half
+	SetPenColor(241,241,241);
+	SetFillColor(241,241,241);
+	Rectangle(2,10,98,50);
+	// bottom half
+	SetPenColor(209,209,209);
+	SetFillColor(209,209,209);
+	Rectangle(2,50,98,90);
+	
+    println("#name#");
+}

@@ -1,0 +1,15 @@
+shape main
+{
+	layouttype="leftright";	
+	defsize(120,20);
+	addSubShape("namePart",100,100);
+	
+	shape namePart
+	{
+		h_align = "left";
+		v_align = "center";
+		editablefield = "name";
+		println("#name#");
+	}
+}
+
