@@ -1,0 +1,11 @@
+// FC_Process, 30/10/08
+
+shape main
+{
+	v_align="center";
+	h_align="center";
+	defsize(100,70);
+	rectangle(0,0,100,100);
+	printwrapped("#name#");
+}
+

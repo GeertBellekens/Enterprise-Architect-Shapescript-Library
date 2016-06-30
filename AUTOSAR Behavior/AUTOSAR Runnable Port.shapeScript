@@ -1,0 +1,9 @@
+shape main
+{
+	if(HasTag("ByReference", "true"))
+	{
+		SetFillColor(0, 176, 240);
+	}
+	
+	DrawNativeShape();
+}

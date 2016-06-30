@@ -1,0 +1,69 @@
+shape main
+{
+	noshadow=true;
+	setfixedregion(44,-11,56,11);
+	moveto(0,0);
+	lineto(100,0);
+	setlinestyle("SOLID");
+	moveto(44,-10);
+	lineto(56,10);
+	moveto(56,-10);
+	lineto(44,10);
+	moveto(50,11);
+	lineto(50,-11);
+	moveto(44,0);
+	lineto(56,0);
+}
+
+label middlebottomlabel
+{
+	print("");
+}
+
+shape target
+{
+	if(hasproperty("direction","Source -> Destination"))
+	{
+		setfillcolor(getuserbordercolor());
+		startpath();
+		moveto(0,0);
+		lineto(16,-6);
+		lineto(16,6);
+		endpath();
+		fillandstrokepath();
+	}
+	if(hasproperty("direction","Bi-directional"))
+	{
+		setfillcolor(getuserbordercolor());
+		startpath();
+		moveto(0,0);
+		lineto(16,-6);
+		lineto(16,6);
+		endpath();
+		fillandstrokepath();
+	}
+}
+
+shape source
+{
+	if(hasproperty("direction","Destination -> Source"))
+	{
+		setfillcolor(getuserbordercolor());
+		startpath();
+		moveto(0,0);
+		lineto(16,-6);
+		lineto(16,6);
+		endpath();
+		fillandstrokepath();
+	}
+	if(hasproperty("direction","Bi-directional"))
+	{
+		setfillcolor(getuserbordercolor());
+		startpath();
+		moveto(0,0);
+		lineto(16,-6);
+		lineto(16,6);
+		endpath();
+		fillandstrokepath();
+	}
+}

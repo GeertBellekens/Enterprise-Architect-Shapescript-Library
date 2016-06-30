@@ -1,0 +1,26 @@
+shape main
+{
+	noshadow=true;
+	setlinestyle("solid");
+	moveto(0,0);
+	lineto(100,0);
+}
+
+shape target
+{
+	scalable="false";
+	setfillcolor(0,0,0);
+	ellipse(28,-4,20,4);
+}
+
+shape source
+{
+	scalable="false";
+	setfillcolor(0,0,0);
+	ellipse(28,-4,20,4);
+}
+
+label middlebottomlabel
+{
+	print("");
+}

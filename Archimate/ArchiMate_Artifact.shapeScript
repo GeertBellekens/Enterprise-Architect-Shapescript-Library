@@ -1,0 +1,79 @@
+// ArchiMate_Artifact, 17/06/2010
+
+shape main
+{
+	layouttype="border";
+	
+	if(hastag("iconstyle","true"))
+	{
+		defsize(70,90);
+		startpath();
+		moveto(70,0);
+		lineto(0,0);
+		lineto(0,100);
+		lineto(100,100);
+		lineto(100,30);
+		lineto(70,0);
+		endpath();
+		fillandstrokepath();
+		lineto(70,30);
+		lineto(100,30);
+	}
+	else
+	{
+		defsize(90,70);
+		rectangle(0,0,100,100);
+		addsubshape("padding","n");
+		addsubshape("name","center");
+		
+		shape padding
+		{
+			preferredheight=20;
+		}
+		
+		shape name
+		{
+			h_align="center";
+			print("#name#");
+		}
+	}
+}
+
+shape label
+{
+	setorigin("sw",0,0);
+
+	if(hastag("iconstyle","true"))
+	{
+		print("#name#");
+	}
+}
+
+decoration artifact
+{
+	orientation="ne";
+	
+	if(hastag("iconstyle","false"))
+	{
+		moveto(60,0);
+		lineto(10,0);
+		lineto(10,100);
+		lineto(90,100);
+		lineto(90,30);
+		lineto(60,0);
+		lineto(60,30);
+		lineto(90,30);
+	}
+}
+
+decoration composite
+{
+	orientation="SE";
+	if(hasproperty("iscomposite","true"))
+	{
+		ellipse(0,40,40,60);
+		ellipse(60,40,100,60);
+		moveto(30,50);
+		lineto(70,50);
+	}
+}

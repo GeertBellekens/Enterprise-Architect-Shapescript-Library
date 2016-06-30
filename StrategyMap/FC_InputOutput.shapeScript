@@ -1,0 +1,18 @@
+// FC_InputOutput, 30/10/08
+
+shape main
+{
+	v_align="center";
+	h_align="center";
+	defsize(90,70);
+	startpath();
+	moveto(-10,0);
+	lineto(90,0);
+	lineto(110,100);
+	lineto(10,100);
+	lineto(-10,0);
+	endpath();
+	fillandstrokepath();
+	printwrapped("#name#");
+}
+

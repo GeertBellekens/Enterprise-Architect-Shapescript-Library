@@ -1,0 +1,100 @@
+// ArchiMate_Process, 17/06/2010
+
+shape main
+{
+	layouttype="border";
+	v_align="center";
+	h_align="center";
+	
+	if(hastag("iconstyle","true"))
+	{
+		defsize(90,40);
+		startpath();
+		moveto(0,0);
+		lineto(75,0);
+		lineto(75,-30);
+		lineto(100,50);
+		lineto(75,130);
+		lineto(75,100);
+		lineto(0,100);
+		lineto(0,0);
+		endpath();
+		fillandstrokepath();
+	}
+	else
+	{
+		defsize(105,70);
+		roundrect(0,0,100,100,20,20);
+		addsubshape("padding","n");
+		addsubshape("name","center");
+		
+		shape padding
+		{
+			preferredheight=20;
+		}
+
+		shape name
+		{
+			h_align="center";
+			print("#name#");
+		}
+	}
+}
+
+shape label
+{
+	setorigin("sw",0,0);
+
+	if(hastag("iconstyle","true"))
+	{
+		print("#name#");
+	}
+}
+
+decoration process
+{
+	orientation="ne";
+	
+	if(hastag("iconstyle","false"))
+	{
+		if(hastag("showdecoration","true"))
+		{
+			moveto(0,25);
+			lineto(55,25);
+			lineto(55,0);
+			lineto(80,50);
+			lineto(55,100);
+			lineto(55,75);
+			lineto(0,75);
+			lineto(0,25);
+		}
+	}
+}
+
+decoration atomic
+{
+	orientation="nw";
+	
+	if(hastag("atomic","true"))
+	{
+		ellipse(0,0,100,100);
+		moveto(20,80);
+		lineto(50,20);
+		lineto(80,80);
+		moveto(35,50);
+		lineto(65,50);
+	}	
+}
+
+decoration composite
+{
+	orientation="SE";
+	if(hasproperty("iscomposite","true"))
+	{
+		ellipse(0,40,40,60);
+		ellipse(60,40,100,60);
+		moveto(30,50);
+		lineto(70,50);
+	}
+}
+

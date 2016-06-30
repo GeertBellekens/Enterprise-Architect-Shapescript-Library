@@ -1,0 +1,40 @@
+shape target
+{
+	noshadow=true;
+	rotatable = false;
+	endpointx = 12; // value in pixels
+	endpointy = 0;
+	
+	moveto(100,8);
+	lineto(56,7);
+	lineto(32,5);
+	lineto(16,4);
+	lineto(8,3);
+	lineto(4,2);
+	lineto(1,0);
+	lineto(4,-2);
+	lineto(8,-3);
+	lineto(16,-4);
+	lineto(32,-5);
+	lineto(56,-7);
+	lineto(100,-8);
+	
+	moveto(0,8);
+	lineto(44,7);
+	lineto(68,5);
+	lineto(84,4);
+	lineto(92,3);
+	lineto(96,2);
+	lineto(99,0);
+	lineto(96,-2);
+	lineto(92,-3);
+	lineto(84,-4);
+	lineto(68,-5);
+	lineto(44,-7);
+	lineto(0,-8);
+}
+
+label middlebottomlabel
+{
+	print("");
+}

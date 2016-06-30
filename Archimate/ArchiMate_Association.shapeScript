@@ -1,0 +1,14 @@
+// ArchiMate_Association, 10/11/2008
+
+label middlebottomlabel
+{
+	print("");
+}
+
+shape source
+{
+}
+
+shape target
+{
+}

@@ -1,0 +1,5 @@
+shape main
+{
+	defsize(50,50);
+	drawnativeshape();
+}

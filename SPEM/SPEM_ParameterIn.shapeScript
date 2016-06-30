@@ -1,0 +1,6 @@
+label middlebottomlabel
+{
+	h_align ="center";
+	print("«input»");
+	
+}

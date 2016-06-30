@@ -1,0 +1,167 @@
+// ArchiMate_Interface, 17/06/2010
+
+shape main
+{
+	layouttype="border";
+	noshadow=true;
+	
+	if(hastag("iconstyle","true"))
+	{
+		if(hastag("interfacekind","provided"))
+		{
+			defsize(50,50);
+			ellipse(0,0,100,100);
+		}
+		if(hastag("interfacekind","required"))
+		{
+			if(hastag("rotation","up"))
+			{
+				defsize(50,25);
+				moveto(0,0);
+				arcto(0,-100,100,100,0,0,100,0);
+			}
+			if(hastag("rotation","down"))
+			{
+				defsize(50,25);
+				moveto(100,100);
+				arcto(0,0,100,200,100,100,0,100);
+			}
+			if(hastag("rotation","left"))
+			{
+				defsize(25,50);
+				moveto(0,100);
+				arcto(-100,0,100,100,0,100,0,0);
+			}
+			if(hastag("rotation","right"))
+			{
+				defsize(25,50);
+				moveto(100,0);
+				arcto(0,0,200,100,100,0,100,100);
+			}
+		}
+		if(hastag("interfacekind","symmetric"))
+		{
+			if(hastag("rotation","up"))
+			{
+				defsize(50,25);
+				startpath();
+				moveto(0,0);
+				arcto(0,-100,100,100,0,0,100,0);
+				moveto(0,0);
+				lineto(100,0);
+				endpath();
+				fillandstrokepath();
+			}
+			if(hastag("rotation","down"))
+			{
+				defsize(50,25);
+				startpath();
+				moveto(100,100);
+				arcto(0,0,100,200,100,100,0,100);
+				moveto(0,100);
+				lineto(100,100);
+				endpath();
+				fillandstrokepath();
+			}
+			if(hastag("rotation","left"))
+			{
+				defsize(25,50);
+				startpath();
+				moveto(0,100);
+				arcto(-100,0,100,100,0,100,0,0);
+				moveto(0,100);
+				lineto(0,0);
+				endpath();
+				fillandstrokepath();
+			}
+			if(hastag("rotation","right"))
+			{
+				defsize(25,50);
+				startpath();
+				moveto(100,0);
+				arcto(0,0,200,100,100,0,100,100);
+				moveto(100,100);
+				lineto(100,0);
+				endpath();
+				fillandstrokepath();
+			}
+		}
+		if(hastag("interfacekind","assembly"))
+		{
+			defsize(50,50);
+			ellipse(10,10,90,90);
+			if(hastag("rotation","up"))
+			{
+				moveto(0,50);
+				arcto(0,0,100,100,0,50,100,50);
+			}
+			if(hastag("rotation","down"))
+			{
+				moveto(100,50);
+				arcto(0,0,100,100,100,50,0,50);
+			}
+			if(hastag("rotation","left"))
+			{
+				moveto(50,100);
+				arcto(0,0,100,100,50,100,50,0);
+			}
+			if(hastag("rotation","right"))
+			{
+				moveto(50,0);
+				arcto(0,0,100,100,50,0,50,100);
+			}
+		}
+	}
+	else
+	{
+		defsize(90,70);
+		rectangle(0,0,100,100);
+		addsubshape("padding","n");
+		addsubshape("name","center");
+		
+		shape padding
+		{
+			preferredheight=20;
+		}
+		
+		shape name
+		{
+			h_align="center";
+			print("#name#");
+		}
+	}
+}
+
+shape label
+{
+	setorigin("sw",0,0);
+
+	if(hastag("iconstyle","true"))
+	{
+		print("#name#");
+	}
+}
+
+decoration interface
+{
+	orientation="ne";
+	
+	if(hastag("iconstyle","false"))
+	{
+		moveto(0,50);
+		lineto(60,50);
+		ellipse(60,30,100,70);
+	}
+}
+
+decoration composite
+{
+	orientation="SE";
+	if(hasproperty("iscomposite","true"))
+	{
+		ellipse(0,40,40,60);
+		ellipse(60,40,100,60);
+		moveto(30,50);
+		lineto(70,50);
+	}
+}

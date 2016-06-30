@@ -1,0 +1,144 @@
+//SPEM_Phase 31/03/09
+
+shape main
+{
+	layouttype="topdown";
+	h_align = "left";
+	v_align = "center";
+	noshadow = "true";
+
+	
+	if(hastag("iconstyle","true"))
+	{
+		defsize(90,60);
+
+		//Golden section
+		setpencolor(211,138,65);
+		setpenwidth(2);
+		setfillcolor(219,159,100);
+		startpath();
+		moveto(0,15);
+		lineto(15,0);
+		lineto(25,10);
+		bezierto(65,50,45,-55,100,25);
+		lineto(100,80);
+		lineto(0,80);
+		endpath();
+		fillandstrokepath();
+
+		//Red section
+		setpencolor(228,104,86);
+		setfillcolor(245,140,126);
+		startpath();
+		moveto(0,40);
+		lineto(15,20);
+		lineto(30,35);
+		bezierto(70,50,45,-20,100,35);
+		lineto(100,60);
+		lineto(20,60);
+		lineto(15,35);
+		lineto(5,60);
+		lineto(0,60);
+		endpath();
+		fillandstrokepath();
+
+		//Blue section
+		setpencolor(88,125,214);
+		setpenwidth(2);
+		setfillcolor(137,181,216);
+		startpath();
+		moveto(0,60);
+		lineto(5,60);
+		lineto(15,35);
+		lineto(20,60);
+		lineto(100,60);
+		lineto(100,85);
+		lineto(0,85);
+		endpath();
+		fillandstrokepath();
+
+		//Bottom bar
+		setfillcolor(137,181,216);
+		setpencolor(88,125,214);
+		rectangle(0,95,100,100);
+	}
+	else
+	{
+		defsize(180,85);
+		roundrect(0,0,100,100,20,20);
+		addsubshape("name",110,15,-5,-40);
+		
+		shape name
+		{
+			h_align="center";
+			println("«#stereotype#»");
+			println("#name#");
+		}
+	}
+}
+shape label
+{
+	h_align="left";
+	setorigin("SW",0,0);
+	if(hastag("iconstyle","true"))
+	{
+		println("#NAME#");
+	}
+}
+decoration WorkProductDefinition
+{
+	orientation="ne";
+	
+	if(hastag("iconstyle","false"))
+	{
+		//Golden section
+		setpencolor(211,138,65);
+		setpenwidth(1);
+		setfillcolor(219,159,100);
+		startpath();
+		moveto(0,15);
+		lineto(15,0);
+		lineto(25,10);
+		bezierto(65,50,45,-55,90,25);
+		lineto(90,80);
+		lineto(0,80);
+		endpath();
+		fillandstrokepath();
+
+		//Red section
+		setpencolor(228,104,86);
+		setfillcolor(245,140,126);
+		startpath();
+		moveto(0,40);
+		lineto(15,20);
+		lineto(30,35);
+		bezierto(70,50,45,-20,90,35);
+		lineto(90,60);
+		lineto(20,60);
+		lineto(15,35);
+		lineto(5,60);
+		lineto(0,60);
+		endpath();
+		fillandstrokepath();
+
+		//Blue section
+		setpencolor(88,125,214);
+		setpenwidth(1);
+		setfillcolor(137,181,216);
+		startpath();
+		moveto(0,60);
+		lineto(5,60);
+		lineto(15,35);
+		lineto(20,60);
+		lineto(90,60);
+		lineto(90,85);
+		lineto(0,85);
+		endpath();
+		fillandstrokepath();
+
+		//Bottom bar
+		setfillcolor(137,181,216);
+		setpencolor(88,125,214);
+		rectangle(0,95,90,100);
+	}
+}

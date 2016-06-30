@@ -1,0 +1,28 @@
+shape target
+{
+	noshadow=true;
+	rotatable = false;
+	endpointx = 22; // value in pixels
+	endpointy = 0;
+	
+	startpath();
+	ellipse(0,-12,100,12);
+	moveto(25,0);
+	lineto(60,0);
+	endpath();
+	strokepath();
+	
+	setfillcolor(0,0,0);
+	startpath();
+	moveto(60,-5);
+	lineto(60,5);
+	lineto(90,0);
+	lineto(60,-5);
+	endpath();
+	fillandstrokepath();
+}
+
+label middlebottomlabel
+{
+	print("");
+}

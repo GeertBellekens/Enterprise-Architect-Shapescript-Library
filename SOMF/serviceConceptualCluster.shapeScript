@@ -1,0 +1,14 @@
+shape main
+{
+	layouttype="border";
+	fixedaspectratio=true;
+	v_align="center";
+	h_align="center";
+	defsize(90,90);
+	startpath();
+	ellipse(0,0,100,100);
+	endpath();
+	fillandstrokepath();
+	addsubshape("panel","center");
+	printwrapped("#name#");
+}

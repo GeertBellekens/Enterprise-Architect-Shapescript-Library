@@ -1,0 +1,115 @@
+shape main
+{
+	layouttype="border";
+	v_align="top";
+	h_align="center";
+	setlinestyle("dashdot");
+	setpenwidth(2);
+	setfillcolor(255,255,175);
+	rectangle(0,0,100,100);
+	
+	addsubshape("triangles","e");
+	addsubshape("panel","n");
+	
+	shape triangles
+	{
+		layouttype="border";
+		scalable="false";
+		preferredwidth=30;
+		if(hastag("CloudType","Public"))
+		{
+			addsubshape("PU", "e");
+		}
+		else if(hastag("CloudType","Private"))
+		{
+			addsubshape("PR", "e");
+		}
+		else if(hastag("CloudType","Community"))
+		{
+			addsubshape("CO", "e");
+		}
+		else if(hastag("CloudType","Hybrid"))
+		{
+			addsubshape("HY", "e");
+		}
+		else
+		{
+			addsubshape("CU", "e");
+		}
+	}
+	
+	shape PU
+	{
+		v_align="top";
+		h_align="center";
+		scalable=false;
+		preferredheight=100;
+		preferredwidth=100;
+		polygon(14,8,3,24,90.0);
+		print("PU");
+	}
+	
+	shape PR
+	{
+		v_align="top";
+		h_align="center";
+		scalable=false;
+		preferredheight=100;
+		preferredwidth=100;
+		polygon(14,8,3,24,90.0);
+		print("PR");
+	}
+	
+	shape CO
+	{
+		v_align="top";
+		h_align="center";
+		scalable=false;
+		preferredheight=100;
+		preferredwidth=100;
+		polygon(14,8,3,24,90.0);
+		print("CO");
+	}
+	
+	shape HY
+	{
+		v_align="top";
+		h_align="center";
+		scalable=false;
+		preferredheight=100;
+		preferredwidth=100;
+		polygon(14,8,3,24,90.0);
+		print("HY");
+	}
+	
+	shape CU
+	{
+		v_align="top";
+		h_align="center";
+		scalable=false;
+		preferredheight=100;
+		preferredwidth=100;
+		polygon(14,8,3,24,90.0);
+		print("");
+	}
+	
+	shape panel
+	{
+		layouttype="border";
+		addsubshape("padding","n");
+		addsubshape("name","center");
+		
+		shape name
+		{
+			v_align="top";
+			h_align="center";
+			println("IntraCloud Space");
+			printwrapped("#name#");
+		}
+		
+		shape padding
+		{
+			preferredheight=12;
+		}
+	}
+}

@@ -1,0 +1,69 @@
+// SequenceFlow, 26/11/08
+
+shape target
+{
+	preferredwidth = 12;
+	preferredheight = 16;
+	noshadow = true;
+	scalable = false;
+	rotatable = true;
+	endpointx = 16;
+	endpointy = 0;
+
+	HideLabel("middletoplabel");
+	ShowLabel("middlebottomlabel");
+
+	setpenwidth(1);
+	setfillcolor(getuserbordercolor());
+	startpath();
+	moveto(0,0);
+	lineto(16,6);
+	lineto(16,-6);
+	endpath();
+	fillandstrokepath();
+}
+
+shape source
+{
+	preferredwidth = 12;
+	preferredheight = 20;
+	noshadow = true;
+	scalable = false;
+	rotatable = true;
+	endpointx = 20;
+	endpointy = 0;
+
+	if(HasTag("conditionType","Expression"))
+	{
+		if(HasProperty("Source.Metatype","Decision"))
+		{
+		}
+		else
+		{
+			startpath();
+			moveto(0,0);
+			lineto(10,-6);
+			lineto(20,0);
+			lineto(10,6);
+			endpath();
+			fillandstrokepath();
+		}
+	}
+	else
+	{
+		if(HasTag("conditionType","Default"))
+		{
+			setpenwidth(1);
+			moveto(0,0);
+			lineto(20,0);
+			moveto(14,-6);
+			lineto(6,6);
+		}
+	}
+}
+
+label MiddleBottomLabel
+{
+	print("#TAG:conditionExpression#");
+}
+

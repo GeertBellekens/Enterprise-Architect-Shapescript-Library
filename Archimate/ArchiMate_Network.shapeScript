@@ -1,0 +1,48 @@
+// ArchiMate_Network, 17/06/2010
+
+shape main
+{
+	layouttype="border";
+	rectangle(0,0,100,100);
+	addsubshape("padding","n");
+	addsubshape("name","center");
+
+	shape padding
+	{
+		preferredheight=20;
+	}
+
+	shape name
+	{
+		h_align="center";
+		print("#name#");
+	}
+}
+
+decoration network
+{
+	orientation="ne";
+	
+	setfillcolor(0,0,0);
+	ellipse(20,0,40,20);
+	ellipse(0,80,20,100);
+	ellipse(80,0,100,20);
+	ellipse(60,80,80,100);
+	moveto(30,10);
+	lineto(90,10);
+	lineto(70,90);
+	lineto(10,90);
+	lineto(30,10);
+}
+
+decoration composite
+{
+	orientation="SE";
+	if(hasproperty("iscomposite","true"))
+	{
+		ellipse(0,40,40,60);
+		ellipse(60,40,100,60);
+		moveto(30,50);
+		lineto(70,50);
+	}
+}

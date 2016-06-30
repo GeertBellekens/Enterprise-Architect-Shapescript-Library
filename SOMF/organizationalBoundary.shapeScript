@@ -1,0 +1,13 @@
+shape main
+{
+	v_align="top";
+	h_align="center";
+	//defsize(100,60);
+	setlinestyle("dashdotdot");
+	setpenwidth(2);
+	setfillcolor(210,210,165);
+	rectangle(0,0,100,100);
+	//printwrapped("Organizational Boundary");
+	println("Organizational Boundary");
+	printwrapped("#name#");
+}

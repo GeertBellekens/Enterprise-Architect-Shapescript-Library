@@ -1,0 +1,13 @@
+// Association, 26/11/08
+
+shape main
+{
+	noshadow = true;
+	
+	HideLabel("middlebottomlabel");
+	//HideLabel("middletoplabel");
+
+	setlinestyle("DASH");
+	lineto(100,0);
+}
+

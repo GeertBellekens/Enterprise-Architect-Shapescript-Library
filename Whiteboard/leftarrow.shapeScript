@@ -1,0 +1,23 @@
+shape main
+{
+	noshadow=true;
+	v_align="center";
+	h_align="center";
+	defsize(90,70);
+	startpath();
+	moveto(0,50);
+	lineto(25,100);
+	lineto(25,75);
+	lineto(100,75);
+	lineto(100,25);
+	lineto(25,25);
+	lineto(25,0);
+	lineto(0,50);
+	endpath();
+	if(hastag("fill","true"))
+		fillandstrokepath();
+	else
+		strokepath();
+	if(hastag("nameVisible","true"))
+		printwrapped("#NAME#");
+}

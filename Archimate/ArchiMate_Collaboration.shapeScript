@@ -1,0 +1,73 @@
+// ArchiMate_Collaboration, 17/06/2010
+
+shape main
+{
+	layouttype="border";
+	noshadow=true;
+
+	if(hastag("iconstyle","true"))
+	{
+		defsize(85,50);
+		ellipse(0,0,60,100);
+		ellipse(40,0,100,100);
+		startpath();
+		ellipse(0,0,60,100);
+		endpath();
+		strokepath();
+	}
+	else
+	{
+		defsize(105,70);
+		rectangle(0,0,100,100);
+		addsubshape("padding","n");
+		addsubshape("name","center");
+		
+		shape padding
+		{
+			preferredheight=20;
+		}
+		
+		shape name
+		{
+			h_align="center";
+			print("#name#");
+		}
+	}
+}
+
+shape label
+{
+	setorigin("sw",0,0);
+
+	if(hastag("iconstyle","true"))
+	{
+		print("#name#");
+	}
+}
+
+decoration collaboration
+{
+	orientation="ne";
+	
+	if(hastag("iconstyle","false"))
+	{
+		ellipse(0,20,60,80);
+		ellipse(40,20,100,80);
+		startpath();
+		ellipse(0,20,60,80);
+		endpath();
+		strokepath();
+	}
+}
+
+decoration composite
+{
+	orientation="SE";
+	if(hasproperty("iscomposite","true"))
+	{
+		ellipse(0,40,40,60);
+		ellipse(60,40,100,60);
+		moveto(30,50);
+		lineto(70,50);
+	}
+}

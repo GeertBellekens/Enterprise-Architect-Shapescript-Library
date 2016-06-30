@@ -1,0 +1,6 @@
+// BusinessProcess, 26/11/08
+
+shape main
+{
+	drawnativeshape();
+}

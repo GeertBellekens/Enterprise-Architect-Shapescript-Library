@@ -1,0 +1,5 @@
+shape main
+{
+	SetFillColor(255,255,204);
+	DrawNativeShape();
+}

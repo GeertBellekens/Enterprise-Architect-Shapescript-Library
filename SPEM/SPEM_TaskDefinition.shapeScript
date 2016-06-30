@@ -1,0 +1,69 @@
+//SPEM_TaskDefinition 31/03/09
+
+shape main
+{
+    layouttype ="topdown";
+	noshadow = "true";
+	h_align = "center";
+	
+	if(hastag("iconstyle","true"))
+	{	
+		defsize(90,45);
+		setfillcolor(254,223,165);
+		setpencolor(0,0,0);
+
+		startpath();
+		moveto(0,0);
+		lineto(70,0);
+		lineto(100,50);
+		lineto(70,100);
+		lineto(0,100);
+		endpath();
+		fillandstrokepath();
+	}
+	else
+	{	
+		defsize(180,85);
+		roundrect(0,0,100,100,20,20);
+		addsubshape("name",110,15,0,2);
+		
+		shape name
+		{
+			h_align="center";
+			println("«#stereotype#»");
+			println("#name#");
+		}
+	}
+}
+shape label
+{
+	h_align="left";
+	setorigin("SW",0,0);
+	if(hastag("iconstyle","true"))
+	{
+		print("#NAME#");
+	}
+}
+decoration TaskDefinition
+{
+	orientation="ne";
+	
+	if(hastag("iconstyle","false"))
+	{		
+		setfillcolor(254,223,165);
+		setpencolor(0,0,0);
+
+		startpath();
+		moveto(0,0);
+		lineto(70,0);
+		lineto(100,30);
+		lineto(70,60);
+		lineto(0,60);
+		endpath();
+		fillandstrokepath();
+		
+	}
+}
+
+
+

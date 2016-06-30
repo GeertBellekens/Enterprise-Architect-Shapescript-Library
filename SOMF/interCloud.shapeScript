@@ -1,0 +1,123 @@
+shape main
+{
+	layouttype="border";
+	editablefield="name";
+	defsize(100,80);
+	startCloudPath(25,10,0);
+	rectangle(10,10,90,85);
+	endpath();
+	fillandstrokepath();
+	
+	startPath();
+	ellipse(15,30,45,60);
+	endpath();
+	strokepath();
+	
+	startPath();
+	ellipse(35,30,65,60);
+	endpath();
+	strokepath();
+	
+	startPath();
+	ellipse(55,30,85,60);
+	endpath();
+	strokepath();
+	
+	addsubshape("triangles","n");
+	addsubshape("panel","s");
+	
+	shape triangles
+	{
+		layouttype="border";
+		preferredheight=25;
+		if(hastag("CloudType","Public"))
+		{
+			addsubshape("PU", "e");
+		}
+		else if(hastag("CloudType","Private"))
+		{
+			addsubshape("PR", "e");
+		}
+		else if(hastag("CloudType","Community"))
+		{
+			addsubshape("CO", "e");
+		}
+		else if(hastag("CloudType","Hybrid"))
+		{
+			addsubshape("HY", "e");
+		}
+		else
+		{
+			addsubshape("CU", "e");
+		}
+	}
+	
+	shape PU
+	{
+		v_align="center";
+		h_align="center";
+		preferredheight=100;
+		preferredwidth=20;
+		polygon(50,30,3,100,90.0);
+		print("PU");
+	}
+	
+	shape PR
+	{
+		v_align="center";
+		h_align="center";
+		preferredheight=100;
+		preferredwidth=20;
+		polygon(50,30,3,100,90.0);
+		print("PR");
+	}
+	
+	shape CO
+	{
+		v_align="center";
+		h_align="center";
+		preferredheight=100;
+		preferredwidth=20;
+		polygon(50,30,3,100,90.0);
+		print("CO");
+	}
+	
+	shape HY
+	{
+		v_align="center";
+		h_align="center";
+		preferredheight=100;
+		preferredwidth=20;
+		polygon(50,30,3,100,90.0);
+		print("HY");
+	}
+	
+	shape CU
+	{
+		v_align="center";
+		h_align="center";
+		preferredheight=100;
+		preferredwidth=20;
+		polygon(50,30,3,100,90.0);
+		print("");
+	}
+	
+	shape panel
+	{
+		layouttype="border";
+		addsubshape("padding","n");
+		addsubshape("name","center");
+		
+		shape name
+		{
+			v_align="top";
+			h_align="center";
+			printwrapped("#name#");
+		}
+		
+		shape padding
+		{
+			preferredheight=12;
+		}
+	}
+}

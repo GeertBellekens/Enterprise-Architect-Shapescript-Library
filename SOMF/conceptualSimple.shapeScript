@@ -1,0 +1,14 @@
+shape main
+{
+	noshadow=true;
+	setlinestyle("dot");
+	
+	moveto(0,0);
+	lineto(100,0);
+}
+
+label middlebottomlabel
+{
+	print("");
+}
+

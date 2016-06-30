@@ -1,0 +1,26 @@
+// DT_False, 29/10/08
+
+shape main
+{
+	noshadow=true;
+	moveto(0,0);
+	lineto(100,0);
+}
+
+shape target
+{
+	noshadow=true;
+	moveto(12,-6);
+	lineto(0,0);
+	lineto(12,6);
+}
+
+label middletoplabel
+{
+	println("False");
+}
+
+label middlebottomlabel
+{
+	print("");
+}

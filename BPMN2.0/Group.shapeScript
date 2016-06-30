@@ -1,0 +1,38 @@
+shape main
+{
+	noshadow="true";
+    h_align="center";
+    v_align="top";
+    defsize(190,190);
+	printwrapped("#name#");
+
+    setlinestyle("dashdot");
+    moveto(0,10);
+    lineto(0,90);
+
+    lineto(1,94);
+    lineto(3,97);
+    lineto(6,99);
+    lineto(10,100);
+    
+    lineto(90,100);
+    
+    lineto(94,99);
+    lineto(97,97);
+    lineto(99,94);
+    lineto(100,90);
+    
+    lineto(100,10);
+    
+    lineto(99,6);
+    lineto(97,3);
+    lineto(94,1);
+    lineto(90,0);
+    
+    lineto(10,0);
+    
+    lineto(6,1);
+    lineto(3,3);
+    lineto(1,6);
+    lineto(0,10);
+}

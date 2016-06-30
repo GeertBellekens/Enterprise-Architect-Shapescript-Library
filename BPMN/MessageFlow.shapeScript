@@ -1,0 +1,79 @@
+// MessageFlow, 26/11/08
+
+shape main
+{
+	preferredwidth=100;
+	preferredheight=10;
+	noshadow=true;
+
+	setlinestyle("DASH");
+	moveto(0,0);
+	lineto(100,0);
+}
+
+shape target
+{
+	preferredwidth = 12;
+	preferredheight = 16;
+	noshadow = true;
+	scalable = false;
+	rotatable = true;
+	endpointx = 16;
+	endpointy = 0;
+
+	if(HasProperty("Direction","Source -> Destination"))
+	{	
+		setpenwidth(1);
+		startpath();
+		moveto(0,0);
+		lineto(16,6);
+		lineto(16,-6);
+		lineto(0,0);
+		endpath();
+		fillandstrokepath();
+	}
+	else
+	{
+		setpenwidth(1);
+		startpath();
+		ellipse(0,6,12,-6);
+		endpath();
+		fillandstrokepath();
+	}
+}
+
+shape source
+{
+	preferredwidth = 12;
+	preferredheight = 16;
+	noshadow = true;
+	scalable = false;
+	rotatable = true;
+	endpointx = 16;
+	endpointy = 0;
+
+	if(HasProperty("Direction","Destination -> Source"))
+	{	
+		setpenwidth(1);
+		startpath();
+		moveto(0,0);
+		lineto(16,6);
+		lineto(16,-6);
+		lineto(0,0);
+		endpath();
+		fillandstrokepath();
+	}
+	else
+	{
+		setpenwidth(1);
+		startpath();
+		ellipse(0,6,12,-6);
+		endpath();
+		fillandstrokepath();
+	}
+}
+
+label middlebottomlabel
+{
+	print("#TAG:Message#");
+}

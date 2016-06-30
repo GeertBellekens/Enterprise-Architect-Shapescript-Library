@@ -1,0 +1,12 @@
+// DT_Start, 24/10/2008
+
+shape main
+{
+	noshadow=true;
+	defsize(30,30);
+	setfillcolor(getuserbordercolor());
+	startpath();
+	ellipse(0,0,100,100);
+	endpath();
+	fillandstrokepath();
+}

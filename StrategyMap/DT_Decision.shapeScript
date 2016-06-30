@@ -1,0 +1,15 @@
+// DT_Decision, 24/10/2008
+
+shape main
+{
+	noshadow=true;
+	defsize(40,40);
+	startpath();
+	moveto(50,0);
+	lineto(100,50);
+	lineto(50,100);
+	lineto(0,50);
+	lineto(50,0);
+	endpath();
+	fillandstrokepath();
+}

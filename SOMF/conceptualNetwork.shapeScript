@@ -1,0 +1,33 @@
+shape main
+{
+	noshadow=true;
+	setfixedregion(40,-10,60,10);
+	setlinestyle("dot");
+	moveto(0,0);
+	lineto(45,0);
+	moveto(56,0);
+	lineto(100,0);
+	setlinestyle("solid");
+	startpath();
+	if(hasproperty("rotationdirection","left"))
+	{
+		moveto(40,-10);
+		lineto(60,-10);
+		lineto(50,10);
+		lineto(40,-10);
+	}
+	else
+	{
+		moveto(40,10);
+		lineto(60,10);
+		lineto(50,-10);
+		lineto(40,10);
+	}
+	endpath();
+	strokepath();
+}
+
+label middlebottomlabel
+{
+	print("");
+}

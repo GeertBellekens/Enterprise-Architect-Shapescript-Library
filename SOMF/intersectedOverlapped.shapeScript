@@ -1,0 +1,48 @@
+shape main
+{
+	noshadow=true;
+	layouttype="border";
+	fixedaspectratio=true;
+	if(hasproperty("type", "class"))
+	{
+		defsize(110,60);
+		setfillcolor(212,212,212);
+		roundrect(0,0,100,100, 20,20);
+		addsubshape("panel","center");
+	}
+	else
+	{
+		moveto(0,0);
+		lineto(100,0);
+		moveto(45,-40);
+		lineto(55,40);
+		moveto(55,-40);
+		lineto(45,40);
+	}
+	
+	shape panel
+	{
+		layouttype="border";
+		addsubshape("padding","s");
+		addsubshape("name","center");
+		
+		shape name
+		{
+			v_align="center";
+			h_align="center";
+			printwrapped("#name#");
+			//printwrapped("Intersected Asset");
+		}
+		
+		shape padding
+		{
+			preferredheight=16;
+		}
+	}
+}
+
+label middlebottomlabel
+{
+	print("");
+}
+

@@ -1,0 +1,13 @@
+shape main
+{
+	v_align="top";
+	h_align="center";
+	//defsize(100,60);
+	setlinestyle("dot");
+	setpenwidth(2);
+	setfillcolor(200,255,200);
+	rectangle(0,0,100,100);
+	//printwrapped("ExtraCloud Space");
+	println("ExtraCloud Space");
+	printwrapped("#name#");
+}

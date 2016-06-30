@@ -1,0 +1,136 @@
+//SPEM_WorkProductDefinition 31/03/09
+
+shape main
+{	
+	noshadow="true";
+	layouttype="topdown";
+	h_align = "left";
+	v_align = "center";
+		
+	if(hastag("iconstyle","true"))
+	{
+		defsize(65,90);	
+		
+		//draw and color the frame	
+		setfillcolor(254,251,224);
+		setpencolor(176,152,79);
+		setpenwidth(3);
+	
+		startpath();
+		moveto(66,0);
+		lineto(0,0);
+		lineto(0,100);
+		lineto(100,100);
+		lineto(100,25);
+		lineto(66,25);
+		lineto(66,0);
+		endpath();
+		fillandstrokepath();
+	
+		//triangle conner
+	
+		setfillcolor(176,152,79);
+		startpath();	
+		moveto(66,0);
+		lineto(100,25);
+		lineto(66,25);
+		endpath();
+		fillandstrokepath();
+	
+		//drawing lines inside
+
+		addsubshape("sub",60,10,5,3);
+		addsubshape("sub",80,10,5,3);
+		addsubshape("sub",80,10,5,3);
+		addsubshape("sub",80,10,5,3);
+		addsubshape("sub",80,10,5,3);
+		addsubshape("sub",80,10,5,3);
+		addsubshape("sub",80,10,5,3);
+	
+		shape sub
+		{
+			setfillcolor(96,132,215);
+			setpencolor(96,132,215);
+			rectangle(0,0,100,30);
+		}
+	}
+	else
+	{
+		defsize(190,75);
+		rectangle(0,0,100,100);
+		addsubshape("stereotype",150,15,-30,-33);
+		addsubshape("name",110,15,-5,-15);
+		
+		shape stereotype
+		{
+			h_align="center";
+			printwrapped("«#stereotype#»");
+		}
+		
+		shape name
+		{
+			h_align="center";
+			print("#name#");
+		}
+	} 
+}
+shape label
+{
+	h_align="left";
+	setOrigin("SW",0,0);
+	if(hastag("iconstyle","true"))
+	{
+		println("#NAME#");	
+	}
+}
+decoration WorkProductDefinition
+{
+	orientation="ne";
+	
+	if(hastag("iconstyle","false"))
+	{	
+		//draw and color the frame	
+		setfillcolor(254,251,224);
+		setpencolor(176,152,79);
+		setpenwidth(1);
+	
+		startpath();
+		moveto(66,0);
+		lineto(0,0);
+		lineto(0,100);
+		lineto(100,100);
+		lineto(100,25);
+		lineto(66,25);
+		lineto(66,0);
+		endpath();
+		fillandstrokepath();
+	
+		//triangle conner
+	
+		setfillcolor(176,152,79);
+		startpath();	
+		moveto(66,0);
+		lineto(100,25);
+		lineto(66,25);
+		endpath();
+		fillandstrokepath();
+	
+		//drawing lines inside
+
+		//addsubshape("sub",60,5,5,3);
+		//addsubshape("sub",60,5,5,9);
+		addsubshape("sub",60,5,5,15);
+		addsubshape("sub",80,5,5,21);
+		addsubshape("sub",80,5,5,27);
+		addsubshape("sub",80,5,5,36);
+		addsubshape("sub",80,5,5,42);
+		addsubshape("sub",80,5,5,48);
+	
+		shape sub
+		{
+			setfillcolor(96,132,215);
+			setpencolor(96,132,215);
+			rectangle(0,0,100,5);
+		}
+	}
+}

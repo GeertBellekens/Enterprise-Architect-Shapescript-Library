@@ -1,0 +1,112 @@
+// StartEvent, 25/03/10
+
+shape main
+{
+	noshadow=true;
+	defsize(30,30);
+	startpath();
+	ellipse(0,0,100,100);
+	endpath();
+	fillandstrokepath();
+
+	if (HasTag("Trigger","None"))
+	{
+		return;
+	}
+	
+	if (HasTag("Trigger","Message"))
+	{
+		rectangle(24,24,76,76);
+		moveto(24,24);
+		lineto(50,50);
+		lineto(76,24);
+		return;
+	}
+	if (HasTag("Trigger","Signal"))
+	{
+		startpath();
+		moveto(50,20);
+		lineto(24,64);
+		lineto(76,64);
+		endpath();
+		fillandstrokepath();
+		return;
+	}
+	if (HasTag("Trigger","Multiple"))
+	{
+		if(hastag("bpmnversion","1.1"))
+		{
+			polygon(50,50,5,28,20);
+		}
+		else
+		{
+			// BPMN 1.0
+			setfillcolor(getuserbordercolor());
+			startpath();
+			moveto(50,20);
+			lineto(24,64);
+			lineto(76,64);
+			endpath();
+			fillandstrokepath();
+			startpath();
+			moveto(50,80);
+			lineto(24,34);
+			lineto(76,34);
+			endpath();
+			fillandstrokepath();
+		}
+		return;
+	}
+	if (HasTag("Trigger","Conditional"))
+	{
+		rectangle(24,24,76,76);
+		moveto(24,34);
+		lineto(76,34);
+		moveto(24,50);
+		lineto(76,50);
+		moveto(24,64);
+		lineto(76,64);
+		return;
+	}
+	if (HasTag("Trigger","Rule"))
+	{
+		rectangle(24,24,76,76);
+		moveto(24,34);
+		lineto(76,34);
+		moveto(24,50);
+		lineto(76,50);
+		moveto(24,64);
+		lineto(76,64);
+		return;
+	}
+	if (HasTag("Trigger","Timer"))
+	{
+		ellipse(24,24,76,76);
+		moveto(50,24);
+		lineto(50,50);
+		lineto(76,50);
+		return;
+	}
+	if (HasTag("Trigger","Link"))
+	{
+		setfillcolor(getuserbordercolor());
+		setpenwidth(1);
+		startpath();
+		moveto(24,40);
+		lineto(24,60);
+		lineto(50,60);
+		lineto(50,76);
+		lineto(76,50);
+		lineto(50,24);
+		lineto(50,40);
+		endpath();
+		fillandstrokepath();
+		return;
+	}
+}
+
+shape label
+{
+	setorigin("SW",0,0);
+	println("#NAME#");
+}

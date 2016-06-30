@@ -1,0 +1,79 @@
+// ArchiMate_Event, 17/06/2010
+
+shape main
+{
+	layouttype="border";
+	
+	if(hastag("iconstyle","true"))
+	{
+		defsize(90,70);
+		startpath();
+		moveto(0,100);
+		lineto(75,100);
+		arcto(50,0,100,100,75,100,75,0);
+		lineto(75,0);	// arcto() appears to miss its target
+		lineto(0,0);
+		bezierto(30,30,30,70,0,100);
+		endpath();
+		fillandstrokepath();
+		addsubshape("padding","w");
+		addsubshape("name","center");
+
+		shape padding
+		{
+			preferredwidth=20;
+		}
+		
+		shape name
+		{
+			v_align="center";
+			h_align="center";
+			print("#name#");
+		}
+	}
+	else
+	{
+		defsize(105,70);
+		roundrect(0,0,100,100,20,20);
+		addsubshape("padding","n");
+		addsubshape("name","center");
+
+		shape padding
+		{
+			preferredheight=20;
+		}
+		
+		shape name
+		{
+			h_align="center";
+			print("#name#");
+		}
+	}
+}
+
+decoration event
+{
+	orientation="ne";
+	
+	if(hastag("iconstyle","false"))
+	{
+		moveto(0,100);
+		lineto(65,100);
+		arcto(40,20,90,100,65,100,65,20);
+		lineto(65,20);
+		lineto(0,20);
+		bezierto(30,40,30,80,0,100);
+	}
+}
+
+decoration composite
+{
+	orientation="SE";
+	if(hasproperty("iscomposite","true"))
+	{
+		ellipse(0,40,40,60);
+		ellipse(60,40,100,60);
+		moveto(30,50);
+		lineto(70,50);
+	}
+}

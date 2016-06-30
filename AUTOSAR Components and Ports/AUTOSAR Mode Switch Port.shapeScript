@@ -1,0 +1,226 @@
+shape main
+{
+	if(HasTag("isService", "true"))
+	{
+		SetFillColor(1,1,1);
+	}
+	if(HasTag("isService", "false"))
+	{
+		SetFillColor(255,255,255);
+	}
+	
+	Rectangle(0,0,100,100);
+	
+	If(HasProperty("parentEdge","Right"))
+	{
+		
+		If(HasTag("direction","in"))
+		{
+			if(HasTag("isService", "false"))
+			{
+				// right in
+				SetFillColor(1,1,1);
+				Ellipse(75,15,85,25);
+				Ellipse(15,45,25,55);
+				Ellipse(75,75,85,85);
+				
+				return;
+			}
+			if(HasTag("isService", "true"))
+			{
+				// right in
+				SetFillColor(255,255,255);
+				SetPenColor(255,255,255);
+				Ellipse(75,15,85,25);
+				Ellipse(15,45,25,55);
+				Ellipse(75,75,85,85);
+				
+				return;
+			}
+			
+		}
+		If(HasTag("direction","out"))
+		{
+			if(hasTag("isService","false"))
+			{
+				// right out
+				SetFillColor(1,1,1);
+				Ellipse(15,15,25,25);
+				Ellipse(15,75,15,85);
+				Ellipse(75,45,85,55);
+				
+				return;
+			}
+			if(hasTag("isService","true"))
+			{
+				// right out
+				SetFillColor(255,255,255);
+				SetPenColor(255,255,255);
+				Ellipse(15,15,25,25);
+				Ellipse(15,75,15,85);
+				Ellipse(75,45,85,55);
+				
+				return;
+			}
+		}
+	}
+	
+	// Left
+	If(HasProperty("parentEdge","Left"))
+	{
+		If(HasTag("direction","in"))
+		{
+			if(hasTag("isService","false"))
+			{
+				// left in
+				SetFillColor(1,1,1);
+				Ellipse(15,15,25,25);
+				Ellipse(15,75,15,85);
+				Ellipse(75,45,85,55);
+				
+				return;
+			}
+		
+			if(hasTag("isService","true"))
+			{
+				// left in
+				SetFillColor(255,255,255);
+				SetPenColor(255,255,255);
+				Ellipse(15,15,25,25);
+				Ellipse(15,75,15,85);
+				Ellipse(75,45,85,55);
+				
+				return;
+		
+			}
+		}
+		If(HasTag("direction","out"))
+		{	
+			if(hasTag("isService","false"))
+			{
+				// right in
+				SetFillColor(1,1,1);
+				Ellipse(75,15,85,25);
+				Ellipse(15,45,25,55);
+				Ellipse(75,75,85,85);
+				
+				return;
+			}
+			if(hasTag("isService","true"))
+			{
+				// right in
+				SetFillColor(255,255,255);
+				SetPenColor(255,255,255);
+				Ellipse(75,15,85,25);
+				Ellipse(15,45,25,55);
+				Ellipse(75,75,85,85);
+				
+				return;
+			}
+			
+		}
+	}
+	
+	// TOP
+	If(HasProperty("parentEdge","Top"))
+	{
+		
+		//TOP
+		If(HasTag("direction","in"))
+		{
+			if(hasTag("isService","false"))
+			{
+				SetFillColor(1,1,1);
+				Ellipse(15,15,25,25);
+				Ellipse(75,15,85,25);
+				Ellipse(45,75,55,85);
+				
+				return;
+			}
+			if(hasTag("isService","true"))
+			{
+				SetFillColor(255,255,255);
+				SetPenColor(255,255,255);
+				Ellipse(15,15,25,25);
+				Ellipse(75,15,85,25);
+				Ellipse(45,75,55,85);
+				
+				return;
+			}
+		}
+		If(HasTag("direction","out"))
+		{	
+			if(hasTag("isService","false"))
+			{
+				SetFillColor(1,1,1);
+				Ellipse(15,75,25,85);
+				Ellipse(45,15,55,25);
+				Ellipse(75,75,85,85);
+				
+				return;
+			}
+			if(hasTag("isService","true"))
+			{
+				SetFillColor(255,255,255);
+				SetPenColor(255,255,255);
+				Ellipse(15,75,25,85);
+				Ellipse(45,15,55,25);
+				Ellipse(75,75,85,85);
+				
+				return;
+			}
+			
+		}
+	}
+	
+	// BOTTOM
+	If(HasProperty("parentEdge","Bottom"))
+	{
+		If(HasTag("direction","in"))
+		{
+			if(hasTag("isService","false"))
+			{
+				SetFillColor(1,1,1);
+				Ellipse(15,75,25,85);
+				Ellipse(45,15,55,25);
+				Ellipse(75,75,85,85);
+				
+				return;
+			}
+			if(hasTag("isService","true"))
+			{
+				SetFillColor(255,255,255);
+				SetPenColor(255,255,255);
+				Ellipse(15,75,25,85);
+				Ellipse(45,15,55,25);
+				Ellipse(75,75,85,85);
+				
+				return;
+			}
+		}
+		If(HasTag("direction","out"))
+		{	
+			if(hasTag("isService","false"))
+			{
+				SetFillColor(1,1,1);
+				Ellipse(15,15,25,25);
+				Ellipse(75,15,85,25);
+				Ellipse(45,75,55,85);
+				
+				return;
+			}
+			if(hasTag("isService","true"))
+			{
+				SetFillColor(255,255,255);
+				SetPenColor(255,255,255);
+				Ellipse(15,15,25,25);
+				Ellipse(75,15,85,25);
+				Ellipse(45,75,55,85);
+				
+				return;
+			}
+			
+		}
+	}
+	
+}

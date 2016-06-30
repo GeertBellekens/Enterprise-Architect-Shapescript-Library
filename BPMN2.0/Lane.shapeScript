@@ -1,0 +1,16 @@
+//Sharon 
+shape main
+{
+	noshadow = "true";
+	drawnativeshape();
+	if(hasproperty("Partition","Horizontal"))
+	{
+		moveto(100,0);
+		lineto(100,100);
+	}
+	if(hasproperty("Partition","Vertical"))
+	{
+		moveto(0,100);
+		lineto(100,100);
+	}
+}

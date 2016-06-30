@@ -1,0 +1,28 @@
+// SM_FinancialPerspective, 17/10/08
+
+shape main
+{
+	noshadow=true;
+	layouttype="border";
+	defsize(650,200);
+	setpenwidth(2);
+	moveto(100,0);
+	lineto(0,0);
+	lineto(0,100);
+	lineto(100,100);
+	
+	addsubshape("padding","N");
+	addsubshape("padding","W");
+	addsubshape("name","center");
+	
+	shape padding
+	{
+		preferredheight=6;
+		preferredwidth=10;
+	}
+	
+	shape name
+	{
+		print("Financial Perspective");
+	}
+}

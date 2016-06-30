@@ -1,0 +1,13 @@
+shape main
+{
+	v_align="top";
+	h_align="center";
+	//defsize(100,60);
+	setlinestyle("solid");
+	setpenwidth(2);
+	setfillcolor(212,212,212);
+	roundrect(0,0,100,100,30,30);
+	//printwrapped("Intersected Region");
+	println("Intersected Region");
+	printwrapped("#name#");
+}

@@ -1,0 +1,32 @@
+shape main
+{
+	layouttype="border";
+	
+	setpencolor(getuserbordercolor());
+	setpenwidth(getuserpensize());
+	
+	startpath();
+	rectangle(0,0,100,100);
+	endpath();
+	fillandstrokepath();
+
+	addsubshape("padding","S");
+	addsubshape("padding","N");
+	addsubshape("padding","W");
+	addsubshape("padding","E");
+	addsubshape("name","CENTER");
+
+	text name
+	{
+		h_align = "center";
+		v_align = "center";
+		PrintWrapped("#NAME#");
+	}
+	
+	shape padding
+	{
+		preferredHeight=6;
+		preferredWidth=6;
+	}
+}
+

@@ -1,0 +1,45 @@
+shape main
+{
+	layouttype="border";
+	editablefield="name";
+	fixedaspectratio=true;
+	defsize(90,70);
+	startpath();
+	ellipse(0,0,100,100);
+	endpath();
+	fillandstrokepath();
+	
+	ellipse(15,40,35,60);
+	ellipse(40,40,60,60);
+	ellipse(65,40,85,60);
+	
+	addsubshape("nick","w");
+	addsubshape("nick","e");
+	addsubshape("panel","s");
+	
+	shape nick
+	{
+		preferredwidth=12;
+		moveto(0,50);
+		lineto(100,50);
+	}
+	
+	shape panel
+	{
+		layouttype="border";
+		addsubshape("padding","n");
+		addsubshape("name","center");
+		
+		shape name
+		{
+			v_align="top";
+			h_align="center";
+			printwrapped("#name#");
+		}
+		
+		shape padding
+		{
+			preferredheight=12;
+		}
+	}
+}

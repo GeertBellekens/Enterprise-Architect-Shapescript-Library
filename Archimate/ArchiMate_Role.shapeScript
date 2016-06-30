@@ -1,0 +1,74 @@
+// ArchiMate_Role, 17/06/2010
+
+shape main
+{
+	layouttype="border";
+	
+	if(hastag("iconstyle","true"))
+	{
+		defsize(90,45);
+		startpath();
+		moveto(25,100);
+		lineto(75,100);
+		arcto(50,0,100,100,75,100,75,0);
+		lineto(25,0);
+		endpath();
+		fillandstrokepath();
+		ellipse(0,0,50,100);
+	}
+	else
+	{
+		defsize(90,70);
+		rectangle(0,0,100,100);
+		addsubshape("padding","n");
+		addsubshape("name","center");
+		
+		shape padding
+		{
+			preferredheight=20;
+		}
+		
+		shape name
+		{
+			h_align="center";
+			print("#name#");
+		}
+	}
+}
+
+shape label
+{
+	setorigin("sw",0,0);
+
+	if(hastag("iconstyle","true"))
+	{
+		print("#name#");
+	}
+}
+
+decoration role
+{
+	orientation="ne";
+	
+	if(hastag("iconstyle","false"))
+	{
+		moveto(25,75);
+		lineto(75,75);
+		arcto(50,25,100,75,75,75,75,25);
+		lineto(75,25);
+		lineto(25,25);
+		ellipse(0,25,50,75);
+	}
+}
+
+decoration composite
+{
+	orientation="SE";
+	if(hasproperty("iscomposite","true"))
+	{
+		ellipse(0,40,40,60);
+		ellipse(60,40,100,60);
+		moveto(30,50);
+		lineto(70,50);
+	}
+}

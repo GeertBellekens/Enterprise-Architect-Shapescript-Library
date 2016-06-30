@@ -1,0 +1,29 @@
+// BS_Perspective, 17/10/08
+
+shape main
+{
+	layouttype="border";
+	defsize(150,150);
+	rectangle(0,0,100,100);
+	
+	addsubshape("header","n");
+	addsubshape("body","center");
+	
+	shape header
+	{
+		preferredheight=20;
+		v_align="center";
+		h_align="center";
+		setfillcolor(200,200,255);
+		rectangle(0,0,100,100);
+		print("#NAME#");
+	}
+	
+	shape body
+	{
+		editableField="note";
+		v_align="top";
+		h_align="left";
+		print("#NOTES#");
+	}
+}

@@ -1,0 +1,19 @@
+// FC_Display, 30/10/08
+
+shape main
+{
+	v_align="center";
+	h_align="center";
+	defsize(90,70);
+	startpath();
+	moveto(70,0);
+	lineto(30,0);
+	lineto(0,50);
+	lineto(30,100);
+	lineto(70,100);
+	arcto(40,0,100,100,70,100,70,0);
+	endpath();
+	fillandstrokepath();
+	printwrapped("#name#");
+}
+

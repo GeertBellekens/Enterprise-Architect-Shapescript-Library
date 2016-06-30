@@ -1,0 +1,146 @@
+shape main
+{
+	layouttype="border";
+	//setfillcolor(247,243,247);
+	roundrect(0,0,100,100,30,30);
+	startpath();
+	if(hastag("edge","bottom"))
+	{
+		moveto(40,98);
+		lineto(60,98);
+		if(hastag("direction","straight"))
+			lineto(50,180);
+		else if(hastag("direction","clockwise"))
+			lineto(10,180);
+		else
+			lineto(90,180);
+		lineto(40,98);
+		endpath();
+		fillpath();
+		
+		setpencolor(getuserfillcolor());
+		setpenwidth(4);
+		moveto(41,100);
+		lineto(59,100);
+		setpencolor(getuserbordercolor());
+		setpenwidth(getuserpensize());
+		
+		moveto(60,99);
+		if(hastag("direction","straight"))
+			lineto(50,180);
+		else if(hastag("direction","clockwise"))
+			lineto(10,180);
+		else
+			lineto(90,180);
+		lineto(40,99);
+	}
+	if(hastag("edge","top"))
+	{
+		moveto(40,2);
+		lineto(60,2);
+		if(hastag("direction","straight"))
+			lineto(50,-80);
+		else if(hastag("direction","clockwise"))
+			lineto(90,-80);
+		else
+			lineto(10,-80);
+		lineto(40,2);
+		endpath();
+		fillpath();
+		
+		setpencolor(getuserfillcolor());
+		setpenwidth(4);
+		moveto(41,0);
+		lineto(59,0);
+		setpencolor(getuserbordercolor());
+		setpenwidth(getuserpensize());
+		
+		moveto(60,1);
+		if(hastag("direction","straight"))
+			lineto(50,-80);
+		else if(hastag("direction","clockwise"))
+			lineto(90,-80);
+		else
+			lineto(10,-80);
+		lineto(40,1);
+	}
+	if(hastag("edge","left"))
+	{
+		moveto(2,40);
+		lineto(2,60);
+		if(hastag("direction","straight"))
+			lineto(-50,50);
+		else if(hastag("direction","clockwise"))
+			lineto(-50,10);
+		else
+			lineto(-50,90);
+		lineto(2,40);
+		endpath();
+		fillpath();
+		
+		setpencolor(getuserfillcolor());
+		setpenwidth(4);
+		moveto(0,41);
+		lineto(0,59);
+		setpencolor(getuserbordercolor());
+		setpenwidth(getuserpensize());
+		
+		moveto(1,60);
+		if(hastag("direction","straight"))
+			lineto(-50,50);
+		else if(hastag("direction","clockwise"))
+			lineto(-50,10);
+		else
+			lineto(-50,90);
+		lineto(1,40);
+	}
+	if(hastag("edge","right"))
+	{
+		moveto(98,40);
+		lineto(98,60);
+		if(hastag("direction","straight"))
+			lineto(150,50);
+		else if(hastag("direction","clockwise"))
+			lineto(150,90);
+		else
+			lineto(150,10);
+		lineto(98,40);
+		endpath();
+		fillpath();
+		
+		setpencolor(getuserfillcolor());
+		setpenwidth(4);
+		moveto(100,41);
+		lineto(100,59);
+		setpencolor(getuserbordercolor());
+		setpenwidth(getuserpensize());
+		
+		moveto(99,60);
+		if(hastag("direction","straight"))
+			lineto(150,50);
+		else if(hastag("direction","clockwise"))
+			lineto(150,90);
+		else
+			lineto(150,10);
+		lineto(99,40);
+	}
+	
+	addsubshape("padding","n");
+	addsubshape("padding","s");
+	addsubshape("padding","e");
+	addsubshape("padding","w");
+	addsubshape("comment","center");
+	
+	shape padding
+	{
+		preferredheight=5;
+		preferredwidth=5;
+	}
+	
+	shape comment
+	{
+		v_align="center";
+		h_align="center";
+		printwrapped("#notes#");
+	}
+}

@@ -1,0 +1,94 @@
+//SPEM_Deliverable 31/03/09
+
+shape main
+{
+	noshadow="true";
+	layouttype="topdown";
+	h_align = "left";
+	v_align = "center";
+
+	if(hastag("iconstyle","true"))
+	{
+		defsize(90,60);
+		setpencolor(204,125,47);
+		setpenwidth(2);
+		setfillcolor(248,235,222);
+		rectangle(20,0,100,100);	
+		moveto(20,0);
+		lineto(60,50);
+		lineto(100,0);
+	
+		addsubshape("sub",30,15,10,8);
+		addsubshape("sub",30,15,10,8);
+		addsubshape("sub",30,15,10,8);
+		addsubshape("sub",30,15,10,8);
+		addsubshape("sub",30,15,10,8);
+		addsubshape("sub",30,15,10,8);
+		addsubshape("sub",30,15,10,8);
+	
+		shape sub
+		{
+			setpencolor(75,138,207);
+			setfillcolor(75,138,207);
+			rectangle(0,0,20,10);
+		}
+	}
+	else
+	{
+		defsize(150,65);
+		rectangle(0,0,100,100);
+		addsubshape("stereotype",150,15,-28,-33);
+		addsubshape("name",110,15,-5,-22);
+		
+		shape stereotype
+		{
+			h_align="center";
+			printwrapped("«#stereotype#»");
+		}
+		
+		shape name
+		{
+			h_align="center";
+			print("#name#");
+		}
+	}
+}
+shape label
+{
+	h_align="left";
+	setOrigin("SW",0,0);
+	if(hastag("iconstyle","true"))
+	{
+		println("#NAME#");
+	}	
+}
+decoration WorkProductDefinition
+{
+	orientation="ne";
+	
+	if(hastag("iconstyle","false"))
+	{
+		setpencolor(204,125,47);
+		setpenwidth(1);
+		setfillcolor(248,235,222);
+		rectangle(20,0,100,100);	
+		moveto(20,0);
+		lineto(60,50);
+		lineto(100,0);
+	
+		addsubshape("sub",50,20,0,-3);
+		addsubshape("sub",50,20,0,-3);
+		addsubshape("sub",50,20,0,-3);
+		addsubshape("sub",50,20,0,-3);
+		addsubshape("sub",50,20,0,-3);
+		addsubshape("sub",50,30,0,-3);
+		//addsubshape("sub",30,15,10,8);
+	
+		shape sub
+		{
+			setpencolor(75,138,207);
+			setfillcolor(75,138,207);
+			rectangle(0,0,40,20);
+		}
+	}
+}

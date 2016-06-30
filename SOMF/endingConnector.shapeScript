@@ -1,0 +1,62 @@
+shape target
+{
+	preferredwidth = 18;
+	preferredheight = 20;
+	noshadow = true;
+	scalable = false;
+	rotatable = true;
+	endpointx = 0;
+	endpointy = 0;
+	
+	if (HasTag("Ending", "true"))
+	{
+		setpenwidth(1);
+		setfillcolor(0,0,0);
+		startpath();
+		moveto(6,0);
+		lineto(18,4);
+		lineto(18,-4);
+		endpath();
+		fillandstrokepath();
+		startpath();
+		rectangle(0,8,5,-8);
+		endpath();
+		fillandstrokepath();
+	}
+	else
+	{
+		setpenwidth(1);
+		setfillcolor(0,0,0);
+		startpath();
+		moveto(0,0);
+		lineto(12,4);
+		lineto(12,-4);
+		endpath();
+		fillandstrokepath();
+	}
+
+}
+
+shape source
+{
+	preferredwidth = 12;
+	preferredheight = 16;
+	noshadow = true;
+	scalable = false;
+	rotatable = true;
+	
+	if (HasTag("Originating", "true"))
+	{
+		setpenwidth(1);
+		setfillcolor(0,0,0);
+		startpath();
+		rectangle(0,5,10,-5);
+		endpath();
+		fillandstrokepath();
+	}
+}
+
+label middlebottomlabel
+{
+	print("");
+}

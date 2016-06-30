@@ -1,0 +1,19 @@
+shape main
+{
+	noshadow=true;
+	setfixedregion(39,-6,61,6);
+	moveto(0,0);
+	lineto(39,0);
+	moveto(61,0);
+	lineto(100,0);
+	startpath();
+	ellipse(39,-6,53,6);
+	ellipse(47,-6,61,6);
+	endpath();
+	strokepath();
+}
+
+label middlebottomlabel
+{
+	print("");
+}

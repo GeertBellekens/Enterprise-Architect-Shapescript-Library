@@ -1,0 +1,206 @@
+//SPEM_Activity 31/03/09
+
+shape main
+
+{
+	layouttype="topdown";
+	h_align = "left";
+	v_align = "center";
+	noshadow = "true";
+	
+	
+	if(hastag("iconstyle","true"))
+	{
+		defsize(90,70);
+		setfillcolor(252,242,227);
+		setpencolor(0,80,159);
+		roundrect(0,0,100,100,10,10);
+	
+		addsubshape("Document",30,65,60,45);
+		addsubshape("Task",50,40,40,30);
+		addsubshape("Role",50,80,5,-60);
+	
+		shape Document
+		{
+			//draw and color the frame
+	
+			setfillcolor(254,251,224);
+			setpencolor(176,152,79);
+			setpenwidth(3);
+	
+			startpath();
+			moveto(66,0);
+			lineto(0,0);
+			lineto(0,100);
+			lineto(100,100);
+			lineto(100,25);
+			lineto(66,25);
+			lineto(66,0);
+			endpath();
+			fillandstrokepath();
+	
+			//triangle conner
+	
+			setfillcolor(176,152,79);
+			startpath();	
+			moveto(66,0);
+			lineto(100,25);
+			lineto(66,25);
+			endpath();
+			fillandstrokepath();
+	
+			//drawing lines inside
+
+			addsubshape("sub",50,10,10,20);
+			addsubshape("sub",80,10,10,25);
+			addsubshape("sub",80,10,10,30);
+	
+			shape sub
+			{
+				setfillcolor(96,132,215);
+				setpencolor(96,132,215);
+				rectangle(0,0,100,30);
+			}
+		}
+		
+		shape Task
+		{	
+			setfillcolor(254,223,165);
+			setpencolor(0,0,0);
+			startpath();
+			moveto(0,0);
+			lineto(70,0);
+			lineto(100,50);
+			lineto(70,100);
+			lineto(0,100);
+			endpath();
+			fillandstrokepath();
+		}
+
+		shape Role
+		{
+			setfillcolor(254,223,165);
+			setpencolor(0,0,0);
+			ellipse(20,0,100,30);
+			startpath();
+			moveto(20,30);
+			lineto(100,30);
+			lineto(80,100);
+			lineto(0,100);
+			lineto(20,30);
+			endpath();
+			fillandstrokepath();
+		}
+	}
+	else
+	{
+		defsize(180,85);
+		roundrect(0,0,100,100,20,20);
+		addsubshape("name",110,15,-5,-42);
+	
+		shape name
+		{
+			h_align="center";
+			println("«#stereotype#»");
+			println("#name#");
+		}
+	}
+}
+shape label
+{
+	h_align="left";
+	setorigin("SW",0,0);
+	if(hastag("iconstyle","true"))
+	{
+		println("#NAME#");
+	}
+}
+decoration WorkProductDefinition
+{
+	orientation="ne";
+	layouttype="topdown";
+	
+	if(hastag("iconstyle","false"))
+	{
+	
+		setfillcolor(252,242,227);
+		setpencolor(0,80,159);
+		roundrect(0,0,100,100,10,10);
+	
+		addsubshape("Document",30,50,60,0);
+		addsubshape("Task",40,25,45,0);
+		addsubshape("Role",40,67,7,-73);
+	
+		shape Document
+		{
+			//draw and color the frame
+	
+			setfillcolor(254,251,224);
+			setpencolor(176,152,79);
+			setpenwidth(1);
+	
+			startpath();
+			moveto(66,0);
+			lineto(0,0);
+			lineto(0,100);
+			lineto(100,100);
+			lineto(100,25);
+			lineto(66,25);
+			lineto(66,0);
+			endpath();
+			fillandstrokepath();
+	
+			//triangle conner
+	
+			setfillcolor(176,152,79);
+			startpath();	
+			moveto(66,0);
+			lineto(100,25);
+			lineto(66,25);
+			endpath();
+			fillandstrokepath();
+	
+			//drawing lines inside
+
+			addsubshape("sub",50,5,10,20);
+			addsubshape("sub",80,5,10,50);
+			addsubshape("sub",80,5,10,80);
+	
+			shape sub
+			{
+				setfillcolor(96,132,215);
+				setpencolor(96,132,215);
+				rectangle(0,0,100,10);
+			}
+		}
+		
+		shape Task
+		{	
+			setfillcolor(254,223,165);
+			setpencolor(0,0,0);
+			startpath();
+			moveto(0,0);
+			lineto(70,0);
+			lineto(100,50);
+			lineto(70,100);
+			lineto(0,100);
+			endpath();
+			fillandstrokepath();
+		}
+
+		shape Role
+		{
+			setfillcolor(254,223,165);
+			setpencolor(0,0,0);
+			ellipse(20,0,100,30);
+			startpath();
+			moveto(20,30);
+			lineto(100,30);
+			lineto(80,100);
+			lineto(0,100);
+			lineto(20,30);
+			endpath();
+			fillandstrokepath();
+		}
+	}
+}

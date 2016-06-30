@@ -1,0 +1,18 @@
+shape main
+{
+	layouttype="border";
+	v_align="center";
+	h_align="center";
+	fixedAspectRatio="true";
+	defsize(100,100);
+	setlinestyle("solid");
+	setpenwidth(1);
+	ellipse(0,70,100,100);
+	rectangle(0,15,100,85);
+	ellipse(0,0,100,30);
+	setpencolor(getuserfillcolor());
+	moveto(1,85);
+	lineto(99,85);
+	
+	printwrapped("#name#");
+}

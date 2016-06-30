@@ -1,0 +1,13 @@
+shape main
+{
+	v_align="top";
+	h_align="center";
+	defsize(240,30);
+	setlinestyle("solid");
+	setpenwidth(1);
+	roundrect(1,0,99,100,20,90);
+	ellipse(85,1,100,98);
+	//setlinestyle("dot");
+	//ellipse(0,0,15,100);
+	printwrapped("#name#");
+}

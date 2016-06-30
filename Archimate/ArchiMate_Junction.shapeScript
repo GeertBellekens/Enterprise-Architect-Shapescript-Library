@@ -1,0 +1,9 @@
+// ArchiMate_Junction, 10/11/2008
+
+shape main
+{
+	noshadow=true;
+	defsize(20,20);
+	setfillcolor(0,0,0);
+	ellipse(0,0,100,100);
+}

@@ -1,0 +1,20 @@
+shape target
+{
+	noshadow=true;
+	rotatable = false;
+	endpointx = 20; // value in pixels
+	endpointy = 0;
+	
+	startpath();
+	rectangle(0,-10,100,10);
+	endpath();
+	strokepath();
+	
+	setfillcolor(getuserbordercolor());
+	rectangle(25,-5,75,5);
+}
+
+label middlebottomlabel
+{
+	print("");
+}

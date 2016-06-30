@@ -1,0 +1,34 @@
+shape main
+{
+	noshadow=true;
+	setlinestyle("DASH");
+	moveto(0,0);
+	lineto(100,0);
+}
+
+shape target
+{
+	setfillcolor(getuserbordercolor());
+	startpath();
+	moveto(0,0);
+	lineto(16,-6);
+	lineto(16,6);
+	endpath();
+	fillandstrokepath();
+}
+
+shape source
+{
+	setfillcolor(getuserbordercolor());
+	startpath();
+	moveto(0,0);
+	lineto(16,-6);
+	lineto(16,6);
+	endpath();
+	fillandstrokepath();
+}
+
+label middlebottomlabel
+{
+	print("");
+}

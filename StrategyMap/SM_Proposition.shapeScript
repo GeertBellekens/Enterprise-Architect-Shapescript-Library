@@ -1,0 +1,11 @@
+// SM_Proposition, 17/10/08
+
+shape main
+{
+	noshadow=true;
+	v_align="top";
+	h_align="center";
+	defsize(500,100);
+	rectangle(0,0,100,100);
+	print("#name#");
+}

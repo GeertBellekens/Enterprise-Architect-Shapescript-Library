@@ -1,0 +1,10 @@
+// SM_IntangibleAsset, 17/10/08
+
+shape main
+{
+	v_align="center";
+	h_align="center";
+	defsize(90,50);
+	ellipse(0,0,100,100);
+	print("#name#");
+}

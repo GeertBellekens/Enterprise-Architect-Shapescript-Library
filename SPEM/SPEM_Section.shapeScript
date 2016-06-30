@@ -1,0 +1,27 @@
+//SPEM_Section 31/03/09
+
+
+shape main
+{
+	layouttype="border";
+	noshadow=true;
+
+	defsize(150,75);
+	rectangle(0,0,100,100);
+	addsubshape("padding","n");
+	addsubshape("name","center");
+		
+	shape padding
+	{
+		preferredheight=20;
+		h_align="center";
+		print("«#stereotype#»");
+	}
+		
+	shape name
+	{
+		h_align="center";
+		print("#name#");
+	}
+
+}

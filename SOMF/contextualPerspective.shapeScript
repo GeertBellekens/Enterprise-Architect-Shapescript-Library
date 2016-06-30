@@ -1,0 +1,29 @@
+shape main
+{
+	layouttype="border";
+	defsize(130,70);
+	startpath();
+	rectangle(0,0,100,100);
+	endpath();
+	fillandstrokepath();
+	
+	addsubshape("padding","w");
+	addsubshape("padding","e");
+	addsubshape("padding","n");
+	addsubshape("padding","s");
+	addsubshape("panel","center");
+	
+	shape padding
+	{
+		preferredwidth=6;
+		preferredheight=6;
+	}
+	
+	shape panel
+	{
+		v_align="center";
+		h_align="center";
+		rectangle(0,0,100,100);
+		printwrapped("#name#");
+	}
+}

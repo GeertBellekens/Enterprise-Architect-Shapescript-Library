@@ -1,0 +1,34 @@
+shape main
+{
+	layouttype="border";
+	editablefield="name";
+	v_align="top";
+	h_align="left";
+	fixedAspectRatio="true";
+	defsize(60,60);
+	setlinestyle("solid");
+	setpenwidth(1);
+	ellipse(0,0,100,100);
+	ellipse(0,0,85,100);
+	
+	addsubshape("panel","s");
+	
+	shape panel
+	{
+		layouttype="border";
+		addsubshape("padding","n");
+		addsubshape("name","center");
+		
+		shape name
+		{
+			v_align="top";
+			h_align="center";
+			printwrapped("#name#");
+		}
+		
+		shape padding
+		{
+			preferredheight=12;
+		}
+	}
+}

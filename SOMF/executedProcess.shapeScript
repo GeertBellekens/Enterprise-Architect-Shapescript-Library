@@ -1,0 +1,16 @@
+shape main
+{
+	layouttype="border";
+	editablefield="name";
+	fixedaspectratio=true;
+	defsize(50,50);
+	ellipse(0,0,100,100);
+	ellipse(0,30,50,80);
+	addsubshape("name","s");
+	
+	shape name
+	{
+		h_align="center";
+		print("#name#");
+	}
+}

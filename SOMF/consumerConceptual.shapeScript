@@ -1,0 +1,29 @@
+shape main
+{
+	layouttype="border";
+	//fixedaspectratio=true;
+	defsize(90,90);
+	
+	addsubshape("triangle","center");
+	addsubshape("name","s");
+
+	shape triangle
+	{
+		layouttype="border";
+		startpath();
+		moveto(0,0);
+		lineto(100,100);
+		lineto(0,100);
+		lineto(0,0);
+		endpath();
+		fillandstrokepath();
+	}
+
+	shape name
+	{
+		v_align="top";
+		h_align="left";
+		printwrapped("#name#");
+	}
+}
+

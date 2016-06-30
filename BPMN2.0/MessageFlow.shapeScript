@@ -1,0 +1,171 @@
+shape main
+{
+	preferredwidth=100;
+	preferredheight=10;
+	noshadow=true;
+	layouttype="topdown";
+	
+	HideLabel("righttoplabel");
+	ShowLabel("middlebottomlabel");
+	
+	setlinestyle("DASH");
+	moveto(0,0);
+	lineto(100,0);
+	SetFixedRegion(40,-10,60,10);
+	if(hastag("messageVisible","Initiating"))
+	{
+		setlinestyle("SOLID");
+		rectangle(40,-10,60,10);
+		if(hasproperty("rotationdirection","up"))
+        {
+                moveto(60,-10);
+                lineto(50,0);
+                lineto(60,10);
+        }
+        if(hasproperty("rotationdirection","down"))
+        {
+                moveto(40,-10);
+                lineto(50,0);
+                lineto(40,10);
+        }
+        if(hasproperty("rotationdirection","right"))
+        {
+                moveto(40,-10);
+                lineto(50,0);
+                lineto(60,-10);
+        }
+        if(hasproperty("rotationdirection","left"))
+        {
+                moveto(40,10);
+                lineto(50,0);
+                lineto(60,10);
+        }
+		return;
+	}
+	if(hastag("messageVisible","Non-initiating"))
+	{
+		setlinestyle("SOLID");
+		setfillcolor(192,192,192);
+		rectangle(40,-10,60,10);
+		if(hasproperty("rotationdirection","up"))
+        {
+			startpath();
+            moveto(60,-10);
+            lineto(50,0);
+            lineto(60,10);
+			endpath();
+			fillandstrokepath();
+        }
+        if(hasproperty("rotationdirection","down"))
+        {
+			startpath();
+            moveto(40,-10);
+            lineto(50,0);
+            lineto(40,10);
+			endpath();
+			fillandstrokepath();
+        }
+        if(hasproperty("rotationdirection","right"))
+        {
+			startpath();
+			moveto(40,-10);
+            lineto(50,0);
+            lineto(60,-10);
+			endpath();
+			fillandstrokepath();
+        }
+        if(hasproperty("rotationdirection","left"))
+        {
+            startpath();
+			moveto(40,10);
+            lineto(50,0);
+            lineto(60,10);
+			endpath();
+			fillandstrokepath();
+        }
+		return;
+	}
+}
+shape target
+{
+	preferredwidth = 12;
+	preferredheight = 16;
+	noshadow = true;
+	scalable = false;
+	rotatable = true;
+	endpointx = 16;
+	endpointy = 0;
+	
+	if(HasProperty("Direction","Source -> Destination"))
+	{	
+		setpenwidth(1);
+		startpath();
+		moveto(0,0);
+		lineto(16,6);
+		lineto(16,-6);
+		lineto(0,0);
+		endpath();
+		fillandstrokepath();
+	}
+	else
+	{
+		setpenwidth(1);
+		startpath();
+		ellipse(0,6,12,-6);
+		endpath();
+		fillandstrokepath();
+	}
+}
+
+shape source
+{
+	preferredwidth = 12;
+	preferredheight = 16;
+	noshadow = true;
+	scalable = false;
+	rotatable = true;
+	endpointx = 16;
+	endpointy = 0;
+
+	if(HasProperty("Direction","Destination -> Source"))
+	{	
+		setpenwidth(1);
+		startpath();
+		moveto(0,0);
+		lineto(16,6);
+		lineto(16,-6);
+		lineto(0,0);
+		endpath();
+		fillandstrokepath();
+	}
+	else
+	{
+		setpenwidth(1);
+		startpath();
+		ellipse(0,6,12,-6);
+		endpath();
+		fillandstrokepath();
+	}
+}
+label MiddleBottomLabel
+{
+	println("#NAME#");
+//	if(hastag("messageVisible","Initiating"))
+//	{
+//		setlinestyle("SOLID");
+//		rectangle(40,-10,60,10);
+//		moveto(60,-10);
+//		lineto(50,0);
+//		lineto(60,10);
+//	}
+//	if(hastag("messageVisible","Non-Initiating"))
+//	{
+//		setlinestyle("SOLID");
+//		setfillcolor(192,192,192);
+//		rectangle(40,-10,60,10);
+//		moveto(60,-10);
+//		lineto(50,0);
+//		lineto(60,10);
+//	}
+}
+

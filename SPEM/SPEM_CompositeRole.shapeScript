@@ -1,0 +1,79 @@
+//SPEM_CompositeRole
+
+shape main
+{
+    layouttype="leftright";
+    h_align="center";
+    v_align="bottom";
+    noshadow = "true";
+    
+	if(hastag("iconstyle","true"))
+	{
+		defsize(80,85);
+        addsubshape("sub",60,100,35,0);
+        addsubshape("sub",50,75,-57,0);
+   
+        shape sub
+        {
+            setfillcolor(254,223,165);
+            setpencolor(0,0,0);
+            ellipse(20,0,100,30);
+            startpath();
+            moveto(20,30);
+            lineto(100,30);
+            lineto(80,100);
+            lineto(0,100);
+            lineto(20,30);
+            endpath();
+            fillandstrokepath();
+        }
+	}
+	else
+	{
+		defsize(180,85);
+		roundrect(0,0,100,100,20,20);
+		addsubshape("name",110,15,0,-84);
+	
+		shape name
+		{
+			h_align="center";
+			println("«#stereotype#»");
+			println("#name#");		
+		}
+	}
+}
+shape label
+{
+	h_align="left";
+	setorigin("SW",0,0);
+	if(hastag("iconstyle","true"))
+	{
+		println("#NAME#");
+	}
+}
+decoration WorkProductDefinition
+{
+	orientation="ne";
+	
+	if(hastag("iconstyle","false"))
+	{
+		defsize(80,85);
+        addsubshape("sub",60,100,35,0);
+        addsubshape("sub",50,75,5,-72);
+   
+        shape sub
+        {
+            setfillcolor(254,223,165);
+            setpencolor(0,0,0);
+            ellipse(20,0,100,30);
+            startpath();
+            moveto(20,30);
+            lineto(100,30);
+            lineto(80,100);
+            lineto(0,100);
+            lineto(20,30);
+            endpath();
+            fillandstrokepath();
+        }
+	}
+}

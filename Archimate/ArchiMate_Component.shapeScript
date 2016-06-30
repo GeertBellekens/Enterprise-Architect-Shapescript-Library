@@ -1,0 +1,56 @@
+// ArchiMate_Component, 17/06/2010
+
+shape main
+{
+	layouttype="border";
+	rectangle(0,0,100,100);
+	addsubshape("padding","n");
+	if(hastag("iconstyle","true"))
+	{
+		addsubshape("port","w");
+	}
+	addsubshape("name","center");
+	
+	shape port
+	{
+		preferredwidth=20;
+		scalable=false;
+		rectangle(-10,-10,10,0);
+		rectangle(-10,10,10,20);
+	}
+		
+	shape padding
+	{
+		preferredheight=15;
+	}
+	
+	shape name
+	{
+		h_align="center";
+		print("#name#");
+	}
+}
+
+decoration component
+{
+	orientation="ne";
+	
+	if(hastag("iconstyle","false"))
+	{
+		rectangle(0,0,60,100);
+		rectangle(-10,10,10,30);
+		rectangle(-10,50,10,70);
+	}
+}
+
+decoration composite
+{
+	orientation="SE";
+	if(hasproperty("iscomposite","true"))
+	{
+		ellipse(0,40,40,60);
+		ellipse(60,40,100,60);
+		moveto(30,50);
+		lineto(70,50);
+	}
+}

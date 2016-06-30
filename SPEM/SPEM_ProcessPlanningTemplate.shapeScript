@@ -1,0 +1,129 @@
+//SPEM_ProcessPlanningTemplate 31/03/09
+
+shape main
+{
+	layouttype="topdown";
+	h_align = "left";
+	v_align = "center";
+	
+	if(hastag("iconstyle","true"))
+	{
+		defsize(75,75);
+		setfillcolor(255,255,255);
+		setpencolor(0,0,0);
+	
+		rectangle(0,0,100,100);
+
+		addsubshape("arrow",100,100,0,35);
+		addsubshape("whirlpool",100,100,20,-10);
+
+		shape arrow
+		{
+			setfillcolor(0,0,0);
+			startpath();
+			moveto(0,90);
+			lineto(7,100);
+			lineto(41,57);
+			lineto(63,78);
+			lineto(82,53);
+			lineto(91,61);
+			lineto(95,25);
+			lineto(64,38);
+			lineto(73,46);
+			lineto(61,61);
+			lineto(40,42);	
+			endpath();
+			fillandstrokepath();
+		}
+
+		shape whirlpool
+		{
+
+			noshadow="true";	
+			setpencolor(0,0,0);
+			setpenwidth(4);
+		
+			moveto(50,65);
+			arc(20,20,90,90,75,65,50,20);
+			arc(20,20,80,80,50,20,50,80);
+			arc(30,30,80,80,50,80,50,30);
+			arc(30,30,70,70,50,30,50,70);
+			arc(40,40,70,70,50,70,50,40);
+			arc(40,40,60,60,50,40,55,55);
+		
+		}
+	}
+	else
+	{
+		defsize(225,85);
+		roundrect(0,0,100,100,20,20);
+		addsubshape("name",110,15,-5,-40);
+		
+		shape name
+		{
+			h_align="center";
+			println("«#stereotype#»");
+			println("#name#");
+		}
+	}
+}
+shape label
+{
+	h_align="left";
+	setorigin("SW",0,0);
+	if(hastag("iconstyle","true"))
+	{
+		print("#NAME#");
+	}
+}
+decoration Catergory
+{
+	orientation="ne";
+	
+	if(hastag("iconstyle","false"))
+	{
+		setfillcolor(255,255,255);
+		setpencolor(0,0,0);
+	
+		rectangle(0,0,90,100);
+
+		addsubshape("arrow",100,100,-6,-20);
+		addsubshape("whirlpool",100,100,20,-60);
+
+		shape arrow
+		{
+			setfillcolor(0,0,0);
+			startpath();
+			moveto(0,90);
+			lineto(7,100);
+			lineto(41,57);
+			lineto(63,78);
+			lineto(82,53);
+			lineto(91,61);
+			lineto(95,25);
+			lineto(64,38);
+			lineto(73,46);
+			lineto(61,61);
+			lineto(40,42);	
+			endpath();
+			fillandstrokepath();
+		}
+
+		shape whirlpool
+		{
+
+			noshadow="true";	
+			setpencolor(0,0,0);
+			setpenwidth(1);
+		
+			moveto(50,65);
+			arc(20,20,90,90,75,65,50,20);
+			arc(20,20,80,80,50,20,50,80);
+			arc(30,30,80,80,50,80,50,30);
+			arc(30,30,70,70,50,30,50,70);
+			arc(40,40,70,70,50,70,50,40);
+			arc(40,40,60,60,50,40,55,55);
+		
+		}
+	}
+}

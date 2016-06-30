@@ -1,0 +1,24 @@
+shape main
+{
+	noshadow="true";
+	setlinestyle("solid");
+	moveto(0,0);
+	lineto(100,0);
+}
+
+shape target
+{
+	setfillcolor(0,0,0);
+	rectangle(0,-8,16,8);
+}
+
+shape source
+{
+	setfillcolor(0,0,0);
+	rectangle(0,-8,16,8);
+}
+
+label middlebottomlabel
+{
+	print("");
+}

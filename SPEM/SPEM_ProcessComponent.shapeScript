@@ -1,0 +1,178 @@
+//SPEM_ProcessComponent 31/03/09
+//Sharon C11098594: ProcessComponent should be able to render as both Package and Class type element.
+shape main
+{
+	layouttype="border";
+	noshadow = "true";
+	
+	if (hasproperty("type","Class"))
+	{
+		if(hastag("iconstyle","true"))
+		{
+			defsize(130,80);
+			addsubshape("icon","center");
+		}
+		else
+		{	
+			defsize(180,85);
+			rectangle(0,0,100,100);
+			addsubshape("name","center");
+			addsubshape("north","n");
+			
+			shape north
+			{
+				layouttype="border";
+				preferredHeight = 28;
+				
+				addsubshape("stereotype","center");
+				addsubshape("iconpatch","e");
+				addsubshape("wspace","w");
+				addsubshape("hspace", "n");
+			}	
+		}
+	}
+	if (hasproperty("type","Package"))
+	{
+		if(hastag("iconstyle","true"))
+		{
+			defsize(130,80);
+			addsubshape("icon","center");
+		}
+		else
+		{	
+			defsize(180,100);
+			addsubshape("packagePicture","center");
+		}
+	}
+	
+	shape packagePicture
+	{
+		layouttype = "topdown";
+		defsize(170,90);
+		rectangle(0,0,50,30);
+		rectangle(0,10,100,100);
+		addsubshape("northpatch",100,15,0,15);
+		addsubshape("middlepatch",100,15,0,25);
+
+		shape northpatch
+		{
+			layouttype = "border";
+			preferredHeight=20;
+			addsubshape("stereotype","center");
+		}
+		
+		shape middlepatch
+		{
+			layouttype = "border";
+			addsubshape("name","CENTER");
+			addsubshape("iconpatch","E");
+		}	
+	}
+	
+	shape iconpatch
+	{
+		preferredWidth = 20;
+		layouttype = "topdown";
+		scalable=false;
+		v_align="CENTER";
+		h_align="CENTER";
+	
+		addsubshape ("icon",20,16,-5,0);
+	}
+	
+	shape wspace
+	{
+		preferredWidth=7;
+	}
+	
+	shape hspace
+	{
+		preferredHeight=2;
+	}
+	
+	text name
+	{
+		h_align="center";
+		print("#name#");
+	}
+	
+	text stereotype
+	{
+		h_align="center";
+		printwrapped("«#stereotype#»");
+	}	
+				
+	shape icon
+	{
+		preferredWidth = 15;
+		layouttype = "leftright";
+		setfillcolor(254,223,165);
+		setpencolor(0,0,0);
+	
+		rectangle(0,0,50,30);
+		rectangle(0,10,100,100);
+		
+		setfillcolor(198,226,255);
+		setpencolor(0,80,159);
+		setpenwidth(1);
+		ellipse(10,20,95,90);
+		
+		addsubshape("arrow",80,60,40,60);
+	}
+	
+	shape arrow
+	{
+		if(hastag("iconstyle","true"))
+		{
+			setpenwidth(4);
+		}
+		
+		if(hastag("iconstyle","false"))
+		{
+			setpenwidth(2);
+		}
+	
+		setpencolor(13,87,162);
+		
+		//triangle on the right
+		startpath();
+		moveto(80,50);
+		lineto(90,50);
+		endpath();
+		fillandstrokepath();
+	
+		setfillcolor(13,87,162);
+		startpath();
+		moveto(90,30);
+		lineto(97,50);
+		lineto(90,70);
+		endpath();
+		fillandstrokepath();	
+
+		//upper arc
+		moveto(80,50);
+		arc(20,0,80,100,80,50,30,20);
+
+		//triangle on the left
+		setfillcolor(13,87,162);
+		startpath();
+		moveto(20,35);
+		lineto(5,45);
+		lineto(35,45);
+		endpath();
+		fillandstrokepath();
+
+		//lower arc
+		moveto(20,50);
+		arc(20,0,80,100,20,40,70,70);
+	}
+}
+shape label
+{
+	h_align="left";
+	setorigin("SW",0,0);
+	if(hastag("iconstyle","true"))
+	{
+		println("#NAME#");
+	}
+}

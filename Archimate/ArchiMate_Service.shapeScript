@@ -1,0 +1,61 @@
+// ArchiMate_Service, 17/06/2010
+
+shape main
+{
+	layouttype="border";
+	
+	if(hastag("iconstyle","true"))
+	{
+		defsize(90,45);
+		startpath();
+		moveto(25,100);
+		lineto(75,100);
+		arcto(50,0,100,100,75,100,75,0);
+		lineto(25,0);
+		arcto(0,0,50,100,25,0,25,100);
+		endpath();
+		fillandstrokepath();
+	}
+	else
+	{
+		defsize(105,70);
+		roundrect(0,0,100,100,20,20);
+	}
+	
+	addsubshape("padding","n");
+	addsubshape("name","center");
+	
+	shape padding
+	{
+		preferredheight=10;
+	}
+	
+	shape name
+	{
+		v_align="top";
+		h_align="center";
+		print("#name#");
+	}
+}
+
+decoration service
+{
+	orientation="ne";
+	
+	if(hastag("iconstyle","false"))
+	{
+		roundrect(0,30,100,70,20,20);
+	}
+}
+
+decoration composite
+{
+	orientation="SE";
+	if(hasproperty("iscomposite","true"))
+	{
+		ellipse(0,40,40,60);
+		ellipse(60,40,100,60);
+		moveto(30,50);
+		lineto(70,50);
+	}
+}

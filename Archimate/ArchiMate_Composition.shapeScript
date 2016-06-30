@@ -1,0 +1,6 @@
+// ArchiMate_Composition, 10/11/2008
+
+label middlebottomlabel
+{
+	print("");
+}

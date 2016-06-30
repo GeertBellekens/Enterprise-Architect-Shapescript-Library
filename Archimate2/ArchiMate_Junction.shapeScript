@@ -1,0 +1,12 @@
+shape main
+{
+	noshadow=true;
+	defsize(20,20);
+	setfillcolor(0,0,0);
+	ellipse(0,0,100,100);
+}
+
+shape label
+{
+  print("#name#");
+}

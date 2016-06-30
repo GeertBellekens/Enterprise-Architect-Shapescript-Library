@@ -1,0 +1,12 @@
+shape target
+{
+	moveto(5,8);
+	lineto(5,-8);
+	lineto(15,8);
+	lineto(15,-8);
+}
+
+label middlebottomlabel
+{
+	print("");
+}

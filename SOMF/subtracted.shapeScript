@@ -1,0 +1,19 @@
+shape target
+{
+	noshadow=true;
+	rotatable = false;
+	endpointx = 20; // value in pixels
+	endpointy = 0;
+	
+	startpath();
+	ellipse(0,-10,100,10);
+	endpath();
+	strokepath();
+	moveto(50,-7);
+	lineto(50,7);
+}
+
+label middlebottomlabel
+{
+	print("");
+}

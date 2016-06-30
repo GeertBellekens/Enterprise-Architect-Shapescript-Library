@@ -1,0 +1,10 @@
+shape target
+{
+	setfillcolor(getuserbordercolor());
+	ellipse(0,-8,16,8);
+}
+
+label middlebottomlabel
+{
+	print("");
+}

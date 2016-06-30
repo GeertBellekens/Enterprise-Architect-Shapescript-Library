@@ -1,0 +1,9 @@
+// OC_Role, 21/11/08
+
+shape main
+{
+	v_align="center";
+	h_align="center";
+	rectangle(0,0,100,100);
+	print("#name#");
+}

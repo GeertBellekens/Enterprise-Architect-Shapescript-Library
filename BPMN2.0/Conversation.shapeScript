@@ -1,0 +1,52 @@
+// BPMN 2.0 Conversation 12-2-2010
+shape main
+{
+	fixedAspectRatio="true";
+	layouttype="border";
+	h_align="center";
+	v_align="center";
+	defsize(38,38);
+	if(hasTag("IsACallConversation","True"))
+	{
+		setpenwidth(2);
+	}
+	startpath();
+	moveto(0,50);
+	lineto(25,100);
+	lineto(75,100);
+	lineto(100,50);
+	lineto(75,0);
+	lineto(25,0);
+	endpath();
+	fillandstrokepath();
+	if (HasTag("IsComposite","True"))
+	{
+		addSubShape("collapsed","S");
+	}
+	else
+	{
+		if(HasProperty("iscomposite","true"))
+		{
+			addSubShape("collapsed","S");
+			
+		}
+	}
+	shape collapsed
+	{
+		preferredWidth=10;
+		preferredHeight=18;
+		setpenwidth(1);
+		rectangle(40,50,60,100);
+		moveto(50,50);
+		lineto(50,100);
+		moveto(40,75);
+		lineto(60,75);
+			
+	}
+	
+}
+shape label
+{	
+	setOrigin("SW",0,0);
+	print("#Name#");
+}

@@ -1,0 +1,14 @@
+// FC_Begin, 31/12/08
+
+shape main
+{
+	defsize(50,31);
+	startpath();
+	moveto(70,0);
+	lineto(30,0);
+	arcto(0,0,60,100,30,0,30,100);
+	lineto(70,100);
+	arcto(40,0,100,100,70,100,70,0);
+	endpath();
+	fillandstrokepath();
+}

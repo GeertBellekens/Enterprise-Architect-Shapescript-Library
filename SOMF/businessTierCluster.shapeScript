@@ -1,0 +1,44 @@
+shape main
+{
+	layouttype="border";
+	editablefield="name";
+	setlinestyle("DASH");
+	defsize(90,70);
+	startpath();
+	rectangle(0,0,100,100);
+	endpath();
+	fillandstrokepath();
+	
+	rectangle(10,40,30,60);
+	rectangle(40,40,60,60);
+	rectangle(70,40,90,60);
+	
+	addsubshape("padding","s");
+	addsubshape("panel","s");
+	
+	shape name
+	{
+		v_align="top";
+		h_align="center";
+		printwrapped("#name#");
+	}
+	
+	shape panel
+	{
+		layouttype="border";
+		addsubshape("padding","n");
+		addsubshape("name","center");
+		
+		shape name
+		{
+			v_align="top";
+			h_align="center";
+			printwrapped("#name#");
+		}
+		
+		shape padding
+		{
+			preferredheight=12;
+		}
+	}
+}

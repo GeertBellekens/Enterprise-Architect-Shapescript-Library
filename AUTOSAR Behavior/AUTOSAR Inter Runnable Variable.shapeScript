@@ -1,0 +1,8 @@
+shape main
+{
+	if(HasTag("Type", "Explicit"))
+	{
+		SetFillColor(255,255,204);
+	}
+	DrawNativeShape();
+}

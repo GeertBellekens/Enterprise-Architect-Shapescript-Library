@@ -1,0 +1,15 @@
+decoration topRight
+{
+	orientation = "NE";
+	
+	SetFillColor(0,0,255);
+	
+	StartPath();
+	moveto(0,0);
+	lineto(100,0);
+	LineTo(100,100);
+	EndPath();
+	
+	FillAndStrokePath();
+}
+

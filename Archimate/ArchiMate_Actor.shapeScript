@@ -1,0 +1,100 @@
+// ArchiMate_Actor, 17/06/2010
+
+shape main
+{
+	layouttype="border";
+	noshadow=true;
+	
+	if(hastag("iconstyle","true"))
+	{
+		defsize(45,90);
+		ellipse(20,0,80,30);
+		moveto(50,30);
+		lineto(50,70);
+		lineto(10,100);
+		moveto(50,70);
+		lineto(90,100);
+		moveto(10,50);
+		lineto(90,50);
+	}
+	else
+	{
+		defsize(90,70);
+		rectangle(0,0,100,100);
+		addsubshape("padding","n");
+		addsubshape("name","center");
+		
+		shape padding
+		{
+			preferredheight=20;
+		}
+		
+		shape name
+		{
+			h_align="center";
+			print("#name#");
+		}
+	}
+}
+
+shape label
+{
+	setorigin("sw",0,0);
+
+	if(hastag("iconstyle","true"))
+	{
+		print("#name#");
+	}
+}
+
+decoration actor
+{
+	orientation="ne";
+	
+	if(hastag("iconstyle","false"))
+	{
+		if(hastag("actorkind","compound"))
+		{
+			ellipse(15,0,35,40);
+			moveto(25,40);
+			lineto(25,70);
+			lineto(5,100);
+			moveto(25,70);
+			lineto(45,100);
+			moveto(0,50);
+			lineto(50,50);
+		
+			ellipse(65,0,85,40);
+			moveto(75,40);
+			lineto(75,70);
+			lineto(55,100);
+			moveto(75,70);
+			lineto(95,100);
+			moveto(50,50);
+			lineto(100,50);
+		}
+		else
+		{
+			ellipse(30,0,70,40);
+			moveto(50,40);
+			lineto(50,70);
+			lineto(10,100);
+			moveto(50,70);
+			lineto(90,100);
+			moveto(20,50);
+			lineto(80,50);
+		}
+	}
+}
+
+decoration composite
+{
+	orientation="SE";
+	if(hasproperty("iscomposite","true"))
+	{
+		ellipse(0,40,40,60);
+		ellipse(60,40,100,60);
+		moveto(30,50);
+		lineto(70,50);
+	}
+}

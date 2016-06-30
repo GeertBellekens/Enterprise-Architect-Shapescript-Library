@@ -1,0 +1,80 @@
+//SPEM_Category 31/03/09
+
+shape main
+
+{
+	layouttype="topdown";
+	h_align = "center";
+	v_align = "center";
+	noshadow = "true";
+	
+	if(hastag("iconstyle","true"))
+	{	
+		defsize(85,60);
+		setfillcolor(254,223,165);
+		setpencolor(0,0,0);
+		rectangle(0,0,40,10);
+		rectangle(0,10,100,100);
+
+		addsubshape("sub",80,50,0,8);
+
+		shape sub
+        {
+        	setfillcolor(198,226,255);
+			setpencolor(0,80,159);
+			setpenwidth(2);
+            roundrect(0,0,100,100,20,20);
+        }
+	}
+	else
+	{
+		defsize(145,70);
+		rectangle(0,0,100,100);
+		addsubshape("stereotype",150,15,0,-34);
+		addsubshape("name",110,15,0,-8);
+		
+		shape stereotype
+		{
+			h_align="center";
+			printwrapped("«#stereotype#»");
+		}
+		
+		shape name
+		{
+			h_align="center";
+			print("#name#");
+		}
+	}
+
+}
+shape label
+{
+	h_align="left";
+	setorigin("SW",0,0);
+	if(hastag("iconstyle","true"))
+	{
+		print("#name#");
+	}
+}
+decoration Catergory
+{
+	orientation="ne";
+	
+	if(hastag("iconstyle","false"))
+	{
+		setfillcolor(254,223,165);
+		setpencolor(0,0,0);
+		rectangle(0,0,40,10);
+		rectangle(0,10,100,100);
+
+		addsubshape("sub",75,45,20,40);
+
+		shape sub
+        {
+        	setfillcolor(198,226,255);
+			setpencolor(0,80,159);
+			setpenwidth(2);
+            roundrect(0,0,100,100,20,20);
+        }
+	}
+}

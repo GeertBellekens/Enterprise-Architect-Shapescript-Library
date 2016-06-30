@@ -1,0 +1,7 @@
+// FC_OnPageConnector, 25/11/08
+
+shape main
+{
+	defsize(30,30);
+	ellipse(0,0,100,100);
+}

@@ -1,0 +1,35 @@
+shape main
+{
+	layouttype="border";
+	defsize(100,80);
+	setlinestyle("solid");
+	setfillcolor(192,192,192);
+	ellipse(0,0,100,100);
+	
+	setfillcolor(GetUserFillColor());
+	startCloudPath(25,10,0);
+	rectangle(20,20,80,80);
+	endpath();
+	fillandstrokepath();
+	
+	addsubshape("panel","center");
+	
+	shape panel
+	{
+		layouttype="border";
+		//addsubshape("padding","n");
+		addsubshape("name","center");
+		
+		shape name
+		{
+			v_align="center";
+			h_align="center";
+			printwrapped("#name#");
+		}
+		
+		shape padding
+		{
+			preferredheight=12;
+		}
+	}
+}

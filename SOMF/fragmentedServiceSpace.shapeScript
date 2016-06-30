@@ -1,0 +1,13 @@
+shape main
+{
+	v_align="top";
+	h_align="center";
+	//defsize(100,60);
+	setlinestyle("dashdot");
+	setpenwidth(2);
+	setfillcolor(210,240,255);
+	rectangle(0,0,100,100);
+	//printwrapped("Fragmented Service Space");
+	println("Fragmented Service Space");
+	printwrapped("#name#");
+}

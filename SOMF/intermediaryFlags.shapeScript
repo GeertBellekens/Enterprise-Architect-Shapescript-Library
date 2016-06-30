@@ -1,0 +1,141 @@
+shape main
+{
+	layouttype="border";
+	v_align="center";
+	h_align="center";
+	rectangle(0,0,100,100);
+	printwrapped("#name#");
+	addsubshape("triangles","n");
+	
+	shape triangles
+	{
+		layouttype="leftright";
+		preferredheight=25;
+		if(hastag("MessageTransformer","true"))
+		{
+			addsubshape("T");
+		}
+		if(hastag("ContentEnricher","true"))
+		{
+			addsubshape("E");
+		}
+		if(hastag("GatewayEnabler","true"))
+		{
+			addsubshape("G");
+		}
+		if(hastag("TransactionMonitor","true"))
+		{
+			addsubshape("M");
+		}
+		if(hastag("ServiceLocator","true"))
+		{
+			addsubshape("L");
+		}
+		if(hastag("MessageRouter","true"))
+		{
+			addsubshape("R");
+		}
+		if(hastag("MessageFilter","true"))
+		{
+			addsubshape("F");
+		}
+		if(hastag("ContentAggregator","true"))
+		{
+			addsubshape("A");
+		}
+		if(hastag("Custom","true"))
+		{
+			addsubshape("C");
+		}
+		
+		shape T
+		{
+			v_align="center";
+			h_align="center";
+			preferredheight=100;
+			preferredwidth=20;
+			polygon(50,50,3,100,90.0);
+			print("T");
+		}
+		
+		shape E
+		{
+			v_align="center";
+			h_align="center";
+			preferredheight=100;
+			preferredwidth=20;
+			polygon(50,50,3,100,90.0);
+			print("E");
+		}
+		
+		shape G
+		{
+			v_align="center";
+			h_align="center";
+			preferredheight=100;
+			preferredwidth=20;
+			polygon(50,50,3,100,90.0);
+			print("G");
+		}
+		
+		shape M
+		{
+			v_align="center";
+			h_align="center";
+			preferredheight=100;
+			preferredwidth=20;
+			polygon(50,50,3,100,90.0);
+			print("M");
+		}
+		
+		shape L
+		{
+			v_align="center";
+			h_align="center";
+			preferredheight=100;
+			preferredwidth=20;
+			polygon(50,50,3,100,90.0);
+			print("L");
+		}
+		
+		shape R
+		{
+			v_align="center";
+			h_align="center";
+			preferredheight=100;
+			preferredwidth=20;
+			polygon(50,50,3,100,90.0);
+			print("R");
+		}
+		
+		shape F
+		{
+			v_align="center";
+			h_align="center";
+			preferredheight=100;
+			preferredwidth=20;
+			polygon(50,50,3,100,90.0);
+			print("F");
+		}
+		
+		shape A
+		{
+			v_align="center";
+			h_align="center";
+			preferredheight=100;
+			preferredwidth=20;
+			polygon(50,50,3,100,90.0);
+			print("A");
+		}
+		
+		shape C
+		{
+			v_align="center";
+			h_align="center";
+			preferredheight=100;
+			preferredwidth=20;
+			polygon(50,50,3,100,90.0);
+			print("");
+		}
+	}
+}

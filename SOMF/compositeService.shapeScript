@@ -1,0 +1,40 @@
+shape main
+{
+	layouttype="border";
+	fixedaspectratio=true;
+	defsize(90,70);
+	startpath();
+	rectangle(0,0,100,100);
+	endpath();
+	fillandstrokepath();
+	
+	addsubshape("nick","w");
+	addsubshape("nick","e");
+	addsubshape("panel","center");
+	
+	shape nick
+	{
+		preferredwidth=12;
+		moveto(0,50);
+		lineto(100,50);
+	}
+	
+	shape panel
+	{
+		layouttype="border";
+		addsubshape("padding","n");
+		addsubshape("name","center");
+		
+		shape name
+		{
+			v_align="top";
+			h_align="center";
+			printwrapped("#name#");
+		}
+		
+		shape padding
+		{
+			preferredheight=12;
+		}
+	}
+}

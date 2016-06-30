@@ -1,0 +1,29 @@
+// ArchiMate_Object, 17/06/2010
+
+shape main
+{
+	layouttype="border";
+	rectangle(0,0,100,100);
+	addsubshape("name","n");
+	
+	shape name
+	{
+		preferredheight=20;
+		h_align="center";
+		v_align="center";
+		rectangle(0,0,100,100);
+		print("#name#");
+	}
+}
+
+decoration composite
+{
+	orientation="SE";
+	if(hasproperty("iscomposite","true"))
+	{
+		ellipse(0,40,40,60);
+		ellipse(60,40,100,60);
+		moveto(30,50);
+		lineto(70,50);
+	}
+}

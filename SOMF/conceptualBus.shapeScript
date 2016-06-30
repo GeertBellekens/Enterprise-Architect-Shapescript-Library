@@ -1,0 +1,22 @@
+shape main
+{
+	noshadow=true;
+	setfixedregion(36,-6,64,6);
+	setlinestyle("dot");
+	moveto(0,0);
+	lineto(36,0);
+	moveto(64,0);
+	lineto(100,0);
+	setlinestyle("solid");
+	
+	moveto(36,-6);
+	lineto(64,-6);
+	lineto(64,6);
+	lineto(36,6);
+	lineto(36,-6);
+}
+
+label middlebottomlabel
+{
+	print("");
+}

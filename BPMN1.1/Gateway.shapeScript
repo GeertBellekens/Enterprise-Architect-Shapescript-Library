@@ -1,0 +1,128 @@
+// Gateway, 24/03/10
+
+shape main
+{
+	defsize(42,42);
+	setpenwidth(getuserpensize());
+	startpath();
+	moveto(0,50);
+	lineto(50,0);
+	lineto(100,50);
+	lineto(50,100);
+	lineto(0,50);
+	endpath();
+	fillandstrokepath();
+
+	// BPMN 1.0
+	if (HasTag("GatewayType","XOR"))
+	{
+		if (HasTag("XORType","Data"))
+		{
+			if (HasTag("MarkerVisible","True"))
+			{
+				setpenwidth(5);
+				moveto(30,30);
+				lineto(70,70);
+				moveto(70,30);
+				lineto(30,70);
+				return;
+			}
+		}
+		if (HasTag("XORType","Event"))
+		{
+			ellipse(25,25,75,75);
+			ellipse(30,30,70,70);
+			setfillcolor(getuserbordercolor());
+			startpath();
+			moveto(50,37);
+			lineto(37,57);
+			lineto(63,57);
+			endpath();
+			fillandstrokepath();
+			startpath();
+			moveto(50,63);
+			lineto(37,43);
+			lineto(63,43);
+			endpath();
+			fillandstrokepath();
+			return;
+		}
+	}
+	
+	if (HasTag("GatewayType","Exclusive"))
+	{
+		if (HasTag("ExclusiveType","Data"))
+		{
+			if (HasTag("MarkerVisible","True"))
+			{
+				setpenwidth(5);
+				moveto(30,30);
+				lineto(70,70);
+				moveto(70,30);
+				lineto(30,70);
+				return;
+			}
+		}
+		if (HasTag("ExclusiveType","Event"))
+		{
+			ellipse(25,25,75,75);
+			ellipse(30,30,70,70);
+			polygon(50,50,5,18,20);
+			return;
+		}
+	}
+	
+	if (HasTag("GatewayType","Complex"))
+	{
+		setpenwidth(5);
+		moveto(30,30);
+		lineto(70,70);
+		moveto(70,30);
+		lineto(30,70);
+		moveto(25,50);
+		lineto(75,50);
+		moveto(50,25);
+		lineto(50,75);
+		return;
+	}
+
+	if (HasTag("GatewayType","OR"))
+	{
+		setpenwidth(3);
+		ellipse(25,25,75,75);
+		return;
+	}
+
+	if (HasTag("GatewayType","Inclusive"))
+	{
+		setpenwidth(3);
+		ellipse(25,25,75,75);
+		return;
+	}
+
+	if (HasTag("GatewayType","AND"))
+	{
+		setpenwidth(5);
+		moveto(25,50);
+		lineto(75,50);
+		moveto(50,25);
+		lineto(50,75);
+		return;
+	}
+	
+	if (HasTag("GatewayType","Parallel"))
+	{
+		setpenwidth(5);
+		moveto(25,50);
+		lineto(75,50);
+		moveto(50,25);
+		lineto(50,75);
+		return;
+	}
+}
+
+shape label
+{
+	setorigin("SW",0,0);
+	print("#NAME#");
+}

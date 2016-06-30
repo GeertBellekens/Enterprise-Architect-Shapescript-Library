@@ -1,0 +1,65 @@
+// SM_Effect, 23/10/08
+
+shape main
+{
+	noshadow=true;
+	moveto(0,0);
+	lineto(100,0);
+}
+
+shape target
+{
+	if(hasproperty("direction","source -> destination"))
+	{
+		setfillcolor(getuserbordercolor());
+		moveto(0,0);
+		startpath();
+		lineto(16,-6);
+		lineto(16,6);
+		lineto(0,0);
+		endpath();
+		fillandstrokepath();
+	}
+	if(hasproperty("direction","bi-directional"))
+	{
+		setfillcolor(getuserbordercolor());
+		moveto(0,0);
+		startpath();
+		lineto(16,-6);
+		lineto(16,6);
+		lineto(0,0);
+		endpath();
+		fillandstrokepath();
+	}
+}
+
+shape source
+{
+	if(hasproperty("direction","destination -> source"))
+	{
+		setfillcolor(getuserbordercolor());
+		moveto(0,0);
+		startpath();
+		lineto(16,-6);
+		lineto(16,6);
+		lineto(0,0);
+		endpath();
+		fillandstrokepath();
+	}
+	if(hasproperty("direction","bi-directional"))
+	{
+		setfillcolor(getuserbordercolor());
+		moveto(0,0);
+		startpath();
+		lineto(16,-6);
+		lineto(16,6);
+		lineto(0,0);
+		endpath();
+		fillandstrokepath();
+	}
+}
+
+label middlebottomlabel
+{
+	print("");
+}

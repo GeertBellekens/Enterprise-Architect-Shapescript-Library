@@ -1,0 +1,155 @@
+shape main
+
+{
+	layouttype="topdown";
+	h_align = "center";
+	v_align = "bottom";
+
+	noshadow = "true";
+	
+	if(hastag("iconstyle","true"))
+	{
+		defsize(90,45);
+		setfillcolor(254,223,165);
+		setpencolor(0,0,0);
+		startpath();
+		moveto(0,0);
+		lineto(70,0);
+		lineto(100,50);
+		lineto(70,100);
+		lineto(0,100);
+		endpath();
+		fillandstrokepath();
+
+		addsubshape("sub",80,65,25,20);
+
+		shape sub
+		{
+
+			noshadow="true";
+			defsize(100,60);
+		
+			setpencolor(13,87,162);
+			setpenwidth(5);
+		
+		//triangle on the right
+			startpath();
+			moveto(80,50);
+			lineto(90,50);
+			endpath();
+			fillandstrokepath();
+		
+			setfillcolor(13,87,162);
+			startpath();
+			moveto(90,30);
+			lineto(97,50);
+			lineto(90,70);
+			endpath();
+			fillandstrokepath();	
+
+		//upper arc
+			moveto(80,50);
+			arc(20,0,80,100,90,60,30,20);
+
+		//triangle on the left
+			setfillcolor(13,87,162);
+			startpath();
+			moveto(20,35);
+			lineto(5,45);
+			lineto(35,45);
+			endpath();
+			fillandstrokepath();
+
+	//lower arc
+			moveto(20,50);
+			arc(20,0,80,100,20,40,70,70);
+
+		}
+	}
+	else
+	{
+		defsize(150,70);
+		roundrect(0,0,100,100,20,20);
+		addsubshape("name",110,15,0,-82);
+		
+		shape name
+		{
+			h_align="center";
+			println("«#stereotype#»");
+			println("#name#");
+		}
+	}
+
+}
+shape label
+{
+	h_align="left";
+	setorigin("SW",0,0);
+	if(hastag("iconstyle","true"))
+	{
+		println("#NAME#");
+	}
+}
+decoration WorkProductDefinition
+{
+	orientation="ne";
+	
+	if(hastag("iconstyle","false"))
+	{
+		setfillcolor(254,223,165);
+		setpencolor(0,0,0);
+		startpath();
+		moveto(0,0);
+		lineto(70,0);
+		lineto(100,30);
+		lineto(70,60);
+		lineto(0,60);
+		endpath();
+		fillandstrokepath();
+
+		addsubshape("sub",80,55,30,33);
+
+		shape sub
+		{
+
+			noshadow="true";
+			defsize(100,60);
+		
+			setpencolor(13,87,162);
+			setpenwidth(2);
+		
+		//triangle on the right
+			startpath();
+			moveto(80,50);
+			lineto(90,50);
+			endpath();
+			fillandstrokepath();
+		
+			setfillcolor(13,87,162);
+			startpath();
+			moveto(90,30);
+			lineto(97,50);
+			lineto(90,70);
+			endpath();
+			fillandstrokepath();	
+
+		//upper arc
+			moveto(80,50);
+			arc(20,0,80,100,90,60,30,20);
+
+		//triangle on the left
+			setfillcolor(13,87,162);
+			startpath();
+			moveto(20,35);
+			lineto(5,45);
+			lineto(35,45);
+			endpath();
+			fillandstrokepath();
+
+	//lower arc
+			moveto(20,50);
+			arc(20,0,80,100,20,40,70,70);
+
+		}
+	}
+}

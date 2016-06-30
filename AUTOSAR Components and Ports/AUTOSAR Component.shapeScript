@@ -1,0 +1,194 @@
+shape main
+{
+	h_align = "Center";
+	
+	
+	
+	if(hastag("Characteristic", "AUTOSAR Service"))
+	{
+		print("«ServiceSwComponentType» ");
+	}
+	
+	if(hastag("Characteristic", "AUTOSAR Parameter"))
+	{
+		print("«ParameterSwComponentType» ");
+	}
+	
+	if(hastag("Characteristic", "AUTOSAR Ecu Abstraction"))
+	{
+		print("«EcuAbstractionSwComponentType» ");
+	}
+	
+	if(hastag("Characteristic", "AUTOSAR Complex Device Driver"))
+	{
+		print("«ComplexDeviceDriverSwComponentType» ");
+	}
+	
+	if(hastag("Characteristic", "AUTOSAR NV Block"))
+	{
+		print("«NvBlockSwComponentType» ");
+	}
+	
+	DrawNativeShape();
+}
+
+decoration Characteristic
+{
+	orientation = "NE"; 
+	
+	setfillcolor(0,0,255);
+	
+	if(hastag("Characteristic", "AUTOSAR Sensor Actuator"))
+	{
+		SetPenColor(0,0,255);
+		
+		Arc(0, 0, 
+			100, 100, 
+			100, 50, 
+			50, 0); 
+		Rectangle(5,85,15,95);
+		//Ellipse(55, 40, 60, 45);
+		MoveTo(15, 85);
+		LineTo(70,20);
+		// arrow head
+		StartPath();
+		moveto(70,20);
+		LineTo(40,40);
+		lineto(50,55);
+		EndPath();
+		
+		FillAndStrokePath();
+		return;
+	}
+	
+	if(hastag("Characteristic", "AUTOSAR Application"))
+	{
+		SetPenColor(0,0,255);
+		SetFillColor(255,255,255);
+		Rectangle(50,0,100,50);
+		return;
+	}
+	
+	if(hastag("Characteristic", "AUTOSAR Composition"))
+	{
+		SetPenColor(0,0,255);
+		SetFillColor(255,255,255);
+		Rectangle(10,10,30,30);
+		Rectangle(70,10,90,30);
+		Rectangle(40,30,60,50);
+		return;
+	}
+	
+	if(hastag("Characteristic", "AUTOSAR Service"))
+	{
+		return;
+	}
+	
+	if(hastag("Characteristic", "AUTOSAR Parameter"))
+	{
+		return;
+	}
+	
+	if(hastag("Characteristic", "AUTOSAR Ecu Abstraction"))
+	{
+		return;
+	}
+	
+	if(hastag("Characteristic", "AUTOSAR Complex Device Driver"))
+	{
+		return;
+	}
+	
+	if(hastag("Characteristic", "AUTOSAR NV Block"))
+	{
+		return;
+	}
+	
+	if(hastag("Characteristic", "AUTOSAR Service Proxy"))
+	{
+		SetPenColor(0,0,255);
+		SetFillColor(255,255,255);
+		
+		Rectangle(70,20,100,50);
+		Rectangle(60,10,90,40);
+		Rectangle(50,0,80,30);
+		return;
+	}
+	
+	
+	
+	
+}
+
+decoration SouthIcon
+{
+	orientation = "S";
+	
+	if(hastag("Characteristic", "AUTOSAR Service"))
+	{
+		SetPenColor(0,0,255);
+		SetFillColor(255,255,255);
+		moveto(50,0);
+		LineTo(90,30);
+		LineTo(70,30);
+		lineto(70,70);
+		lineto(90,70);
+		lineto(50, 100);
+		lineto(10, 70);
+		lineto(30,70);
+		lineto(30,30);
+		lineto(10,30);
+		lineto(50,0);
+	}
+	
+	if(hastag("Characteristic", "AUTOSAR Ecu Abstraction"))
+	{
+		SetPenColor(0,0,255);
+		SetFillColor(255,255,255);
+		moveto(50,0);
+		LineTo(90,30);
+		LineTo(70,30);
+		lineto(70,70);
+		lineto(90,70);
+		lineto(50, 100);
+		lineto(10, 70);
+		lineto(30,70);
+		lineto(30,30);
+		lineto(10,30);
+		lineto(50,0);
+	}
+	
+	if(hastag("Characteristic", "AUTOSAR Complex Device Driver"))
+	{
+		SetPenColor(0,0,255);
+		SetFillColor(255,255,255);
+		moveto(50,0);
+		LineTo(90,30);
+		LineTo(70,30);
+		lineto(70,70);
+		lineto(90,70);
+		lineto(50, 100);
+		lineto(10, 70);
+		lineto(30,70);
+		lineto(30,30);
+		lineto(10,30);
+		lineto(50,0);
+	}
+	
+	if(hastag("Characteristic", "AUTOSAR NV Block"))
+	{
+		SetPenColor(0,0,255);
+		SetFillColor(255,255,255);
+		moveto(50,0);
+		LineTo(90,30);
+		LineTo(70,30);
+		lineto(70,70);
+		lineto(90,70);
+		lineto(50, 100);
+		lineto(10, 70);
+		lineto(30,70);
+		lineto(30,30);
+		lineto(10,30);
+		lineto(50,0);
+	}
+}

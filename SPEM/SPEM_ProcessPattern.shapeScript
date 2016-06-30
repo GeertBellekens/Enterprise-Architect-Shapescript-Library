@@ -1,0 +1,137 @@
+//SPEM_ProcessPattern 31/03/09
+
+
+shape main
+{
+	layouttype="topdown";
+	h_align = "left";
+	v_align = "center";
+	
+	if(hastag("iconstyle","true"))
+	{
+		defsize(90,60);
+	
+		setfillcolor(198,226,255);
+		setpencolor(0,80,159);
+		setpenwidth(3);
+	
+		ellipse(0,0,100,75);
+       
+		addsubshape("sub",80,60,25,15);
+
+		shape sub
+		{
+			setpencolor(13,87,162);
+			setpenwidth(5);
+		
+			//triangle on the right
+			startpath();
+			moveto(80,50);
+			lineto(90,50);
+			endpath();
+			fillandstrokepath();
+		
+			setfillcolor(13,87,162);
+			startpath();
+			moveto(90,30);
+			lineto(97,50);
+			lineto(90,70);
+			endpath();
+			fillandstrokepath();	
+
+			//upper arc
+			moveto(80,50);
+			arc(20,0,80,100,80,50,30,20);
+
+			//triangle on the left
+			setfillcolor(13,87,162);
+			startpath();
+			moveto(20,35);
+			lineto(5,45);
+			lineto(35,45);
+			endpath();
+			fillandstrokepath();
+
+			//lower arc
+			moveto(20,50);
+			arc(20,0,80,100,20,40,70,70);
+		}
+	}
+	else
+	{
+		defsize(180,85);
+		roundrect(0,0,100,100,20,20);
+		addsubshape("name",110,15,-5,-40);
+		
+		shape name
+		{
+			h_align="center";
+			println("«#stereotype#»");
+			println("#name#");
+		}
+	}
+}
+shape label
+{
+	h_align="left";
+	setorigin("SW",0,0);
+	if(hastag("iconstyle","true"))
+	{
+		print("#NAME#");
+	}
+}
+decoration Catergory
+{
+	orientation="ne";
+	
+	if(hastag("iconstyle","false"))
+	{
+		defsize(90,60);
+	
+		setfillcolor(198,226,255);
+		setpencolor(0,80,159);
+		setpenwidth(1);
+	
+		ellipse(0,0,100,75);
+       
+		addsubshape("sub",80,60,25,40);
+
+		shape sub
+		{
+			setpencolor(13,87,162);
+			setpenwidth(2);
+		
+			//triangle on the right
+			startpath();
+			moveto(80,50);
+			lineto(90,50);
+			endpath();
+			fillandstrokepath();
+		
+			setfillcolor(13,87,162);
+			startpath();
+			moveto(90,30);
+			lineto(97,50);
+			lineto(90,70);
+			endpath();
+			fillandstrokepath();	
+
+			//upper arc
+			moveto(80,50);
+			arc(20,0,80,100,80,50,30,20);
+
+			//triangle on the left
+			setfillcolor(13,87,162);
+			startpath();
+			moveto(20,35);
+			lineto(5,45);
+			lineto(35,45);
+			endpath();
+			fillandstrokepath();
+
+			//lower arc
+			moveto(20,50);
+			arc(20,0,80,100,20,40,70,70);
+		}
+	}
+}

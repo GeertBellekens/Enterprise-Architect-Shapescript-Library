@@ -1,0 +1,131 @@
+shape main
+{
+	layouttype="border";
+	noshadow=true;
+	
+	setpenwidth(2);
+	setpencolor(0,128,0);
+	startpath();
+	rectangle(0,0,100,100);
+	endpath();
+	
+	//if (HasTag("Concurrency", "asynchronous"))
+	//{
+	//	setfillcolor(240,240,240);
+	//	fillandstrokepath();
+	//}
+	//else
+	//{
+		strokepath();
+	//}
+	
+	addsubshape("management","E");
+	//addsubshape("atomicity","S");
+	addsubshape("concurrency","W");
+	addsubshape("sectionName","W");
+	
+	shape management
+	{
+		preferredwidth=30;
+		h_Align="left";
+		v_Align="top";
+		scalable="false";
+		
+		SetFillColor(255,255,255);
+		startpath();
+		rectangle(0,2,29,18);
+		endpath();
+		fillandstrokepath();
+		
+		if (HasTag("Management", "orchestration"))
+		{
+			print("ORC");
+		}
+		else
+		{
+			print("CHO");
+		}
+	}
+	
+	//This does not work at all since it
+	// affects the concurrency shape
+	shape atomicity
+	{
+		preferredheight=20;
+		h_Align="right";
+		v_Align="bottom";
+		//scalable="false";
+		
+		//SetFillColor(255,255,255);
+		//startpath();
+		//rectangle(200,0,240,18);
+		//endpath();
+		//fillandstrokepath();
+		
+		if (HasTag("Atomicity",""))
+		{
+		}
+		else
+		{
+			print("#TAG:Atomicity#");
+		}
+	}
+	
+	shape concurrency
+	{
+		preferredwidth=40;
+		//scalable="false";
+		//fixedAspectRatio="true";
+		h_Align="left";
+		v_Align="bottom";
+		
+		if (HasTag("Concurrency", "synchronous"))
+		{
+			setfillcolor(255,255,255);
+		}
+		else
+		{
+			setfillcolor(200,200,200);
+		}
+		rectangle(2,1,40,99);
+	}
+	
+	shape sectionName
+	{
+		h_Align="left";
+		v_Align="top";
+		preferredwidth=100;
+		scalable="false";
+		
+		SetFillColor(225,225,225); 
+		StartPath(); 
+		Rectangle(0,0,100,16); 
+		EndPath(); 
+		FillAndStrokePath();
+		println("Activity Section");
+		printwrapped("#name#");
+	}
+}
+
+Decoration Atomicity
+{ 
+	Orientation="SE";
+	preferredwidth=50;
+	h_Align="left";
+	v_Align="top";
+	
+	if (HasTag("Atomicity",""))
+	{
+	}
+	else
+	{
+		//No way to determine how big the
+		// box should be (variable size text)
+	//	SetFillColor(255,255,255); 
+	//	StartPath(); 
+	//	Rectangle(-50,-20,100,100); 
+	//	EndPath(); 
+	//	FillAndStrokePath();
+		print("#TAG:Atomicity#");
+	}
+} 

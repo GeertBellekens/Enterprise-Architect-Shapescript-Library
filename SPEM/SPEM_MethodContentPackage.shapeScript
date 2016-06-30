@@ -1,0 +1,61 @@
+//SPEM_MethodContentPack 31/03/09
+
+shape main
+
+{
+	noshadow = "true";
+	h_align = "center";
+	if(hastag("iconstyle","true"))
+	{
+		defsize(130,80);
+		setfillcolor(254,223,165);
+		setpencolor(0,0,0);
+		rectangle(0,0,50,30);
+		rectangle(0,10,100,100);
+	}
+	else
+	{
+		defsize(185,90);
+		rectangle(0,0,50,30);
+		rectangle(0,10,100,100);
+		addsubshape("stereotype",150,15,-2,10);
+		addsubshape("name",110,15,0,20);
+		
+		shape stereotype
+		{
+			h_align="center";
+			printwrapped("«#stereotype#»");
+		}
+		
+		shape name
+		{
+			h_align="center";
+			print("#name#");
+		}
+	}
+
+}
+shape label
+{
+	h_align="left";
+	setorigin("SW",0,0);
+	
+	if(hastag("iconstyle","true"))
+	{
+		println("#NAME#");
+	}
+}
+decoration MethodContentPackage
+{
+	orientation="e";
+	
+	if(hastag("iconstyle","false"))
+	{
+		defsize(130,80);
+		setfillcolor(254,223,165);
+		setpencolor(0,0,0);
+		rectangle(0,0,50,30);
+		rectangle(0,10,100,100);
+	}
+	
+}

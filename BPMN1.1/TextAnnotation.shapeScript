@@ -1,0 +1,37 @@
+// TextAnnotation, 26/11/08
+
+shape main
+{
+	noshadow = true;
+	layouttype="border";
+	
+	if(HasTag("RightFacing","true")) {
+		moveto(50,0);
+		lineto(100,0);
+		lineto(100,100);
+		lineto(50,100);
+	} else {
+		moveto(50,0);
+		lineto(0,0);
+		lineto(0,100);
+		lineto(50,100);
+	}
+	
+	addsubshape("padding","W");
+	addsubshape("padding","N");
+	addsubshape("padding","S");
+	addsubshape("padding","E");
+	addSubShape("line","CENTER");
+
+	shape padding
+	{
+		preferredwidth=10;
+		preferredheight = 10;
+	}
+	
+	text line
+	{
+		editablefield = "note";
+		PrintWrapped("#NOTES#");
+	}
+}

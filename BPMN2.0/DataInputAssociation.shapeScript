@@ -1,0 +1,45 @@
+//BPMN 2.0 DataInputAssociation 12-02-2010
+//Update 20-07-2012 for C12039149
+
+shape main
+{
+	preferredwidth=100;
+	preferredheight=10;
+	noshadow=true;
+
+	setlinestyle("DASH");
+	lineto(100,0);
+}
+//Sharon C12039149: For DataInputAssociaton, arrowhead always shows at Target end, regardless the direction.
+shape target
+{
+	preferredwidth = 12;
+	preferredheight = 16;
+	noshadow = true;
+	scalable = false;
+	rotatable = true;
+	endpointx = 16;
+	endpointy = 0;
+
+	setpenwidth(1);
+	setfillcolor(getuserbordercolor());
+	setlinestyle("SOLID");
+	moveto(16,6);
+	lineto(0,0);
+	lineto(16,-6);	
+}
+Shape source
+{
+	preferredwidth = 12;
+	preferredheight = 16;
+	noshadow = true;
+	scalable = false;
+	rotatable = true;
+	endpointx = 16;
+	endpointy = 0;
+
+}
+label MiddleBottomLabel
+{
+	print("#TAG:transformation#");
+}

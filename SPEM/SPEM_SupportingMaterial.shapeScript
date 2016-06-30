@@ -1,0 +1,170 @@
+//SPEM_Guidance 31/03/09
+shape main
+{
+	noshadow="true";
+	layouttype="topdown";
+	
+	if(hastag("iconstyle","true"))
+	{
+		
+	//	h_align = "left";
+	//	v_align = "center";
+		defsize(65,85);
+		setpencolor(96,132,215);
+		setfillcolor(119,200,249);
+		startpath();
+		moveto(50,0);
+		lineto(100,0);
+		lineto(100,100);
+		lineto(0,100);
+		lineto(0,70);
+		lineto(50,70);
+		endpath();
+		fillandstrokepath();
+	
+	//	h_lines
+		setpencolor(96,132,215);
+		setpenwidth(2);
+                
+		moveto(50,10);
+		lineto(60,10);
+               
+		moveto(90,10);
+		lineto(100,10);
+                
+		moveto(50,30);
+		lineto(60,30);
+                
+		moveto(90,30);
+		lineto(100,30);
+                
+		moveto(50,50);
+		lineto(60,50);
+                
+		moveto(90,50);
+		lineto(100,50);
+             
+		moveto(90,70);
+		lineto(100,70);
+             	
+		moveto(90,90);
+		lineto(100,90);
+                                     
+	// v_lines
+		moveto(10,70);
+		lineto(10,75);						
+ 				
+		moveto(10,100);			
+		lineto(10,95);			
+ 				
+		moveto(30,70);			
+		lineto(30,75);			
+ 				
+		moveto(30,100);			
+		lineto(30,95);			
+ 				
+		moveto(50,100);			
+		lineto(50,95);			
+ 				
+		moveto(70,100);			
+		lineto(70,95);	
+	}
+	else
+	{
+		defsize(180,75);
+		rectangle(0,0,100,100);
+		addsubshape("stereotype",150,15,-27,0);
+		addsubshape("name",110,15,-4,20);
+		
+		shape stereotype
+		{
+			h_align="center";
+			printwrapped("«#stereotype#»");
+		}
+		
+		shape name
+		{
+			h_align="center";
+			print("#name#");
+		}
+	}	
+
+}
+shape label
+{
+	h_align="left";
+	setOrigin("SW",0,0);
+	if(hastag("iconstyle","true"))
+	{
+		print("#name#");
+	}
+	
+}
+decoration actor
+{
+	orientation="ne";
+	
+	if(hastag("iconstyle","false"))
+	{
+		setpencolor(96,132,215);
+		setfillcolor(119,200,249);
+		startpath();
+		moveto(50,0);
+		lineto(100,0);
+		lineto(100,100);
+		lineto(0,100);
+		lineto(0,70);
+		lineto(50,70);
+		endpath();
+		fillandstrokepath();
+	
+	//	h_lines
+		setpencolor(96,132,215);
+		setpenwidth(2);
+                
+		moveto(50,10);
+		lineto(60,10);
+               
+		moveto(90,10);
+		lineto(100,10);
+                
+		moveto(50,30);
+		lineto(60,30);
+                
+		moveto(90,30);
+		lineto(100,30);
+                
+		moveto(50,50);
+		lineto(60,50);
+                
+		moveto(90,50);
+		lineto(100,50);
+             
+		moveto(90,70);
+		lineto(100,70);
+             	
+		moveto(90,90);
+		lineto(100,90);
+                                     
+	// v_lines
+		moveto(10,70);
+		lineto(10,75);						
+ 				
+		moveto(10,100);			
+		lineto(10,95);			
+ 				
+		moveto(30,70);			
+		lineto(30,75);			
+ 				
+		moveto(30,100);			
+		lineto(30,95);			
+ 				
+		moveto(50,100);			
+		lineto(50,95);			
+ 				
+		moveto(70,100);			
+		lineto(70,95);	
+		
+	}
+}
+

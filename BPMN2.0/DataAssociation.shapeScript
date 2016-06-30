@@ -1,0 +1,73 @@
+shape main
+{
+	preferredwidth=100;
+	preferredheight=10;
+	noshadow=true;
+
+	setlinestyle("DASH");
+	lineto(100,0);
+}
+shape target
+{
+	preferredwidth = 12;
+	preferredheight = 16;
+	noshadow = true;
+	scalable = false;
+	rotatable = true;
+	endpointx = 16;
+	endpointy = 0;
+	
+	//Sharon C12039149: For DataAssociaton, assume arrowhead remains at Target End for "Source->Destination", "Unspecified" and "Bi-Directional" direction.
+	if (hasproperty ("direction", "Source -> Destination"))
+	{
+		setpenwidth(1);
+		setfillcolor(getuserbordercolor());
+		setlinestyle("SOLID");
+		moveto(16,6);
+		lineto(0,0);
+		lineto(16,-6);
+	}
+	if (hasproperty ("direction", "Unspecified"))
+	{
+		setpenwidth(1);
+		setfillcolor(getuserbordercolor());
+		setlinestyle("SOLID");
+		moveto(16,6);
+		lineto(0,0);
+		lineto(16,-6);
+	}	
+	if (hasproperty ("direction", "Bi-Directional"))
+	{
+		setpenwidth(1);
+		setfillcolor(getuserbordercolor());
+		setlinestyle("SOLID");
+		moveto(16,6);
+		lineto(0,0);
+		lineto(16,-6);
+	}	
+}
+Shape Source
+{
+	preferredwidth = 12;
+	preferredheight = 16;
+	noshadow = true;
+	scalable = false;
+	rotatable = true;
+	
+	if (hasproperty ("direction", "Destination -> Source"))
+	{
+		setpenwidth(1);
+		setfillcolor(getuserbordercolor());
+		setlinestyle("SOLID");
+		moveto(16,6);
+		lineto(0,0);
+		lineto(16,-6);
+	}
+}
+label MiddleBottomLabel
+{
+	print("#TAG:transformation#");
+}
+
+	
+

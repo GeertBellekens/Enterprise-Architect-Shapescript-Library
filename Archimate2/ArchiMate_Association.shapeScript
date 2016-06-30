@@ -1,0 +1,12 @@
+label middlebottomlabel
+{
+	print("");
+}
+
+shape source
+{
+}
+
+shape target
+{
+}

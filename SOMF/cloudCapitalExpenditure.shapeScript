@@ -1,0 +1,14 @@
+shape target
+{
+	noshadow = "true";
+	setlinestyle("solid");
+	setpenwidth(1);
+	moveto(16,0);
+	lineto(1,16);
+	lineto(1,0);
+}
+
+label middlebottomlabel
+{
+	print("");
+}

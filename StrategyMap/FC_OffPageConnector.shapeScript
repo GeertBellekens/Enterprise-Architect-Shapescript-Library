@@ -1,0 +1,15 @@
+// FC_OffPageConnector, 25/11/08
+
+shape main
+{
+	defsize(30,50);
+	startpath();
+	moveto(0,0);
+	lineto(100,0);
+	lineto(100,70);
+	lineto(50,100);
+	lineto(0,70);
+	lineto(0,0);
+	endpath();
+	fillandstrokepath();
+}

@@ -1,0 +1,146 @@
+// StartEvent for BPMN2.0, 22/02/10
+
+shape main
+{
+	noshadow="true";
+	fixedAspectRatio="true";
+	defsize(30,30);
+	//Sharon C12111023: Remove double drawing for Interrupting StartEvent.
+	if(hasTag("isInterrupting","false"))
+	{
+		setlinestyle("dot");
+	}
+	ellipse(0,0,100,100);
+	
+	setlinestyle("solid");
+	if(HasTag("eventDefinition","ParallelMultiple"))
+	{
+		startpath();
+		moveto(25,45);
+		lineto(25,55);
+		lineto(45,55);
+		lineto(45,75);
+		lineto(55,75);
+		lineto(55,55);
+		lineto(75,55);
+		lineto(75,45);
+		lineto(55,45);
+		lineto(55,25);
+		lineto(45,25);
+		lineto(45,45);
+		endpath();
+		fillandstrokepath();
+	
+		return;
+	}
+	if (HasTag("eventDefinition","None"))
+	{
+		return;
+	}
+	
+	if (HasTag("eventDefinition","Message"))
+	{
+		rectangle(24,24,76,76);
+		moveto(24,24);
+		lineto(50,50);
+		lineto(76,24);
+	}
+	if (HasTag("eventDefinition","Signal"))
+	{
+		startpath();
+		moveto(50,20);
+		lineto(24,64);
+		lineto(76,64);
+		endpath();
+		fillandstrokepath();
+		
+		return;
+	}
+	if (HasTag("eventDefinition","Multiple"))
+	{
+		polygon(50,50,5,28,20);
+	
+		return;
+	}
+	if (HasTag("eventDefinition","Conditional"))
+	{
+		rectangle(24,24,76,76);
+		moveto(24,34);
+		lineto(76,34);
+		moveto(24,50);
+		lineto(76,50);
+		moveto(24,64);
+		lineto(76,64);
+
+		return;
+	}
+	if (HasTag("eventDefinition","Rule"))
+	{
+		rectangle(24,24,76,76);
+		moveto(24,34);
+		lineto(76,34);
+		moveto(24,50);
+		lineto(76,50);
+		moveto(24,64);
+		lineto(76,64);
+		
+		return;
+	}
+	if (HasTag("eventDefinition","Timer"))
+	{
+		ellipse(24,24,76,76);
+		moveto(50,24);
+		lineto(50,50);
+		lineto(76,50);
+
+		return;
+	}
+	if(HasTag("eventDefinition","Error"))
+	{
+		startpath();
+		moveto(23,77);
+		lineto(40,26);
+		lineto(57,42);
+		lineto(77,23);
+		lineto(57,74);
+		lineto(40,58);
+		lineto(23,77);
+		endpath();
+		fillandstrokepath();
+		return;
+	}
+	if(HasTag("eventDefinition","Compensation"))
+	{
+		startpath();
+		moveto(21,50);
+		lineto(47,24);
+		lineto(47,76);
+		endpath();
+		fillandstrokepath();
+		startpath();
+		moveto(47,50);
+		lineto(73,24);
+		lineto(73,74);
+		endpath();
+		fillandstrokepath();
+		return;
+	}
+	if(HasTag("eventDefinition","Escalation"))
+	{
+		startpath();
+		moveto(50,15);
+		lineto(20,80);
+		lineto(50,50);
+		lineto(80,80);
+		lineto(50,15);
+		endpath();
+		fillandstrokepath();
+		return;
+	}
+}
+
+shape label
+{
+	setorigin("SW",0,0);
+	println("#NAME#");
+}

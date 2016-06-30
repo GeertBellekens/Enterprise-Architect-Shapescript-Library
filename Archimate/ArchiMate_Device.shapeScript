@@ -1,0 +1,75 @@
+// ArchiMate_Device, 17/06/2010
+
+shape main
+{
+	layouttype="border";
+	
+	if(hastag("iconstyle","true"))
+	{
+		roundrect(0,0,100,70,30,30);
+		roundrect(5,5,95,65,25,25);
+		startpath();
+		moveto(10,100);
+		lineto(20,70);
+		lineto(80,70);
+		lineto(90,100);
+		endpath();
+		fillandstrokepath();
+	}
+	else
+	{
+		rectangle(0,0,100,100);
+		addsubshape("padding","n");
+		addsubshape("name","center");
+		
+		shape padding
+		{
+			preferredheight=20;
+		}
+		
+		shape name
+		{
+			h_align="center";
+			print("#name#");
+		}
+	}
+}
+
+shape label
+{
+	setorigin("sw",0,0);
+
+	if(hastag("iconstyle","true"))
+	{
+		print("#name#");
+	}
+}
+
+decoration device
+{
+	orientation="ne";
+	
+	if(hastag("iconstyle","false"))
+	{
+		roundrect(0,0,100,70,30,30);
+		startpath();
+		moveto(10,100);
+		lineto(20,70);
+		lineto(80,70);
+		lineto(90,100);
+		endpath();
+		fillandstrokepath();
+	}
+}
+
+decoration composite
+{
+	orientation="SE";
+	if(hasproperty("iscomposite","true"))
+	{
+		ellipse(0,40,40,60);
+		ellipse(60,40,100,60);
+		moveto(30,50);
+		lineto(70,50);
+	}
+}

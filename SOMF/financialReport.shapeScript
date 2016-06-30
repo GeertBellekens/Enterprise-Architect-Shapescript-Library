@@ -1,0 +1,15 @@
+shape main
+{
+	v_align="center";
+	h_align="center";
+	defsize(100,80);
+	startPath();
+	moveto(0,0);
+	lineto(85,0);
+	lineto(100,15);
+	lineto(100,100);
+	lineto(0,100);
+	endPath();
+	fillandstrokepath();
+	printwrapped("#name#");
+}

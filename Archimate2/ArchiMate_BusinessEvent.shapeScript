@@ -1,0 +1,84 @@
+shape main
+{
+	layouttype="border";
+	
+	if(hasproperty("rectanglenotation","0"))
+	{
+		defsize(90,70);
+		startpath();
+		moveto(0,100);
+		lineto(75,100);
+		arcto(50,0,100,100,75,100,75,0);
+		lineto(75,0);	// arcto() appears to miss its target
+		lineto(0,0);
+		lineto(20,50);
+		lineto(0,100);
+		endpath();
+		fillandstrokepath();
+		addsubshape("padding","w");
+		addsubshape("padding","n");
+		addsubshape("name","center");
+
+		shape padding
+		{
+			preferredwidth=20;
+			preferredheight=20;
+		}
+
+		shape name
+		{
+			v_align="top";
+			h_align="center";
+			print("#name#");
+		}
+	}
+	else
+	{
+		defsize(105,70);
+		roundrect(0,0,100,100,20,20);
+		addsubshape("padding","n");
+		addsubshape("name","center");
+
+		shape padding
+		{
+			preferredheight=20;
+		}
+		
+		shape name
+		{
+			v_align="top";
+			h_align="center";
+			print("#name#");
+		}
+	}
+}
+
+decoration event
+{
+	orientation="ne";
+	
+	if(hasproperty("rectanglenotation","0"))
+	{
+	}
+	else
+	{
+		moveto(0,80);
+		lineto(75,80);
+		bezierto(100,70,100,30,75,20);
+		lineto(0,20);
+		lineto(20,50);
+		lineto(0,80);
+	}
+}
+
+decoration composite
+{
+	orientation="SE";
+	if(hasproperty("iscomposite","true"))
+	{
+		ellipse(0,40,40,60);
+		ellipse(60,40,100,60);
+		moveto(30,50);
+		lineto(70,50);
+	}
+}

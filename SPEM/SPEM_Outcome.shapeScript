@@ -1,0 +1,146 @@
+//SPEM_Outcome 31/03/09
+
+shape main
+{
+	noshadow="true";
+	layouttype="topdown";
+	h_align = "left";
+	v_align = "center";
+
+	
+	if(hastag("iconstyle","true"))
+	{
+		defsize(80,75);	
+	//draw and color the frame	
+		setfillcolor(254,251,224);
+		setpencolor(176,152,79);
+		setpenwidth(3);
+	
+		rectangle(30,0,100,100);
+		
+	//draw the content
+		addsubshape("line",50,10,40,40);
+		addsubshape("line",50,10,40,40);	
+		addsubshape("line",50,10,40,40);
+		addsubshape("square",30,30,75,40);
+		addsubshape("line",50,10,40,35);
+		addsubshape("line",50,10,40,35);	
+		addsubshape("line",50,10,40,35);
+		addsubshape("arrow",70,70,-10,-45);
+	
+		shape line
+		{
+			setfillcolor(96,132,215);
+			setpencolor(96,132,215);
+			rectangle(0,0,100,40);
+		}
+
+		shape square
+		{
+			setfillcolor(19,62,108);
+			rectangle(0,0,50,50);
+		}
+		
+		shape arrow
+		{
+			setfillcolor(137,181,216);
+			setpencolor(28,88,155);
+			setpenwidth(2);
+			startpath();
+			moveto(10,20);
+			lineto(10,80);
+			lineto(50,80);
+			lineto(50,100);
+			lineto(100,50);
+			lineto(50,0);
+			lineto(50,20);
+			endpath();
+			fillandstrokepath();	
+		}
+	}
+	else
+	{
+		defsize(150,65);
+		rectangle(0,0,100,100);
+		addsubshape("stereotype",150,15,-28,-33);
+		addsubshape("name",110,15,-5,-22);
+		
+		shape stereotype
+		{
+			h_align="center";
+			printwrapped("«#stereotype#»");
+		}
+		
+		shape name
+		{
+			h_align="center";
+			print("#name#");
+		}
+	}
+}
+shape label
+{
+	h_align="left";
+	setOrigin("SW",0,0);
+	if(hastag("iconstyle","true"))
+	{
+		println("#NAME#");
+	}
+	
+}
+decoration WorkProductDefinition
+{
+	orientation="ne";
+	
+	if(hastag("iconstyle","false"))
+	{
+		defsize(80,75);	
+	//draw and color the frame	
+		setfillcolor(254,251,224);
+		setpencolor(176,152,79);
+		setpenwidth(1);
+	
+		rectangle(30,0,100,100);
+		
+	//draw the content
+		//addsubshape("line",50,10,40,40);
+		addsubshape("line",50,10,35,25);	
+		addsubshape("line",50,10,35,25);
+		addsubshape("square",30,30,70,20);
+		addsubshape("line",50,10,35,25);
+		addsubshape("line",50,10,35,25);	
+		//addsubshape("line",50,10,40,35);
+		addsubshape("arrow",70,70,-7,-55);
+	
+		shape line
+		{
+			setfillcolor(96,132,215);
+			setpencolor(96,132,215);
+			rectangle(0,0,100,20);
+		}
+
+		shape square
+		{
+			setfillcolor(19,62,108);
+			rectangle(0,0,50,50);
+		}
+		
+		shape arrow
+		{
+			setfillcolor(137,181,216);
+			setpencolor(28,88,155);
+			setpenwidth(1);
+			startpath();
+			moveto(10,20);
+			lineto(10,80);
+			lineto(50,80);
+			lineto(50,100);
+			lineto(100,50);
+			lineto(50,0);
+			lineto(50,20);
+			endpath();
+			fillandstrokepath();	
+		}
+	}
+	
+}

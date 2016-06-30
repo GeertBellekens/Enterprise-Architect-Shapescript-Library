@@ -1,0 +1,71 @@
+//SPEM_RoleDefinition 31/03/09
+
+shape main
+{
+	layouttype="topdown";
+	noshadow=true;
+	
+	if(hastag("iconstyle","true"))
+	{
+		defsize(55,80);
+		setfillcolor(254,223,165);
+		setpencolor(0,0,0);
+		ellipse(20,0,100,30);
+		startpath();
+		moveto(20,30);
+		lineto(100,30);
+		lineto(80,100);
+		lineto(0,100);
+		lineto(20,30);
+		endpath();
+		fillandstrokepath();
+	}
+	else
+	{
+		
+		defsize(150,75);
+		rectangle(0,0,100,100);
+		addsubshape("stereotype",150,15,-25,0);
+		addsubshape("name",110,15,-5,12);
+		
+		shape stereotype
+		{
+			h_align="center";
+			printwrapped("«#stereotype#»");
+		}
+		
+		shape name
+		{
+			h_align="center";
+			print("#name#");
+		}
+	}
+}
+shape label
+{
+	h_align="left";
+	setorigin("SW",0,0);
+	if (hastag("iconstyle","true"))
+	{
+		print("#NAME#");
+	}
+}
+decoration actor
+{
+	orientation="ne";
+	
+	if(hastag("iconstyle","false"))
+	{
+		setfillcolor(254,223,165);
+		setpencolor(0,0,0);
+		ellipse(20,0,100,30);
+		startpath();
+		moveto(20,30);
+		lineto(100,30);
+		lineto(80,100);
+		lineto(0,100);
+		lineto(20,30);
+		endpath();
+		fillandstrokepath();
+	}
+}

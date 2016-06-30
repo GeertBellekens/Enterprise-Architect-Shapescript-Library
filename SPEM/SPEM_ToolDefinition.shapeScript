@@ -1,0 +1,108 @@
+//SPEM_ToolDefinition 31/03/09
+
+shape main
+
+{
+	layouttype="topdown";
+	h_align = "center";
+	v_align = "center";
+	noshadow = "true";
+	
+	if(hastag("iconstyle","true"))
+	{
+		defsize(70,80);	
+		setfillcolor(128,128,128);
+		setpencolor(0,0,0);
+		setpenwidth(1);
+	
+		//hammer head
+		startpath();	
+		moveto(70,18);
+		arcto(5,5,100,100,90,30,50,0);
+		lineto(15,16);
+		lineto(13,6);
+		lineto(0,10);
+		lineto(7,50);
+		lineto(19,46);
+		lineto(17,34);
+		lineto(70,17);
+		endpath();
+		fillandstrokepath();	
+
+		//hammer handle	
+		setfillcolor(97,66,58);
+		startpath();
+		moveto(44,26);
+		lineto(33,29);
+		lineto(42,98);
+		lineto(62,92);
+		lineto(45,29);
+		endpath();
+		fillandstrokepath();
+	}
+	else
+	{
+		defsize(150,75);
+		rectangle(0,0,100,100);
+		addsubshape("stereotype",150,15,0,-34);
+		addsubshape("name",110,15,0,-20);
+		
+		shape stereotype
+		{
+			h_align="center";
+			printwrapped("«#stereotype#»");
+		}
+		
+		shape name
+		{
+			h_align="center";
+			print("#name#");
+		}
+	}
+}
+shape label
+{
+	h_align="left";
+	setorigin("SW",0,0);
+	if(hastag("iconstyle","true"))
+	{
+		print("#name#");
+	}
+}
+decoration ToolDefinition
+{
+	orientation="ne";
+	
+	if(hastag("iconstyle","false"))
+	{
+		setfillcolor(128,128,128);
+		setpencolor(0,0,0);
+		setpenwidth(1);
+	
+		//hammer head
+		startpath();	
+		moveto(70,18);
+		arcto(5,5,100,100,90,30,50,0);
+		lineto(15,16);
+		lineto(13,6);
+		lineto(0,10);
+		lineto(7,50);
+		lineto(19,46);
+		lineto(17,34);
+		lineto(70,17);
+		endpath();
+		fillandstrokepath();	
+
+		//hammer handle	
+		setfillcolor(97,66,58);
+		startpath();
+		moveto(44,26);
+		lineto(33,29);
+		lineto(42,98);
+		lineto(62,92);
+		lineto(45,29);
+		endpath();
+		fillandstrokepath();
+	}
+}
+

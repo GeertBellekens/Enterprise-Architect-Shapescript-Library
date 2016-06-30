@@ -1,0 +1,13 @@
+decoration topRight
+{
+	orientation= "NE";
+	SetFillColor(255,0,0);
+	
+	Rectangle(0,0,50,20);
+	
+	SetFillColor(0,0,255);
+	Rectangle(30,30,100,50);
+	
+	SetFillColor(0,255,0);
+	Rectangle(20,70, 80,90);
+}

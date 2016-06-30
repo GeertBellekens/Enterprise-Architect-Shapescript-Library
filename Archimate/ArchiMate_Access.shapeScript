@@ -1,0 +1,14 @@
+// ArchiMate_Access, 10/11/2008
+
+shape main
+{
+	noshadow=true;
+	setlinestyle("DOT");
+	moveto(0,0);
+	lineto(100,0);
+}
+
+label middlebottomlabel
+{
+	print("");
+}

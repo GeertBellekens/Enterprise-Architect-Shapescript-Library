@@ -1,0 +1,31 @@
+// FC_Annotation, 29/10/08
+
+shape main
+{
+	noshadow = true;
+	layouttype = "border";
+	defsize(90,70);
+
+	moveto(50,0);
+	lineto(0,0);
+	lineto(0,100);
+	lineto(50,100);
+	
+	addsubshape("padding","W");
+	addsubshape("padding","N");
+	addsubshape("padding","S");
+	addsubshape("padding","E");
+	addSubShape("line","CENTER");
+
+	shape padding
+	{
+		preferredwidth = 10;
+		preferredheight = 10;
+	}
+	
+	text line
+	{
+		editablefield = "note";
+		printwrapped("#NOTES#");
+	}
+}

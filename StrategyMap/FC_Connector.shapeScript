@@ -1,0 +1,17 @@
+// FC_Connector, 29/10/08
+
+shape target
+{
+	setfillcolor(getuserbordercolor());
+	startpath();
+	moveto(12,-5);
+	lineto(0,0);
+	lineto(12,5);
+	endpath();
+	fillandstrokepath();
+}
+
+shape middlebottomlabel
+{
+	print("");
+}

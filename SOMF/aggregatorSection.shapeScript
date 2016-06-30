@@ -1,0 +1,30 @@
+shape main
+{
+	layouttype="border";
+	noshadow=true;
+	
+	setpenwidth(2);
+	setpencolor(128,0,64);
+	startpath();
+	rectangle(0,0,100,100);
+	endpath();
+	strokepath();
+	
+	addsubshape("sectionName","W");
+	
+	shape sectionName
+	{
+		h_Align="left";
+		v_Align="top";
+		preferredwidth=160;
+		scalable="false";
+		
+		SetFillColor(225,225,225); 
+		StartPath(); 
+		Rectangle(0,0,160,16); 
+		EndPath(); 
+		FillAndStrokePath();
+		println("Aggregating Entity Section");
+		printwrapped("#name#");
+	}
+}

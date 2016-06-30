@@ -1,0 +1,40 @@
+// DataObject, 26/11/08
+
+shape main
+{
+	layouttype="border";
+	h_align = "center";
+	v_align = "center";
+
+	startpath();
+	moveto(66,0);
+	lineto(0,0);
+	lineto(0,100);
+	lineto(100,100);
+	lineto(100,25);
+	lineto(66,0);
+	endpath();
+	fillandstrokepath();
+	lineto(66,25);
+	lineto(100,25);
+}
+
+shape label
+{
+	setOrigin("SW",0,0);
+	if(hasproperty("classifier",""))
+	{
+		println("#NAME#");
+	}
+	else
+	{
+		println("#NAME# :#CLASSIFIER#");
+	}
+	if(hastag("State",""))
+	{
+	}
+	else
+	{
+		print("[#TAG:State#]");
+	}
+}

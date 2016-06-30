@@ -1,0 +1,17 @@
+shape main
+{
+	noshadow=true;
+	setfillcolor(getuserbordercolor());
+	defsize(20,300);
+	startpath();
+	moveto(50,0);
+	lineto(100,15);
+	lineto(75,15);
+	lineto(75,100);
+	lineto(25,100);
+	lineto(25,15);
+	lineto(0,15);
+	lineto(50,0);
+	endpath();
+	fillandstrokepath();
+}

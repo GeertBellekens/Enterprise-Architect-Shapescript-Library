@@ -1,0 +1,133 @@
+shape main
+{
+	layouttype="border";
+	rectangle(0,0,100,100);
+	
+	if(hasproperty("diagram.mdgtype","BPMN2.0::Conversation"))
+	{
+		defsize(100,100);
+		if(hastag("participantMultiplicity","true"))
+		{
+			addsubshape("base","S");
+			addsubshape("section","N");
+			addsubshape("padding","W");
+			addsubshape("padding","E");
+
+			shape section
+			{
+				layouttype="border";
+				preferredHeight=28;
+				rectangle(0,0,100,100);
+				addsubshape("pad","N");
+				addsubshape("pad","W");
+				addsubshape("pad","E");
+				addsubshape("pad","S");
+				addsubshape("name","CENTER");
+					
+				shape pad
+				{
+					preferredHeight=0;
+					preferredWidth=0;
+				}
+				shape name
+				{
+					h_align = "center";
+					Printwrapped("#NAME#");
+				}	
+			}
+			shape padding
+			{
+				preferredHeight=40;
+				preferredWidth=40;
+			}
+			shape base
+			{
+				layouttype="border";
+				preferredHeight=15;
+		
+				addsubshape("null","N");
+				addsubshape("null","S");
+				addsubshape("baseshapes","CENTER");
+		
+				shape null
+				{
+					preferredHeight=3;
+				}
+				shape baseshapes
+				{
+					layouttype="leftright";
+					scalable=false;
+					v_align="CENTER";
+					h_align="CENTER";
+						
+					addsubshape("spacer");
+					addSubShape("multiple");
+					addsubshape("spacer");
+						
+					shape spacer
+					{
+						preferredWidth=2;
+					}
+					shape multiple
+					{
+						preferredWidth=15;
+						preferredHeight=15;
+						setfillcolor(getuserbordercolor());
+						startpath();
+						rectangle(10,0,25,100);
+						endpath();
+						fillandstrokepath();
+						startpath();
+						rectangle(47,0,58,100);
+						endpath();
+						fillandstrokepath();
+						startpath();
+						rectangle(80,0,95,100);
+						endpath();
+						fillandstrokepath();
+					}
+				}
+			}
+		}
+		else
+		{
+			addsubshape("section","N");
+			addsubshape("padding","W");
+			addsubshape("padding","E");
+			addsubshape("padding","S");
+
+			shape section
+			{
+				layouttype="border";
+				preferredHeight=28;
+				rectangle(0,0,100,100);
+				addsubshape("pad","N");
+				addsubshape("pad","W");
+				addsubshape("pad","E");
+				addsubshape("pad","S");
+				addsubshape("name","CENTER");
+					
+				shape pad
+				{
+					preferredHeight=8;
+					preferredWidth=8;
+				}
+				shape name
+				{
+					h_align = "center";
+					Printwrapped("#NAME#");
+				}	
+			}
+			shape padding
+			{
+				preferredHeight=30;
+				preferredWidth=30;
+			}
+			return;
+		}
+	}
+	else
+	{
+		drawnativeshape();
+	}
+}

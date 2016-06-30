@@ -1,0 +1,38 @@
+shape main
+{
+	noshadow=true;
+	setfixedregion(49,-8,51,8);
+	setlinestyle("solid");
+	moveto(0,0);
+	lineto(100,0);
+	setpenwidth(2);
+	moveto(50,8);
+	lineto(50,-8);
+}
+
+shape target
+{
+	setfillcolor(getuserbordercolor());
+	startpath();
+	moveto(0,0);
+	lineto(16,-6);
+	lineto(16,6);
+	endpath();
+	fillandstrokepath();
+}
+
+shape source
+{
+	setfillcolor(getuserbordercolor());
+	startpath();
+	moveto(0,0);
+	lineto(16,-6);
+	lineto(16,6);
+	endpath();
+	fillandstrokepath();
+}
+
+label middlebottomlabel
+{
+	print("");
+}

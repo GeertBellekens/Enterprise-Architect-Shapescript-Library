@@ -1,0 +1,25 @@
+// ArchiMate_Grouping, 18/01/2010
+
+shape main
+{
+	layouttype="border";
+	noshadow=true;
+	defsize(100,80);
+	setlinestyle("DOT");
+	startpath();
+	rectangle(0,0,100,100);
+	endpath();
+	strokepath();
+	addsubshape("tab","n");
+	
+	shape tab
+	{
+		preferredheight=14;
+		v_align="center";
+		setlinestyle("DOT");
+		moveto(70,0);
+		lineto(70,100);
+		lineto(0,100);
+		print("#name#");
+	}
+}

@@ -1,0 +1,33 @@
+shape main
+{
+	layouttype="border";
+	
+	defsize(90,70);
+	roundrect(0,0,100,100,20,20);
+	addsubshape("padding","n");
+	addsubshape("name","center");
+	
+	shape padding
+	{
+		preferredheight=20;
+	}
+	
+	shape name
+	{
+		h_align="center";
+		print("#name#");
+	}
+}
+
+decoration composite
+{
+	orientation="SE";
+	if(hasproperty("iscomposite","true"))
+	{
+		ellipse(0,40,40,60);
+		ellipse(60,40,100,60);
+		moveto(30,50);
+		lineto(70,50);
+	}
+}
+

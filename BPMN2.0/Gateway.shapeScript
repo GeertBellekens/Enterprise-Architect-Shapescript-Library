@@ -1,0 +1,123 @@
+// Gateway for BPMN 2.0, 2014/05/29
+
+shape main
+{
+	noshadow="true";
+	fixedAspectRatio="true";
+	setpenwidth(getuserpensize());
+	defsize(42,42);
+	startpath();
+	moveto(0,50);
+	lineto(50,0);
+	lineto(100,50);
+	lineto(50,100);
+	lineto(0,50);
+	endpath();
+	fillandstrokepath();
+
+	if (HasTag("gatewayType","Exclusive"))
+	{
+		if (HasProperty("BPMNmarker","1"))
+		{
+			addsubshape("ExclusiveGatewayMarker",100,100);
+		}
+		else
+		{
+			if(HasTag("markerVisible","True"))
+			{
+				addsubshape("ExclusiveGatewayMarker",100,100);
+			}
+		}
+	}
+
+	if (hastag("gatewayType","Event"))	// 99x: 08-04-2011
+	{
+		if (hastag("eventGatewayType", "Exclusive"))
+		{
+			if (hasTag("instantiate","true"))
+			{
+				ellipse(25,25,75,75);
+				polygon(50,50,5,18,20);
+				return;
+			}
+			else
+			{
+				ellipse(25,25,75,75);
+				ellipse(30,30,70,70);
+				polygon(50,50,5,18,20);
+				return;
+			}
+		}
+
+		if (hastag("eventGatewayType","Parallel"))
+		{
+				ellipse(25,25,75,75);
+				startpath();
+				moveto(35,45);
+				lineto(35,55);
+				lineto(45,55);
+				lineto(45,65);
+				lineto(55,65);
+				lineto(55,55);
+				lineto(65,55);
+				lineto(65,45);
+				lineto(55,45);
+				lineto(55,35);
+				lineto(45,35);
+				lineto(45,45);
+				endpath();
+
+				fillandstrokepath();
+
+				return;
+		}
+	}
+
+	if (HasTag("gatewayType","Complex"))
+	{
+		setpenwidth(5);
+		moveto(30,30);
+		lineto(70,70);
+		moveto(70,30);
+		lineto(30,70);
+		moveto(25,50);
+		lineto(75,50);
+		moveto(50,25);
+		lineto(50,75);
+		return;
+	}
+
+	if (HasTag("gatewayType","Inclusive"))
+	{
+		setpenwidth(3);
+		ellipse(25,25,75,75);
+		return;
+	}
+
+	if (HasTag("gatewayType","Parallel"))
+	{
+		setpenwidth(5);
+		moveto(25,50);
+		lineto(75,50);
+		moveto(50,25);
+		lineto(50,75);
+		return;
+	}
+	
+	shape ExclusiveGatewayMarker
+	{
+		setpenwidth(5);
+		moveto(30,30);
+		lineto(70,70);
+		moveto(70,30);
+		lineto(30,70);
+		return;
+	}
+}
+
+shape label
+{
+	setorigin("SW",0,0);
+
+	print("#NAME#");
+}

@@ -1,0 +1,10 @@
+// DT_OutcomeActivity, 23/12/08
+
+shape main
+{
+	v_align="center";
+	h_align="center";
+	defsize(90,50);
+	roundrect(0,0,100,100,10,10);
+	printwrapped("#name#");
+}

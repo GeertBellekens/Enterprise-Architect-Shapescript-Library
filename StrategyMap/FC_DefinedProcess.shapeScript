@@ -1,0 +1,15 @@
+// FC_DefinedProcess, 30/10/08
+
+shape main
+{
+	v_align="center";
+	h_align="center";
+	defsize(100,70);
+	rectangle(0,0,100,100);
+	moveto(5,0);
+	lineto(5,100);
+	moveto(95,0);
+	lineto(95,100);
+	printwrapped("#name#");
+}
+

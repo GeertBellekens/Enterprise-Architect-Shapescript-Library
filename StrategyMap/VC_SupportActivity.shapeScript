@@ -1,0 +1,30 @@
+// VC_SupportActivity, 17/10/08
+
+shape main
+{
+	noshadow=true;
+	layouttype="border";
+	dockable="standard";
+	defsize(400,50);
+
+	rectangle(0,0,100,100);
+	
+	addsubshape("padding","N");
+	addsubshape("padding","S");
+	addsubshape("padding","E");
+	addsubshape("padding","W");
+	addsubshape("name","center");
+	
+	shape name
+	{
+		v_align="center";
+		h_align="center";
+		printwrapped("#NAME#");
+	}
+
+	shape padding
+	{
+		preferredwidth=10;
+		preferredheight=10;
+	}
+}

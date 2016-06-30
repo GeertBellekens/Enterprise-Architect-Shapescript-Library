@@ -1,0 +1,21 @@
+shape target
+{
+	rotatable = false;
+	endpointx = 16; // value in pixels
+	endpointy = 0;
+	setfillcolor(0,0,0);
+   
+	// in following commands,
+	//    x co-ords are % of endpointx
+	//    y co-ords are pixel values
+	ellipse(100,3,70,-3);
+	moveto(94,0);
+	lineto(0,12);
+	moveto(94,0);
+	lineto(0,-12);
+}
+
+label middlebottomlabel
+{
+	print("");
+}

@@ -1,0 +1,34 @@
+shape main
+{
+	h_align = "center";
+	v_align = "center";
+	
+	rectangle(0,0,100,100);
+	
+	Print("#NAME#");
+}
+
+decoration MyIcon
+{
+	orientation = "NE";
+	
+	SetPenColor(0,0,255);
+	
+	if(HasTag("CanBeInvokedConcurrently", "true"))
+	{
+		SetFillColor(0,0,255);
+	}
+	
+	StartPath();
+	moveto(40,70);
+	lineto(20,50);
+	lineto(30,30);
+	lineto(20,20);
+	lineto(50,20);
+	lineto(60,60);
+	lineto(50,50);
+	LineTo(40,70);
+	endpath();
+	
+	FillAndStrokePath();
+}

@@ -1,0 +1,12 @@
+shape main
+{
+	v_align="top";
+	h_align="center";
+	defsize(200,160);
+	setlinestyle("dashdotdot");
+	setpenwidth(1);
+	setfillcolor(255,255,255);
+	roundrect(0,0,100,100,30,30);
+	println("Logical Reference Architecture Model");
+	printwrapped("#name#");
+}

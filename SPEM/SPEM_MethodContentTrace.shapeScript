@@ -1,0 +1,5 @@
+label middlebottomlabel
+{
+	h_align = "center";
+	print("«content trace»");
+}

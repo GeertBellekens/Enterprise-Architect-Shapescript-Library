@@ -1,0 +1,40 @@
+shape main
+{
+	layouttype="border";
+	defsize(50,50);
+	startpath();
+	moveto(0,10);
+	lineto(0,80);
+	bezierto(30,100,70,100,100,80);
+	lineto(100,10);
+	endpath();
+	fillandstrokepath();
+	ellipse(0,0,100,20);
+	
+	moveto(0,20);
+	bezierto(30,32,70,32,100,20);
+	
+	moveto(0,30);
+	bezierto(30,42,70,42,100,30);
+		
+}
+
+shape label //  99x: 31/03/2011
+{
+	setOrigin("SW",0,0);
+	if(hasproperty("classifier",""))
+	{
+		println("#NAME#");
+	}
+	else
+	{
+		println("#NAME# :#CLASSIFIER#");
+	}
+	if(hastag("dataState",""))
+	{
+	}
+	else
+	{
+		print("[#TAG:dataState#]");
+	}
+}

@@ -1,0 +1,103 @@
+//BPMN 2.0 Data Object 11-03-2010
+
+shape main
+{
+
+	layouttype="border";
+	h_align = "center";
+	v_align = "center";
+	
+	defsize(35,50);
+
+	startpath();
+	moveto(66,0);
+	lineto(0,0);
+	lineto(0,100);
+	lineto(100,100);
+	lineto(100,25);
+	lineto(66,0);
+	endpath();
+	fillandstrokepath();
+	lineto(66,25);
+	lineto(100,25);
+	
+	if (hastag("isCollection", "true"))
+	{
+		addsubshape("base", "S");
+	
+		shape base
+		{
+			
+			preferredWidth=10;
+			preferredHeight=15;	
+			setfillcolor(getuserbordercolor());
+			startpath();
+			rectangle(37,0,42,100);
+			endpath();
+			fillandstrokepath();
+			startpath();
+			rectangle(48,0,52,100);
+			endpath();
+			fillandstrokepath();
+			startpath();
+			rectangle(58,0,62,100);
+			endpath();
+			fillandstrokepath();
+		}
+	}
+}
+
+shape label
+{
+	setOrigin("SW",0,0);
+	if(hasproperty("classifier",""))
+	{
+		println("#NAME#");
+	}
+	else
+	{
+		println("#NAME# :#CLASSIFIER#");
+	}
+	if(hastag("dataState",""))
+	{
+	}
+	else
+	{
+		print("[#TAG:dataState#]");
+	}
+}
+decoration InOut
+{
+	if (hastag("dataInOut", "Input"))
+	{
+		//setbordercolor(getuserbordercolor());
+		setpenwidth(1);
+		startpath();
+		moveto(0,30);
+		lineto(0,70);
+		lineto(70,70);
+		lineto(70,100);
+		lineto(100,50);
+		lineto(70,0);
+		lineto(70,30);
+		lineto(0,30);
+		endpath();
+		fillandstrokepath();
+	}
+	if (hastag("dataInOut","Output"))
+	{
+		setfillcolor(getuserbordercolor());
+		setpenwidth(1);
+		startpath();
+		moveto(0,30);
+		lineto(0,70);
+		lineto(70,70);
+		lineto(70,100);
+		lineto(100,50);
+		lineto(70,0);
+		lineto(70,30);
+		lineto(0,30);
+		endpath();
+		fillandstrokepath();
+	}
+}

@@ -1,0 +1,27 @@
+shape target
+{
+	noshadow=true;
+	rotatable = false;
+	endpointx = 24; // value in pixels
+	endpointy = 0;
+	
+	setlinestyle("solid");
+	setpenwidth(1);
+	startpath();
+	moveto(0,0);
+	lineto(20,8);
+	lineto(100,8);
+	lineto(100,-8);
+	lineto(20,-8);
+	lineto(0,0);
+	endpath();
+	strokepath();
+	
+	moveto(100,-8);
+	lineto(20,8);
+}
+
+label middlebottomlabel
+{
+	print("");
+}

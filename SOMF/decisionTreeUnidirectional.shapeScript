@@ -1,0 +1,46 @@
+shape main
+{
+	noshadow=true;
+	setfixedregion(55,-8,60,8);
+	setlinestyle("solid");
+	moveto(0,0);
+	lineto(100,0);
+	setpenwidth(2);
+	moveto(60,8);
+	lineto(60,-8);
+	moveto(55,8);
+	lineto(55,-8);
+}
+
+shape target
+{
+	if(hasproperty("direction","Source -> Destination"))
+	{
+		setfillcolor(getuserbordercolor());
+		startpath();
+		moveto(0,0);
+		lineto(16,-6);
+		lineto(16,6);
+		endpath();
+		fillandstrokepath();
+	}
+}
+
+shape source
+{
+	if(hasproperty("direction","Destination -> Source"))
+	{
+		setfillcolor(getuserbordercolor());
+		startpath();
+		moveto(0,0);
+		lineto(16,-6);
+		lineto(16,6);
+		endpath();
+		fillandstrokepath();
+	}
+}
+
+label middlebottomlabel
+{
+	print("");
+}

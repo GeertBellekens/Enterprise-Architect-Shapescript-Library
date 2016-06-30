@@ -1,0 +1,175 @@
+shape main
+{
+	if(HasTag("isService", "true"))
+	{
+		SetFillColor(1,1,1);
+	}
+	if(HasTag("isService", "false"))
+	{
+		SetFillColor(255,255,255);
+	}
+	
+	Rectangle(0,0,100,100);
+	
+	If(HasProperty("parentEdge","Right"))
+	{
+		
+		If(HasTag("direction","in"))
+		{
+			if(HasTag("isService", "false"))
+			{
+				Arc(20,20,80,80, 50,0, 50, 100); 
+				return;
+			}
+			if(HasTag("isService", "true"))
+			{
+				SetPenColor(255,255,255);
+				SetFillColor(255,255,255);
+				StartPath();
+				Arc(20,20,80,80, 50,0, 50, 100); 
+				EndPath();
+				
+				FillAndStrokePath();
+				return;
+			}
+			
+		}
+		If(HasTag("direction","out"))
+		{
+			if(hasTag("isService","false"))
+			{
+				Ellipse(20,20,80,80); 
+				return;
+			}
+			if(hasTag("isService","true"))
+			{
+				SetFillColor(255,255,255);
+				StartPath();
+				Ellipse(20,20,80,80); 
+				EndPath();
+				FillAndStrokePath();
+				return;
+			}
+		}
+	}
+	
+	// Left
+	If(HasProperty("parentEdge","Left"))
+	{
+		If(HasTag("direction","in"))
+		{
+			if(hasTag("isService","false"))
+			{
+				Arc(20,20,80,80, 50,100, 50, 0); 
+				return;
+			}
+		
+			if(hasTag("isService","true"))
+			{
+				SetPenColor(255,255,255);
+				SetFillColor(255,255,255);
+				StartPath();
+				Arc(20,20,80,80, 50,100, 50, 0); 
+				EndPath();
+				
+				FillAndStrokePath();
+				return;
+		
+			}
+		}
+		If(HasTag("direction","out"))
+		{	
+			if(hasTag("isService","false"))
+			{
+				Ellipse(20,20,80,80); 
+				return;
+			}
+			if(hasTag("isService","true"))
+			{
+				SetFillColor(255,255,255);
+				Ellipse(20,20,80,80); 
+				
+				return;
+			}
+			
+		}
+	}
+	// TOP
+	If(HasProperty("parentEdge","Top"))
+	{
+		
+		//TOP
+		If(HasTag("direction","in"))
+		{
+			if(hasTag("isService","false"))
+			{
+				Arc(20,20,80,80, 0,50, 100, 50); 
+				return;
+			}
+			if(hasTag("isService","true"))
+			{
+				SetFillColor(255,255,255);
+				SetPenColor(255,255,255);
+				StartPath();
+				Arc(20,20,80,80, 0,50, 100, 50); 
+				EndPath();
+				FillAndStrokePath();
+				return;
+			}
+		}
+		If(HasTag("direction","out"))
+		{	
+			if(hasTag("isService","false"))
+			{
+				Ellipse(20,20,80,80); 
+				return;
+			}
+			if(hasTag("isService","true"))
+			{
+				SetFillColor(255,255,255);
+				Ellipse(20,20,80,80); 
+				return;
+			}
+			
+		}
+	}
+	
+	// BOTTOM
+	If(HasProperty("parentEdge","Bottom"))
+	{
+		If(HasTag("direction","in"))
+		{
+			if(hasTag("isService","false"))
+			{
+				Arc(20,20,80,80, 100,50, 0, 50); 
+				return;
+			}
+			if(hasTag("isService","true"))
+			{
+				SetFillColor(255,255,255);
+				SetPenColor(255,255,255);
+				StartPath();
+				Arc(20,20,80,80, 100,50, 0, 50); 
+				EndPath();
+				FillAndStrokePath();
+				return;
+			}
+		}
+		If(HasTag("direction","out"))
+		{	
+			if(hasTag("isService","false"))
+			{
+				Ellipse(20,20,80,80); 
+				return;
+			}
+			if(hasTag("isService","true"))
+			{
+				SetFillColor(255,255,255);
+				Ellipse(20,20,80,80); 
+				return;
+			}
+			
+		}
+	}
+	
+}

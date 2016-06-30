@@ -1,0 +1,25 @@
+shape main
+{
+	layouttype="border";
+	setlinestyle("DASH");
+	defsize(90,70);
+	startpath();
+	rectangle(0,0,100,100);
+	endpath();
+	fillandstrokepath();
+	
+	addsubshape("padding","n");
+	addsubshape("name","center");
+	
+	shape name
+	{
+		v_align="top";
+		h_align="center";
+		printwrapped("#name#");
+	}
+	
+	shape padding
+	{
+		preferredheight=12;
+	}
+}

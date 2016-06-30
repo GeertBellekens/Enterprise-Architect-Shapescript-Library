@@ -1,0 +1,45 @@
+shape main
+{
+	layouttype="border";
+
+	setpencolor(getuserbordercolor());
+	setpenwidth(getuserpensize());
+	
+	startpath();
+	ellipse(0,0,100,100);
+	endpath();
+	fillandstrokepath();
+
+	addsubshape("padding","S");
+	addsubshape("padding","N");
+	addsubshape("padding","W");
+	addsubshape("padding","E");
+	addsubshape("name","CENTER");
+
+	text name
+	{
+		h_align = "center";
+		v_align = "center";
+		PrintWrapped("#NAME#");
+	}
+	
+	shape padding
+	{
+		preferredHeight=15;
+		preferredWidth=15;
+	}
+}
+
+decoration compo
+{
+	orientation="S";
+
+	if(HasProperty("iscomposite","true"))
+	{
+		moveto(40,50);
+		lineto(60,50);
+		ellipse(0,40,40,60);
+		ellipse(60,40,100,60);
+	}
+}
+

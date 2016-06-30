@@ -1,0 +1,493 @@
+shape main
+{
+	layouttype="border";
+	noshadow="true";
+
+	// Set the defsize depending on the number of participants.
+	if(hasTag("numberOfParticipants","2"))		
+	{			
+		defsize(130,100);
+	}		
+	if(hasTag("numberOfParticipants","3"))		
+	{			
+		defsize(140,120);
+	}		
+	if(hasTag("numberOfParticipants","4"))		
+	{			
+		defsize(150,140);
+	}
+	
+	// Outer border width for called choreography or not
+	if(hasTag("isACalledChoreography","true"))
+	{
+		setpenwidth(3);	// This width will be partially overridden by subshapes.
+	}
+	else
+	{
+		setpenwidth(1); // Overriding user selection because wider lines mean something different.
+	}
+	
+	// Explicitly drawing a round rect in controlled way
+	// Starting just below the Top Left
+	startpath();
+	setfixedregion(0,0,10,10);
+  	moveto(0,10);
+	
+	setfixedregion(0,90,10,100);  
+	lineto(0,90);
+	bezierto(0,100,0,100,10,100);
+	
+	setfixedregion(90,90,100,100); 
+	lineto(90,100);
+	bezierto(100,100,100,100,100,90);
+	
+	setfixedregion(90,0,100,10);
+  	lineto(100,10);
+  	bezierto(100,0,100,0,90,0);
+	
+	setfixedregion(0,0,10,10);
+  	lineto(10,0);
+  	bezierto(0,0,0,0,0,10);
+  	endpath();
+
+  	fillandstrokepath();
+	setfixedregion(0,0,0,0);
+	setpenwidth(1);
+
+	// Add outer two participants and process center further.
+	addsubshape("participantA", "N");
+	addsubshape("participantB", "S");
+	addsubshape("main2", "CENTER");
+	
+	shape main2
+	{
+		layouttype="border";		
+		v_align="center";	
+		h_align="center";
+		
+		// Add any further participants and process center again.
+		if(hasTag("numberOfParticipants","2"))		
+		{
+			addsubshape("choreographyCenter","CENTER");
+		}	
+		if(hasTag("numberOfParticipants","3"))		
+		{
+			addsubshape("participantC", "N");
+			addsubshape("choreographyCenter","CENTER");
+		}		
+		if(hasTag("numberOfParticipants","4"))		
+		{
+			addsubshape("participantC", "N");
+			addsubshape("participantD", "S");
+			addsubshape("choreographyCenter","CENTER");
+		}
+	}
+	
+	shape choreographyCenter
+	{
+		layouttype="border";		
+		v_align="center";	
+		h_align="center";		
+
+		// Draw a rect here to ensure consistent border width.
+		rectangle(0,0,100,100);
+
+		// Center is made up of three things added here.
+		addsubshape("NamePart", "N");
+		addsubshape("icons", "S");
+		
+		if(HasProperty("ShowComposedDiagram", "true"))
+			addsubshape("ComposedDiagram", "CENTER");
+		
+		shape ComposedDiagram
+		{
+			DrawComposedDiagram();
+		}
+		
+		shape NamePart
+		{
+			preferredheight=33;	
+			layouttype="border";
+			addsubshape("NamePadding", "N");
+			addsubshape("Name", "CENTER");
+
+			shape NamePadding		
+			{			
+				preferredheight=18;		
+			}
+			shape Name
+			{
+				h_align="center";
+				printwrapped("#Name#");
+			}
+		}
+		
+		shape icons
+		{
+			preferredHeight=14;	
+			layouttype="leftright";	
+			scalable=false;	
+			v_align="CENTER";
+			h_align="CENTER";
+			if (HasTag("loopType","Standard"))
+			{
+				addSubShape("loop");	
+				addsubshape("spacer");
+			}	
+			if (HasTag("loopType","MultiInstanceParallel"))		
+			{		
+				addSubShape("multiple");
+				addsubshape("spacer");
+			}
+			if(hastag("loopType","MultiInstanceSequential"))
+			{
+				addSubShape("sequential");
+				addsubshape("spacer");
+			}
+			if (HasTag("choreographyType","Sub-Process"))
+			{
+				addSubShape("collapsed");
+			    addsubshape("spacer");
+			}	
+			else
+			{
+				if(HasProperty("iscomposite","true"))
+				{
+					if(HasProperty("ShowComposedDiagram", "false"))
+					{
+						addSubShape("collapsed");
+						addsubshape("spacer");
+					}
+				}
+			}
+			shape collapsed
+			{
+				preferredWidth=15;
+				preferredHeight=15;
+				rectangle(0,0,100,100);
+				moveto(15,50);
+				lineto(50,50);
+				moveto(85,50);
+				lineto(50,50);
+				moveto(50,15);
+				lineto(50,50);
+				moveto(50,85);
+				lineto(50,50);
+			}
+			shape loop
+			{
+				preferredWidth=15;
+				preferredHeight=12;
+				setpenwidth(2);
+				moveto(0,90); 
+				//Sharon C11128881: improve arc shape rendering.
+				//bezierto(-80,-30,170,-30,80,100); 
+				moveto(70,90);
+				arc(0,0,100,100,70,90,30,90);
+				setfillcolor(getuserbordercolor());
+				startpath();
+				moveto(-20,100);
+				lineto(40,100);
+				lineto(40,60);
+				endpath();
+				fillandstrokepath();
+			}
+			shape multiple
+			{
+				preferredWidth=15;
+				preferredHeight=12;
+				setfillcolor(getuserbordercolor());			
+				startpath();
+				rectangle(10,0,20,100);
+				endpath();
+				fillandstrokepath();
+				startpath();
+				rectangle(45,0,55,100);
+				endpath();
+				fillandstrokepath();
+				startpath();
+				rectangle(80,0,90,100);
+				endpath();
+				fillandstrokepath();
+			}
+			shape sequential
+			{
+				preferredWidth=15;
+				preferredHeight=15;
+				setfillcolor(getuserbordercolor());
+				startpath();
+				rectangle(0,10,100,25);
+				endpath();
+				fillandstrokepath();
+				startpath();
+				rectangle(0,42,100,63);
+				endpath();
+				fillandstrokepath();
+				startpath();
+				rectangle(0,80,100,95);
+				endpath();
+				fillandstrokepath();
+			}
+		}
+	}
+
+	shape participantA
+	{
+		preferredheight=20;
+		layouttype="border";
+		v_align="center";
+		h_align="center";
+		
+		if(hasTag("initiatingParticipant","participantA"))
+		{			
+			setfillcolor(getUserFillColor());
+		}
+		else
+		{
+			setfillcolor(192,192,192);
+		}
+		
+		// Partial round rect, rendered over the top part
+		// of the overall shape.
+		startpath();
+		setfixedregion(0,0,10,10);
+		moveto(0,10);
+		
+		lineto(0,100);
+		
+		lineto(100,100);
+		
+		setfixedregion(90,0,100,10);
+		lineto(100,10);
+		bezierto(100,0,100,0,90,0);
+		
+		setfixedregion(0,0,10,10);
+		lineto(10,0);
+		bezierto(0,0,0,0,0,10);
+		endpath();
+
+		fillandstrokepath();
+		setfixedregion(0,0,0,0);
+
+		addsubshape("NameParticipantA", "N");
+		addsubshape("DecorateParticipantA", "S");
+
+		shape NameParticipantA
+		{			
+			preferredHeight=9;
+			h_align="center";
+			if(hastag("participantARef",""))
+			{
+				print("#TAG:participantA#");
+			}
+			else
+			{
+				print("#TAG:participantARef#");
+			}
+		}
+
+		shape DecorateParticipantA
+		{
+			preferredHeight=7;
+			layouttype="leftright";
+			scalable=false;
+			v_align="CENTER";
+			h_align="CENTER";	
+			if (HasTag("participantAMultiplicity","true"))
+			{
+				addSubShape("participantMultiple");
+				addsubshape("spacer");
+			}
+		}
+	}
+	
+	shape participantB
+	{
+		preferredheight=20;
+		layouttype="border";
+		v_align="center";
+		h_align="center";
+
+		if(hasTag("initiatingParticipant","participantB"))
+		{			
+			setfillcolor(getUserFillColor());
+		}
+		else
+		{
+			setfillcolor(192,192,192);
+		}
+		
+		// Partial round rect, rendered over the bottom part
+		// of the overall shape.
+		startpath();
+		moveto(0,0);
+		
+		setfixedregion(0,90,10,100); 
+		lineto(0,90);
+		bezierto(0,100,0,100,10,100);
+		
+		setfixedregion(90,90,100,100); 
+		lineto(90,100);
+		bezierto(100,100,100,100,100,90);
+		
+		lineto(100,00);
+		
+		lineto(0,0);
+		endpath();
+		fillandstrokepath();
+		setfixedregion(0,0,0,0);
+
+		addsubshape("NameParticipantB", "N");
+		addsubshape("DecorateParticipantB", "S");
+
+		shape NameParticipantB
+		{			
+			preferredHeight=9;
+			h_align="center";
+			if(hastag("participantBRef",""))
+			{
+				print("#TAG:participantB#");
+			}
+			else
+			{
+				print("#TAG:participantBRef#");
+			}
+		}
+
+		shape DecorateParticipantB
+		{
+			preferredHeight=7;
+			layouttype="leftright";
+			scalable=false;
+			v_align="CENTER";
+			h_align="CENTER";	
+			if (HasTag("participantBMultiplicity","true"))
+			{
+				addSubShape("participantMultiple");
+				addsubshape("spacer");
+			}
+		}
+	}
+	
+	shape participantC
+	{
+		preferredheight=20;
+		layouttype="border";
+		v_align="center";
+		h_align="center";
+		
+		if(hasTag("initiatingParticipant","participantC"))
+		{			
+			setfillcolor(getUserFillColor());
+		}
+		else
+		{
+			setfillcolor(192,192,192);
+		}
+		rectangle(0,0,100,100);
+		
+		addsubshape("NameParticipantC", "N");
+		addsubshape("DecorateParticipantC", "S");
+
+		shape NameParticipantC
+		{			
+			preferredHeight=9;
+			h_align="center";
+			if(hastag("participantCRef",""))
+			{
+				print("#TAG:participantC#");
+			}
+			else
+			{
+				print("#TAG:participantCRef#");
+			}
+		}
+
+		shape DecorateParticipantC
+		{
+			preferredHeight=7;
+			layouttype="leftright";
+			scalable=false;
+			v_align="CENTER";
+			h_align="CENTER";	
+			if (HasTag("participantCMultiplicity","true"))
+			{
+				addSubShape("participantMultiple");
+				addsubshape("spacer");
+			}
+		}
+	}
+	
+	shape participantD
+	{
+		preferredheight=20;
+		layouttype="border";
+		v_align="center";
+		h_align="center";
+		
+		if(hasTag("initiatingParticipant","participantD"))
+		{			
+			setfillcolor(getUserFillColor());
+		}
+		else
+		{
+			setfillcolor(192,192,192);
+		}
+		rectangle(0,0,100,100);
+		
+		addsubshape("NameParticipantD", "N");
+		addsubshape("DecorateParticipantD", "S");
+
+		shape NameParticipantD
+		{			
+			preferredHeight=9;
+			h_align="center";
+			if(hastag("participantDRef",""))
+			{
+				print("#TAG:participantD#");
+			}
+			else
+			{
+				print("#TAG:participantDRef#");
+			}
+		}
+
+		shape DecorateParticipantD
+		{
+			preferredHeight=7;
+			layouttype="leftright";
+			scalable=false;
+			v_align="CENTER";
+			h_align="CENTER";	
+			if (HasTag("participantDMultiplicity","true"))
+			{
+				addSubShape("participantMultiple");
+				addsubshape("spacer");
+			}
+		}
+	}
+	
+	shape participantMultiple
+	{
+		preferredWidth=10;
+		preferredHeight=7;
+		setfillcolor(getuserbordercolor());		
+		startpath();
+		rectangle(10,0,20,100);
+		endpath();
+		fillandstrokepath();
+		startpath();
+		rectangle(45,0,55,100);
+		endpath();
+		fillandstrokepath();
+		startpath();
+		rectangle(80,0,90,100);
+		endpath();
+		fillandstrokepath();
+	}		
+	shape spacer
+	{
+		preferredWidth=2;
+	}
+	
+}

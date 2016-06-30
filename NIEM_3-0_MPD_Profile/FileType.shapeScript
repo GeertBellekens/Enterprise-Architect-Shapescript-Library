@@ -1,0 +1,5 @@
+label middlebottomlabel
+{
+	// because we don't want to see the «use» keyword
+	print("«#stereotype#»");
+}

@@ -1,0 +1,29 @@
+shape main
+{
+	noshadow=true;
+	defsize(70,90);
+	startpath();
+	moveto(50,100);
+	lineto(0,75);
+	lineto(25,75);
+	lineto(25,0);
+	lineto(75,0);
+	lineto(75,75);
+	lineto(100,75);
+	lineto(50,100);
+	endpath();
+	if(hastag("fill","true"))
+		fillandstrokepath();
+	else
+		strokepath();
+}
+
+shape label
+{
+	setorigin("SW",0,0);
+	if(hastag("nameVisible","true"))
+	{
+		print("#NAME#");
+	}
+}
+

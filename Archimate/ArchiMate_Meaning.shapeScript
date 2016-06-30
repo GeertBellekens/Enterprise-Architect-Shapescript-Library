@@ -1,0 +1,53 @@
+// ArchiMate_Meaning, 17/06/2010
+
+shape main
+{
+	layouttype="border";
+	defsize(111,87);
+	
+	addsubshape("padding","n");
+	addsubshape("padding","s");
+	addsubshape("padding","e");
+	addsubshape("padding","w");
+	addsubshape("cloud","center");
+	
+	shape padding
+	{
+		preferredwidth=10;
+		preferredheight=8;
+	}
+	
+	shape cloud
+	{
+		layouttype="border";
+		h_align="center";
+		v_align="center";
+		
+		startcloudpath();
+		rectangle(0,0,100,100);
+		endpath();
+		fillandstrokepath();
+		
+		addsubshape("name","n");
+		
+		shape name
+		{
+			v_align="center";
+			h_align="center";
+			preferredheight=70;
+			print("#name#");
+		}
+	}
+}
+
+decoration composite
+{
+	orientation="SE";
+	if(hasproperty("iscomposite","true"))
+	{
+		ellipse(0,40,40,60);
+		ellipse(60,40,100,60);
+		moveto(30,50);
+		lineto(70,50);
+	}
+}

@@ -1,0 +1,17 @@
+// DT_Target, 24/10/2008
+
+shape main
+{
+	noshadow=true;
+	defsize(30,30);
+	setpenwidth(5);
+	startpath();
+	ellipse(0,0,100,100);
+	endpath();
+	strokepath();
+	setfillcolor(getuserbordercolor());
+	startpath();
+	ellipse(30,30,70,70);
+	endpath();
+	fillandstrokepath();
+}

@@ -1,0 +1,334 @@
+//2/5/2010 BPMN2.0 Pool
+
+shape main
+{
+	layouttype="border";
+	noshadow="true";
+	if(hasTag("blackBoxPool","false"))
+	{
+		drawnativeshape();
+		if(hastag("participantMultiplicity","false"))
+		{
+			addsubshape("padding","S");
+
+			shape padding
+			{
+				preferredHeight=30;
+				preferredWidth=30;
+			}
+			return;
+		}	
+		else
+		{	
+			addsubshape("base","S");
+			addsubshape("padding","N");
+			addsubshape("padding","W");
+			addsubshape("padding","E");
+
+			shape padding
+			{
+				preferredHeight=40;
+				preferredWidth=40;
+			}
+			shape base
+			{
+				layouttype="border";
+				preferredHeight=15;
+		
+				addsubshape("null","N");
+				addsubshape("null","S");
+				addsubshape("baseshapes","CENTER");
+		
+				shape null
+				{
+					preferredHeight=3;
+				}
+				shape baseshapes
+				{
+					layouttype="leftright";
+					scalable=false;
+					v_align="CENTER";
+					h_align="CENTER";
+						
+					addsubshape("spacer");
+					addsubshape("multiple");
+					addsubshape("spacer");
+						
+					shape spacer
+					{
+						preferredWidth=2;
+					}
+					shape multiple
+					{
+						preferredWidth=15;
+						preferredHeight=15;
+						setfillcolor(getuserbordercolor());
+						startpath();
+						rectangle(10,0,25,100);
+						endpath();
+						fillandstrokepath();
+						startpath();
+						rectangle(47,0,58,100);
+						endpath();
+						fillandstrokepath();
+						startpath();
+						rectangle(80,0,95,100);
+						endpath();
+						fillandstrokepath();
+					}
+				}
+			}
+		}
+	}
+	if(hastag("blackBoxPool","true"))
+	{	
+		rectangle(0,0,100,100);
+		if(hasproperty("Partition","Horizontal"))
+		{
+			defsize(370,175);
+			if(hastag("participantMultiplicity","false"))
+			{
+				addsubshape("section","N");
+				addsubshape("padding","W");
+				addsubshape("padding","E");
+				addsubshape("padding","S");
+
+				shape section
+				{
+					layouttype="border";
+					preferredHeight=28;
+					rectangle(0,0,100,100);
+					addsubshape("pad","N");
+					addsubshape("pad","W");
+					addsubshape("pad","E");
+					addsubshape("pad","S");
+					addsubshape("name","CENTER");			
+					shape pad
+					{
+						preferredHeight=8;
+						preferredWidth=8;
+					}
+					shape name
+					{
+						h_align = "center";
+						Printwrapped("#NAME#");
+					}		
+				}
+				shape padding
+				{
+					preferredHeight=30;
+					preferredWidth=30;
+				}
+				return;
+			}
+			else
+			{	
+				addsubshape("base","S");
+				addsubshape("section","N");
+				addsubshape("padding","W");
+				addsubshape("padding","E");
+
+				shape section
+				{
+					layouttype="border";
+					preferredHeight=28;
+					rectangle(0,0,100,100);
+					addsubshape("pad","N");
+					addsubshape("pad","W");
+					addsubshape("pad","E");
+					addsubshape("pad","S");
+					addsubshape("name","CENTER");
+					
+					shape pad
+					{
+						preferredHeight=8;
+						preferredWidth=8;
+					}
+					shape name
+					{
+						h_align = "center";
+						Printwrapped("#NAME#");
+					}	
+				}
+				shape padding
+				{
+					preferredHeight=40;
+					preferredWidth=40;
+				}
+				shape base
+				{
+					layouttype="border";
+					preferredHeight=15;
+		
+					addsubshape("null","N");
+					addsubshape("null","S");
+					addsubshape("baseshapes","CENTER");
+		
+					shape null
+					{
+						preferredHeight=3;
+					}
+					shape baseshapes
+					{
+						layouttype="leftright";
+						scalable=false;
+						v_align="CENTER";
+						h_align="CENTER";
+						
+						addsubshape("spacer");
+						addSubShape("multiple");
+						addsubshape("spacer");
+						
+						shape spacer
+						{
+							preferredWidth=2;
+						}
+						shape multiple
+						{
+							preferredWidth=15;
+							preferredHeight=15;
+							setfillcolor(getuserbordercolor());
+							startpath();
+							rectangle(10,0,25,100);
+							endpath();
+							fillandstrokepath();
+							startpath();
+							rectangle(47,0,58,100);
+							endpath();
+							fillandstrokepath();
+							startpath();
+							rectangle(80,0,95,100);
+							endpath();
+							fillandstrokepath();
+						}
+					}
+				}
+			}
+			return;
+		}
+		if(hasproperty("partition","vertical"))
+		{
+			defsize (175,370);
+			if(hastag("participantMultiplicity","false"))
+			{
+				addsubshape("section","N");
+				addsubshape("padding","W");
+				addsubshape("padding","E");
+				addsubshape("padding","S");
+
+				shape section
+				{
+					layouttype="border";
+					preferredHeight=28;
+					rectangle(0,0,100,100);
+					addsubshape("pad","N");
+					addsubshape("pad","W");
+					addsubshape("pad","E");
+					addsubshape("pad","S");
+					addsubshape("name","CENTER");			
+					shape pad
+					{
+						preferredHeight=8;
+						preferredWidth=8;
+					}
+					shape name
+					{
+						h_align = "center";
+						Printwrapped("#NAME#");
+					}		
+				}
+				shape padding
+				{
+					preferredHeight=30;
+					preferredWidth=30;
+				}
+				return;
+			}
+			else
+			{	
+				addsubshape("base","S");
+				addsubshape("section","N");
+				addsubshape("padding","W");
+				addsubshape("padding","E");
+
+				shape section
+				{
+					layouttype="border";
+					preferredHeight=28;
+					rectangle(0,0,100,100);
+					addsubshape("pad","N");
+					addsubshape("pad","W");
+					addsubshape("pad","E");
+					addsubshape("pad","S");
+					addsubshape("name","CENTER");
+					
+					shape pad
+					{
+						preferredHeight=8;
+						preferredWidth=8;
+					}
+					shape name
+					{
+						h_align = "center";
+						Printwrapped("#NAME#");
+					}	
+				}
+				shape padding
+				{
+					preferredHeight=40;
+					preferredWidth=40;
+				}
+				shape base
+				{
+					layouttype="border";
+					preferredHeight=15;
+		
+					addsubshape("null","N");
+					addsubshape("null","S");
+					addsubshape("baseshapes","CENTER");
+		
+					shape null
+					{
+						preferredHeight=3;
+					}
+					shape baseshapes
+					{
+						layouttype="leftright";
+						scalable=false;
+						v_align="CENTER";
+						h_align="CENTER";
+						
+						addsubshape("spacer");
+						addSubShape("multiple");
+						addsubshape("spacer");
+						
+						shape spacer
+						{
+							preferredWidth=2;
+						}
+						shape multiple
+						{
+							preferredWidth=15;
+							preferredHeight=15;
+							setfillcolor(getuserbordercolor());
+							startpath();
+							rectangle(10,0,25,100);
+							endpath();
+							fillandstrokepath();
+							startpath();
+							rectangle(47,0,58,100);
+							endpath();
+							fillandstrokepath();
+							startpath();
+							rectangle(80,0,95,100);
+							endpath();
+							fillandstrokepath();
+						}
+					}
+				}
+				
+			}
+			return;
+		}
+	}
+}

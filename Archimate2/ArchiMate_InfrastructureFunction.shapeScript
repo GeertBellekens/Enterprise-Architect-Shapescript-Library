@@ -1,0 +1,142 @@
+shape main
+{
+	layouttype="border";
+	
+	if(hasproperty("rectanglenotation","0"))
+	{
+		if(hastag("rotation","right"))
+		{
+			defsize(75,70);
+			startpath();
+			moveto(80,0);
+			lineto(100,50);
+			lineto(80,100);
+			lineto(0,100);
+			lineto(20,50);
+			lineto(0,0);
+			lineto(80,0);
+			endpath();
+			fillandstrokepath();
+		}
+		else if(hastag("rotation","left"))
+		{
+			defsize(75,70);
+			startpath();
+			moveto(20,0);
+			lineto(0,50);
+			lineto(20,100);
+			lineto(100,100);
+			lineto(80,50);
+			lineto(100,0);
+			lineto(20,0);
+			endpath();
+			fillandstrokepath();
+		}
+		else if(hastag("rotation","down"))
+		{
+			defsize(70,75);
+			startpath();
+			moveto(0,80);
+			lineto(50,100);
+			lineto(100,80);
+			lineto(100,0);
+			lineto(50,20);
+			lineto(0,0);
+			lineto(0,80);
+			endpath();
+			fillandstrokepath();
+		}
+		else	// default = up
+		{
+			defsize(70,75);
+			startpath();
+			moveto(0,20);
+			lineto(50,0);
+			lineto(100,20);
+			lineto(100,100);
+			lineto(50,80);
+			lineto(0,100);
+			lineto(0,20);
+			endpath();
+			fillandstrokepath();
+		}
+	}
+	else
+	{
+		defsize(105,70);
+		roundrect(0,0,100,100,20,20);
+		addsubshape("padding","n");
+		addsubshape("name","center");
+		
+		shape padding
+		{
+			preferredheight=20;
+		}
+		
+		shape name
+		{
+			h_align="center";
+			print("#name#");
+		}
+	}
+}
+
+shape label
+{
+	setorigin("sw",0,0);
+
+	if(hasproperty("rectanglenotation","0"))
+	{
+		print("#name#");
+	}
+}
+
+decoration function
+{
+	orientation="ne";
+	
+	if(hasproperty("rectanglenotation","0"))
+	{
+	}
+	else
+	{
+		if(hastag("showdecoration","true"))
+		{
+			moveto(0,20);
+			lineto(40,0);
+			lineto(80,20);
+			lineto(80,100);
+			lineto(40,80);
+			lineto(0,100);
+			lineto(0,20);
+		}
+	}
+}
+
+decoration atomic
+{
+	orientation="nw";
+	
+	if(hastag("atomic","true"))
+	{
+		ellipse(0,0,100,100);
+		moveto(20,80);
+		lineto(50,20);
+		lineto(80,80);
+		moveto(35,50);
+		lineto(65,50);
+	}	
+}
+
+decoration composite
+{
+	orientation="SE";
+	if(hasproperty("iscomposite","true"))
+	{
+		ellipse(0,40,40,60);
+		ellipse(60,40,100,60);
+		moveto(30,50);
+		lineto(70,50);
+	}
+}
+

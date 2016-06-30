@@ -1,0 +1,36 @@
+shape main
+{
+	layouttype="border";
+	editablefield="name";
+	defsize(100,80);
+	setlinestyle("solid");
+	startCloudPath(25,10,0);
+	rectangle(10,10,90,85);
+	endpath();
+	fillandstrokepath();
+	
+	setfillcolor(192,192,192);
+	setlinestyle("dash");
+	rectangle(15,20,55,60);
+	
+	addsubshape("panel","s");
+	
+	shape panel
+	{
+		layouttype="border";
+		addsubshape("padding","n");
+		addsubshape("name","center");
+		
+		shape name
+		{
+			v_align="top";
+			h_align="center";
+			printwrapped("#name#");
+		}
+		
+		shape padding
+		{
+			preferredheight=12;
+		}
+	}
+}

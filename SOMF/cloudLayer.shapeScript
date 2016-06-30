@@ -1,0 +1,111 @@
+shape main
+{
+	layouttype="border";
+	v_align="center";
+	h_align="center";
+	defsize(240,80);
+	setlinestyle("solid");
+	setpenwidth(1);
+	rectangle(0,0,100,100);
+	moveto(10,90);
+	lineto(90,90);
+	printwrapped("#name#");
+	
+	addsubshape("cloud","e");
+	addsubshape("triangles","w");
+	
+	shape cloud
+	{
+		layouttype="border";
+		preferredwidth=50;
+		preferredheight=25;
+		scalable="false";
+		
+		setfillcolor(255,255,255);
+		startcloudpath(20,10,0);
+		rectangle(0,12,40,32);
+		endpath();
+		fillandstrokepath();
+	}
+	
+	shape triangles
+	{
+		layouttype="border";
+		preferredwidth=30;
+		if(hastag("CloudType","Public"))
+		{
+			addsubshape("PU", "w");
+		}
+		else if(hastag("CloudType","Private"))
+		{
+			addsubshape("PR", "w");
+		}
+		else if(hastag("CloudType","Community"))
+		{
+			addsubshape("CO", "w");
+		}
+		else if(hastag("CloudType","Hybrid"))
+		{
+			addsubshape("HY", "w");
+		}
+		else
+		{
+			addsubshape("CU", "w");
+		}
+	}
+	
+	shape PU
+	{
+		v_align="top";
+		h_align="center";
+		scalable="false";
+		preferredheight=100;
+		preferredwidth=100;
+		polygon(14,8,3,24,90.0);
+		print("PU");
+	}
+	
+	shape PR
+	{
+		v_align="top";
+		h_align="center";
+		scalable="false";
+		preferredheight=100;
+		preferredwidth=100;
+		polygon(14,8,3,24,90.0);
+		print("PR");
+	}
+	
+	shape CO
+	{
+		v_align="top";
+		h_align="center";
+		scalable="false";
+		preferredheight=100;
+		preferredwidth=100;
+		polygon(14,8,3,24,90.0);
+		print("CO");
+	}
+	
+	shape HY
+	{
+		v_align="top";
+		h_align="center";
+		scalable="false";
+		preferredheight=100;
+		preferredwidth=100;
+		polygon(14,8,3,24,90.0);
+		print("HY");
+	}
+	
+	shape CU
+	{
+		v_align="top";
+		h_align="center";
+		scalable="false";
+		preferredheight=100;
+		preferredwidth=100;
+		polygon(14,8,3,24,90.0);
+		print("");
+	}
+}

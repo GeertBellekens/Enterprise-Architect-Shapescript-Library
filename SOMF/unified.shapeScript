@@ -1,0 +1,26 @@
+shape main
+{
+	noshadow=true;
+	setfixedregion(56,-10,84,10);
+	moveto(0,0);
+	lineto(56,0);
+	moveto(84,0);
+	lineto(100,0);
+	startpath();
+	moveto(56,0);
+	lineto(68,-10);
+	lineto(70,-6);
+	lineto(72,-10);
+	lineto(84,0);
+	lineto(72,10);
+	lineto(70,6);
+	lineto(68,10);
+	lineto(56,0);
+	endpath();
+	strokepath();
+}
+
+label middlebottomlabel
+{
+	print("");
+}
