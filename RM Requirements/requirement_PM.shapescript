@@ -1,0 +1,59 @@
+shape main
+{
+ layouttype = "border";
+ h_align = "left";
+ v_align = "center";
+ DefSize(150,35);
+ Addsubshape("borderBlock","W");
+
+ SetFillColor(GetDefaultFillColor());
+ SetPenColor(GetDefaultFillColor());	
+ AddSubShape("nameCompartment","CENTER");	
+ 
+shape borderBlock
+{
+	layouttype = "leftright";
+	preferredWidth=30;
+	SetFillColor(GetStatusColor());
+	SetPenColor(GetUserBorderColor());	
+	rectangle(0,0,100,100);
+	AddSubShape("P",35,50,10,25);
+	AddSubShape("M",35,50,20,25);
+	shape M
+	{
+		DefSize(20,40);
+		setpencolor(0,0,0);
+		SetPenWidth(1);
+		//top start left bottom
+		moveto(2,98);
+		lineto(2,2);
+		lineto(50,98);
+		lineto(98,2);
+		lineto(98,98);
+		
+	}
+	shape P
+	{
+		SetPenWidth(1);
+		setpencolor(0,0,0);
+		//belly
+		moveto(2,48);
+		lineto(57,48);
+		arcto(24,2,89,48,57,48,57,2);
+		lineto(2,2);
+		//left vertical
+		lineto(2,98);
+	}
+}
+shape nameCompartment
+{
+	h_align = "center";
+	v_align = "center";
+	editablefield = "name";
+	SetPenColor(GetUserBorderColor());
+	Rectangle(0,0,100,100);
+	SetFontColor(0,0,0);
+	println("#name#");
+}
+
+}
