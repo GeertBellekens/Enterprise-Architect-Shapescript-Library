@@ -1,0 +1,47 @@
+shape main
+{
+
+	DefSize(130,75);
+	AddSubShape("process",100,100);
+	if (HasProperty("stereotypehidden","true"))
+	{
+		addSubShape("name",100,10,0,-90);
+	}else
+	{
+		addSubShape("stereotype",100,10,0,-95);
+		addSubShape("name",100,10,0,-90);
+	}
+	
+shape process
+{
+
+
+	StartPath();
+	lineto(85,0);
+	lineto(100,50);
+	lineto(85,100);
+	lineto(0,100);
+	lineto(15,50);
+	lineto(0,0);
+	endpath();
+	FillAndStrokePath();
+
+}
+shape name
+{
+	h_align = "center";
+	v_align = "TOP";
+	editablefield = "name";
+	PrintWrapped("#name#");
+}
+
+shape stereotype
+{
+	h_align = "center";
+	v_align = "TOP";
+	editablefield = "stereotype";
+	println("«#stereotype#»");
+}
+		
+
+}

@@ -161,7 +161,7 @@ shape borderBlock
 }
 shape nameCompartment
 {
-	h_align = "center";
+	h_align = "left";
 	v_align = "center";
 	editablefield = "name";
 	SetPenColor(GetUserBorderColor());
