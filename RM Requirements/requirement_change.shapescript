@@ -17,13 +17,12 @@ shape borderBlock
 	SetFillColor(GetStatusColor());
 	SetPenColor(GetUserBorderColor());	
 	rectangle(0,0,100,100);
-	AddSubShape("l_c",10,40,7,30);
-	AddSubShape("l_o",10,40,12,30);
-	AddSubShape("l_n",11,40,16,30);
-	AddSubShape("l_t",10,55,19,15);
-	AddSubShape("l_r",10,40,24,30);
-	AddSubShape("l_o",10,40,27,30);
-	AddSubShape("l_l",10,55,26,15);
+	AddSubShape("l_c",11,40,7,30);
+	AddSubShape("l_h",11,55,13,15);
+	AddSubShape("l_a",11,40,19,30);
+	AddSubShape("l_n",11,40,23,30);
+	AddSubShape("l_g",10,55,29,30);
+	AddSubShape("l_e",10,40,32,30);
 	shape l_l
 	{
 		setpencolor(0,0,0);
@@ -32,18 +31,29 @@ shape borderBlock
 		moveto(50,2);
 		lineto(50,98);
 	}
+	shape l_h
+	{
+		setpencolor(0,0,0);
+		SetPenWidth(1);
+		//start bottom right
+		moveto(98,98);
+		lineto(98,60);
+		//arc
+		arcto(2,33,98,87,98,60,2,60);
+		//left leg
+		moveto(2,2);
+		lineto(2,98);
+	}
 	shape l_t
 	{
 		setpencolor(0,0,0);
 		SetPenWidth(1);
 		//vertical
-		moveto(50,2);
-		lineto(50,80);
-		//bottom arc
-		arcto(50,62,100,98,50,80,86,94);
-		//cross the t
-		moveto(28,30);
-		lineto(85,30);
+		moveto(60,98);
+		arcto(50,68,71,98,60,98,50,88);
+		lineto(50,13);
+		moveto(25,32);
+		lineto(70,32);
 	}
 	shape l_y
 	{

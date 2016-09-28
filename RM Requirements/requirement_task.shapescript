@@ -13,25 +13,14 @@ shape main
 shape borderBlock
 {
 	layouttype = "leftright";
-	preferredWidth=35;
+	preferredWidth=30;
 	SetFillColor(GetStatusColor());
 	SetPenColor(GetUserBorderColor());	
 	rectangle(0,0,100,100);
-	AddSubShape("l_c",10,40,7,30);
-	AddSubShape("l_o",10,40,12,30);
-	AddSubShape("l_n",11,40,16,30);
-	AddSubShape("l_t",10,55,19,15);
-	AddSubShape("l_r",10,40,24,30);
-	AddSubShape("l_o",10,40,27,30);
-	AddSubShape("l_l",10,55,26,15);
-	shape l_l
-	{
-		setpencolor(0,0,0);
-		SetPenWidth(1);
-		//vertical
-		moveto(50,2);
-		lineto(50,98);
-	}
+	AddSubShape("l_t",18,55,5,15);
+	AddSubShape("l_a",18,40,10,30);
+	AddSubShape("l_s",18,40,17,30);
+	AddSubShape("l_k",18,53,22,17);
 	shape l_t
 	{
 		setpencolor(0,0,0);
@@ -45,38 +34,6 @@ shape borderBlock
 		moveto(28,30);
 		lineto(85,30);
 	}
-	shape l_y
-	{
-		setpencolor(0,0,0);
-		SetPenWidth(1);
-		//vertical
-		moveto(2,2);
-		lineto(50,65);
-		moveto(98,2);
-		lineto(29,98);
-		lineto(11,98);
-	}
-	shape l_i
-	{
-		setpencolor(0,0,0);
-		SetPenWidth(1);
-		//dot
-		moveto(50,2);
-		lineto(50,8);
-		//vertical line
-		moveto(50,29);
-		lineto(50,98);
-	}	
-	shape l_p
-	{
-		setpencolor(0,0,0);
-		SetPenWidth(1);
-		//Top arc
-		arc(4,2,98,73,8,60,3,24);
-		//left vertical
-		moveto(2,2);
-		lineto(2,98);
-	}	
 	shape l_a
 	{
 		DefSize(15,20);
@@ -103,6 +60,43 @@ shape borderBlock
 		moveto(85,22);
 		arcto(2,2,98,98,85,22,91,62);
 	}
+	shape l_i
+	{
+		setpencolor(0,0,0);
+		SetPenWidth(1);
+		//dot
+		moveto(50,2);
+		lineto(50,8);
+		//vertical line
+		moveto(50,29);
+		lineto(50,98);
+	}
+	shape l_k
+	{
+		setpencolor(0,0,0);
+		SetPenWidth(1);
+		//left vertical
+		moveto(2,2);
+		lineto(2,98);
+		//upper diagonal
+		moveto(2,65);
+		lineto(88,28);
+		//lower diagonal
+		moveto(98,98);
+		lineto(39,53);
+		
+	}		
+	shape l_s
+	{
+		setpencolor(0,0,0);
+		SetPenWidth(1);
+		//bottom arc
+		moveto(2,78);
+		arcto(2,48,98,98,10,85,50,48);
+		//top arc
+		moveto(88,23);
+		arcto(7,2,93,48,93,25,50,48);
+	}	
 	shape l_e
 	{
 		setpencolor(0,0,0);
@@ -112,21 +106,6 @@ shape borderBlock
 		lineto(98,50);
 		//arc
 		arcto(2,2,98,98,98,49,93,72);
-	}
-	shape l_g
-	{
-		DefSize(20,40);
-		setpencolor(0,0,0);
-		SetPenWidth(1);
-		//bottom arc
-		moveto(2,78);
-		arcto(2,49,98,98,6,81,98,73);
-		//right vertical
-		lineto(98,2);
-		//middle arc
-		moveto(98,24);
-		//top arc
-		arcto(2,2,100,69,98,24,98,49);
 	}
 	shape l_o
 	{
