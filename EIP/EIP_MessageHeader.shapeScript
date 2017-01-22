@@ -1,0 +1,19 @@
+// MDG Technology for EIP
+// EIP_MessageHeader
+// www.bobovo.eu
+
+shape main
+{
+	noshadow=true;
+	
+	DefSize(20,20);
+
+	SetPenWidth(2);
+	setfillcolor(192,192,192); // (R,G,B)
+	ellipse(0,0,100,100);
+}
+
+shape label
+{
+
+}

@@ -1,0 +1,63 @@
+// MDG Technology for EIP
+// EIP_DynamicRouter
+// www.bobovo.eu
+
+shape main
+{
+	rotatable = true;
+	
+	SetLineStyle("solid");
+	
+	SetPenWidth(1);
+	rectangle(0,0,100,100);  // (x1,y1,x2,y2)
+
+	SetPenWidth(3);
+	
+	setfillcolor(0,0,0); // (R,G,B)
+	ellipse(33,48,37,53);
+	
+	SetPenWidth(2);
+	MoveTo(10,50);
+	LineTo(35,50);
+	
+	SetPenWidth(3);
+	ellipse(63,48,67,53);
+	
+	SetPenWidth(2);
+	MoveTo(65,50);
+	LineTo(90,50);
+	
+	SetPenWidth(3);
+	ellipse(63,23,67,28);
+	
+	SetPenWidth(2);
+	MoveTo(65,25);
+	LineTo(90,25);
+	
+	SetPenWidth(3);
+	ellipse(63,73,67,78);
+	
+	SetPenWidth(2);
+	MoveTo(65,75);
+	LineTo(90,75);
+	
+	SetPenWidth(2);
+	MoveTo(35,50);
+	LineTo(65,25);
+
+	SetPenWidth(2);
+	SetLineStyle("DASH");
+	
+	MoveTo(50,38);
+	LineTo(50,100);
+	
+}
+
+shape label
+{
+	setOrigin("SW",0,0); 
+    // define the text for the label
+	println("#name#");
+}
+
+

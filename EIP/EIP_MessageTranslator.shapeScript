@@ -1,0 +1,29 @@
+// MDG Technology for EIP
+// EIP_MessageTranslator
+// www.bobovo.eu
+
+shape main
+{
+	SetPenWidth(1);
+	rectangle(0,0,100,100);  // (x1,y1,x2,y2)
+
+	SetPenWidth(2);
+	
+	setfillcolor(255,255,255); // (R,G,B)
+	rectangle(10,10,40,90);
+	rectangle(60,10,90,90);
+	
+	SetPenWidth(3);
+	MoveTo(30,30);
+	LineTo(70,70);
+	
+	MoveTo(30,70);
+	LineTo(70,30);
+}
+
+shape label
+{
+	setOrigin("SW",0,0); 
+    // define the text for the label
+	println("#name#");
+}

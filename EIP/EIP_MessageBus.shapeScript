@@ -1,0 +1,91 @@
+// MDG Technology for EIP
+// EIP_MessageBus
+// www.bobovo.eu
+
+shape main
+{
+	noshadow=true;
+	
+	if(HasTag("messageBusOrientation", "vertical"))
+	{
+		DefSize(30,70);
+		AddSubShape("busVertical", 100,100);
+		return;
+	}
+	
+	if(HasTag("messageBusOrientation", "horizontal"))
+	{
+		DefSize(100,30);
+		AddSubShape("busHorizontal", 100,100);
+		return;
+	}
+	
+	Shape busVertical
+	{
+		SetPenWidth(3);
+		startpath();
+
+		moveTo(0,10);
+		Lineto(0,90);
+		ArcTo(0,90,100,100,40,95,60,95);
+		Lineto(100,10);
+		endpath();
+
+		setfillcolor(192,192,192);
+		fillandstrokepath();
+		
+		setfillcolor(255,255,255);
+		Ellipse(0,5,100,15);
+		
+		SetPenColor(192,192,192);
+		setPenWidth(1);
+		startpath();
+	}
+			
+	Shape busHorizontal
+	{
+		noshadow=true;
+			
+		SetPenWidth(3);
+		startpath();
+		
+		moveTo(10,0);
+		ArcTo(5,0,15,100,10,0,10,100);
+		lineto(90,100);
+		ArcTo(85,0,95,100,90,100,90,0);
+		ArcTo(85,0,95,100,90,45,90,65);
+		ArcTo(85,0,95,100,90,100,90,0);
+
+		endpath();
+
+		setfillcolor(192,192,192);
+		fillandstrokepath();
+	}
+}
+
+shape main_20151224
+{
+	noshadow=true;
+
+	SetPenWidth(3);
+	startpath();
+		
+	moveTo(10,35);
+	ArcTo(5,35,15,65,10,35,10,65);
+	lineto(90,65);
+	ArcTo(85,35,95,65,90,65,90,35);
+	ArcTo(85,35,95,65,90,45,90,55);
+	ArcTo(85,35,95,65,90,65,90,35);
+
+	endpath();
+
+	setfillcolor(192,192,192);
+	fillandstrokepath();
+}
+
+shape label
+{
+	setOrigin("SW",0,0); 
+    // define the text for the label
+	println("#name#");
+}

@@ -1,0 +1,42 @@
+// MDG Technology for EIP
+// EIP_MessagingBridge
+// www.bobovo.eu
+
+shape main
+{
+	SetPenWidth(1);
+	rectangle(0,0,100,100);  // (x1,y1,x2,y2)
+
+	SetPenWidth(3);
+
+	MoveTo(10,75);
+	LineTo(90,75);
+	
+	MoveTo(15,85);
+	Bezierto(15,85,50,-65,85,85);
+	
+	SetPenWidth(2);
+	
+	MoveTo(30,75);
+	LineTo(30,41);
+	
+	MoveTo(40,75);
+	LineTo(40,25);
+	
+	MoveTo(50,75);
+	LineTo(50,19);
+	
+	MoveTo(60,75);
+	LineTo(60,23);
+	
+	MoveTo(70,75);
+	LineTo(70,37);
+
+}
+
+shape label
+{
+	setOrigin("SW",0,0); 
+    // define the text for the label
+	println("#name#");
+}

@@ -1,0 +1,25 @@
+// MDG Technology for EIP
+// EIP_Fail
+// www.bobovo.eu
+
+shape main
+{
+	DefSize(70,70);
+	
+	SetPenWidth(1);
+	SetPenWidth(5);
+	SetPenColor(255,0,0);
+	MoveTo(0,0);
+	LineTo(100,100);
+	
+	MoveTo(0,100);
+	LineTo(100,0);
+	
+}
+
+shape label
+{
+	setOrigin("SW",0,0); 
+    // define the text for the label
+	println("#name#");
+}

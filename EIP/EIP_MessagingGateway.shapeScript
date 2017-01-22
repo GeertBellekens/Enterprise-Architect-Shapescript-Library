@@ -1,0 +1,100 @@
+// MDG Technology for EIP
+// EIP_MessagingGateway
+// www.bobovo.eu
+
+shape main
+{
+	noshadow=true;
+	
+	SetPenWidth(1);
+	rectangle(0,0,100,100);  // (x1,y1,x2,y2)
+
+	SetPenWidth(2);
+	
+	if(HasTag("messagingGatewayType", "inBound"))
+	{
+		//
+		startpath();
+		moveto(60,10);
+		lineto(60,90);
+		lineto(80,80);
+		lineto(80,20);
+		endpath();
+	
+		setfillcolor(0,255,255);
+		fillandstrokepath();
+		
+		//
+		setfillcolor(0,255,255);
+		rectangle(35,10,55,90);
+		
+		//
+		SetPenWidth(2);
+		
+		//Arrow
+		setPenWidth(1);
+		SetPenColor(192,192,192);
+		startpath();
+
+		moveto(20,40);
+		lineto(35,50);
+		lineto(20,60);
+				
+		endpath();
+		setfillcolor(192,192,192);
+		fillandstrokepath();
+		
+		setPenWidth(2);
+		SetPenColor(192,192,192);		
+		moveto(-10,50);
+		lineto(30,50);
+		return;
+	}
+	
+	if(HasTag("messagingGatewayType", "outBound"))
+	{
+		//
+		setfillcolor(0,255,255);
+		rectangle(60,10,80,90);
+		
+		//
+		startpath();
+		moveto(35,20);
+		lineto(35,80);
+		lineto(55,90);
+		lineto(55,10);
+		endpath();
+
+		setfillcolor(0,255,255);
+		fillandstrokepath();
+		
+		//
+		SetPenWidth(2);
+		
+		//Arrow
+		setPenWidth(1);
+		SetPenColor(192,192,192);
+		startpath();
+
+		moveto(20,40);
+		lineto(35,50);
+		lineto(20,60);
+				
+		endpath();
+		setfillcolor(192,192,192);
+		fillandstrokepath();
+		
+		setPenWidth(2);
+
+		moveto(-10,50);
+		lineto(30,50);
+		return;
+	}
+}
+
+shape label
+{
+	setOrigin("SW",0,0); 
+    // define the text for the label
+	println("#name#");
+}

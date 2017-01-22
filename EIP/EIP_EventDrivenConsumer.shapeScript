@@ -1,0 +1,56 @@
+// MDG Technology for EIP
+// EIP_EventDrivenConsumer
+// www.bobovo.eu
+
+shape main
+{
+	noshadow=true;
+	
+	SetPenWidth(1);
+	rectangle(0,0,100,100);  // (x1,y1,x2,y2)
+
+	SetPenWidth(2);
+	SetPenColor(192,192,192);
+	MoveTo(-10,50);
+	LineTo(20,50);
+	
+	startpath();
+	SetPenWidth(1);
+	moveto(10,40);
+    lineto(25,50);
+    lineto(10,60);
+	endpath();
+	setfillcolor(192,192,192);
+	fillandstrokepath();
+	
+	SetPenWidth(1);
+	SetPenColor(0,0,0);
+	MoveTo(11,50);
+	LineTo(70,50);
+	
+	startpath();
+	SetPenWidth(1);
+	moveto(65,45);
+    lineto(75,50);
+    lineto(65,55);
+	endpath();
+	setfillcolor(0,0,0);
+	fillandstrokepath();
+	
+	startpath();
+	SetPenWidth(1);
+	moveto(85,40);
+    lineto(75,50);
+    lineto(85,60);
+	lineto(95,50);
+	endpath();
+	setfillcolor(0,0,0);
+	fillandstrokepath();
+}
+
+shape label
+{
+	setOrigin("SW",0,0); 
+    // define the text for the label
+	println("#name#");
+}

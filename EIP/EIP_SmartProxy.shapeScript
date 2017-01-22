@@ -1,0 +1,84 @@
+// MDG Technology for EIP
+// EIP_SmartProxy
+// www.bobovo.eu
+
+shape main
+{
+	SetPenWidth(1);
+	rectangle(0,0,100,100);  // (x1,y1,x2,y2)
+
+	SetPenWidth(2);
+
+	MoveTo(10,10);
+	LineTo(90,10);
+
+	moveto(50,10);
+    lineto(50,29);
+	
+	startpath();
+	SetPenWidth(1);
+	moveto(55,20);
+    lineto(50,30);
+    lineto(45,20);
+	endpath();
+	
+	setfillcolor(0,0,0);
+	fillandstrokepath();
+
+	SetPenWidth(1);
+	setfillcolor(0,0,0); // (R,G,B)
+	ellipse(47,7,53,13);
+	
+	SetPenWidth(2);
+	
+	moveto(10,50);
+    lineto(30,50);
+	moveto(10,70);
+    lineto(30,70);
+	moveto(70,70);
+    lineto(90,70);	
+	moveto(10,90);
+    lineto(30,90);
+	moveto(70,70);
+    lineto(30,50);
+	
+	//
+	SetPenWidth(1);
+	moveto(50,33);
+    lineto(50,36);
+	moveto(50,39);
+    lineto(50,42);
+	moveto(50,45);
+    lineto(50,48);
+	moveto(50,51);
+    lineto(50,54);
+	moveto(50,57);
+    lineto(50,60);
+	
+	//
+	SetPenWidth(1);
+	setfillcolor(0,0,0); // (R,G,B)
+	ellipse(27,47,33,53);
+	
+	//
+	SetPenWidth(1);
+	setfillcolor(0,0,0); // (R,G,B)
+	ellipse(27,67,33,73);
+	
+	//
+	SetPenWidth(1);
+	setfillcolor(0,0,0); // (R,G,B)
+	ellipse(27,87,33,93);
+	
+	//
+	SetPenWidth(1);
+	setfillcolor(0,0,0); // (R,G,B)
+	ellipse(67,67,73,73);
+}
+
+shape label
+{
+	setOrigin("SW",0,0); 
+    // define the text for the label
+	println("#name#");
+}

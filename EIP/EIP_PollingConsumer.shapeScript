@@ -1,0 +1,60 @@
+// MDG Technology for EIP
+// EIP_PollingConsumer
+// www.bobovo.eu
+
+shape main
+{
+	noshadow=true;
+	
+	SetPenWidth(1);
+	rectangle(0,0,100,100);  // (x1,y1,x2,y2)
+
+	SetPenWidth(2);
+	SetPenColor(192,192,192);
+	MoveTo(-10,50);
+	LineTo(24,50);
+	
+	//
+	startpath();
+	SetPenWidth(1);
+	moveto(10,40);
+    lineto(25,50);
+    lineto(10,60);
+	endpath();
+	setfillcolor(192,192,192);
+	fillandstrokepath();
+	
+	//Cyrcle
+	SetPenWidth(1);
+	SetPenColor(0,0,0);
+	Arc(22,20,68,80,18,60,18,40);
+	
+	//
+	startpath();
+	SetPenWidth(1);
+	MoveTo(22,43);
+	LineTo(23,30);
+	LineTo(29,35);
+	LineTo(22,43);
+	endpath();
+	setfillcolor(0,0,0);
+	fillandstrokepath();
+	
+	//
+	startpath();
+	SetPenWidth(1);
+	moveto(85,40);
+    lineto(75,50);
+    lineto(85,60);
+	lineto(95,50);
+	endpath();
+	setfillcolor(0,0,0);
+	fillandstrokepath();
+}
+
+shape label
+{
+	setOrigin("SW",0,0); 
+    // define the text for the label
+	println("#name#");
+}

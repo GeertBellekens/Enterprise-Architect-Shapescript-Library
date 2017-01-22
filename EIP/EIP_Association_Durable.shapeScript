@@ -1,0 +1,95 @@
+// MDG Technology for EIP
+// EIP_Association_Durable
+// www.bobovo.eu
+
+shape main
+{
+	// draw a dashed line
+	noshadow=true;
+	
+	//setfixedregion(0,0,0,0);
+	SetPenWidth(2);
+
+	moveto(0,0);
+	lineto(100,0);
+
+	hidelabel("MiddleBottomLabel");
+	
+	if(hasproperty("rotationdirection","up"))
+	{
+		SetFixedRegion(40,-10,60,10);
+		image("lock_16x16x32_LEFT.png",40,-10,60,10);
+	}
+
+	if(hasproperty("rotationdirection","down"))
+	{
+		SetFixedRegion(40,-10,60,10);
+		image("lock_16x16x32_LEFT.png",40,-10,60,10);
+	}
+
+	if(hasproperty("rotationdirection","left"))
+	{
+		SetFixedRegion(40,-10,60,10);
+		image("lock_16x16x32_LEFT.png",40,-10,60,10);
+	}
+
+	if(hasproperty("rotationdirection","right"))
+	{
+		SetFixedRegion(40,-10,60,10);
+		image("lock_16x16x32_LEFT.png",40,-10,60,10);
+	}
+	
+	//AddSubShape("target1",20,20,10,10);
+		
+	shape target1
+	{
+		rotatable = true;
+		noshadow=true;
+		
+		//
+		startpath();
+		SetPenWidth(2);
+		MoveTo(30,40);
+		ArcTo(30,40,70,80,30,60,70,60);
+		lineto(70,40);
+		lineto(30,40);
+		
+		SetPenWidth(2);
+		Arc(33,15,67,65,70,40,30,40);
+		
+		SetPenWidth(2);
+		MoveTo(50,50);
+		lineto(50,70);
+		endpath();
+			
+		Setfillcolor(255,255,255);
+		fillandstrokepath();
+	}
+}
+
+shape source
+{
+}
+
+shape target
+{
+	rotatable = true;
+	
+	startpath();
+
+	moveto(0,0);
+
+	lineto(16,6);
+
+	lineto(16,-6);
+
+	endpath();
+		
+	SetPenWidth(1);
+	Setfillcolor(0,0,0);
+
+	fillandstrokepath();
+	
+	//SetFixedRegion(40,-10,60,10);
+	//image("lock_16x16x32.png",40,-10,60,10);
+}

@@ -1,0 +1,88 @@
+// MDG Technology for EIP
+// EIP_InvalidMessageChannel
+// www.bobovo.eu
+
+shape main
+{
+	noshadow=true;
+	fixedAspectRatio = "true";
+		
+	SetPenWidth(2);
+	startpath();
+	
+	moveTo(10,35);
+	ArcTo(5,35,15,65,10,35,10,65);
+	lineto(90,65);
+	ArcTo(85,35,95,65,90,65,90,35);
+	ArcTo(85,35,95,65,90,45,90,65);
+	ArcTo(85,35,95,65,90,65,90,35);
+
+	endpath();
+	setfillcolor(192,192,192);
+	fillandstrokepath();
+
+	SetPenWidth(2);
+	setfillcolor(255,255,0);
+	startpath();
+	moveTo(50,70);
+	lineto(60,95);
+	lineto(40,95);
+	endpath();
+	
+	setfillcolor(255,255,0);
+	fillandstrokepath();
+}
+
+shape main_20151205
+{
+	noshadow=true;
+	fixedAspectRatio = "true";
+
+	SetPenWidth(2);
+	setfillcolor(255,255,0);
+	startpath();
+	moveTo(50,50);
+	lineto(70,90);
+	lineto(30,90);
+	endpath();
+	
+	setfillcolor(255,255,0);
+	fillandstrokepath();
+	
+	startpath();
+	SetPenWidth(1);
+	moveTo(48,60);
+	lineto(52,60);
+	lineto(50,80);
+	endpath();
+	setfillcolor(0,0,0);
+	fillandstrokepath();
+	
+	//DefSize(100,100);
+	Ellipse(48,83,52,87);
+	
+	//Arrow
+	SetPenColor(192,192,192);
+	setPenWidth(1);
+	startpath();
+
+	moveto(75,25);
+    lineto(85,30);
+    lineto(75,35);
+	
+	endpath();
+	setfillcolor(192,192,192);
+	fillandstrokepath();
+	
+	setPenWidth(2);
+	setPenColor(192,192,192);
+	moveto(85,30);
+	lineto(15,30);
+}
+
+shape label
+{
+	setOrigin("SW",0,0); 
+    // define the text for the label
+	println("#name#");
+}

@@ -1,0 +1,97 @@
+// MDG Technology for EIP
+// EIP_DurableSubscriber
+// www.bobovo.eu
+
+shape main
+{
+	noshadow=true;
+	
+	SetPenWidth(1);
+	rectangle(0,0,100,100);  // (x1,y1,x2,y2)
+	
+AddSubShape("lock",50,50,0,25);
+	
+	shape lock
+	{
+		SetPenWidth(2);
+		startpath();
+		MoveTo(30,40);
+		ArcTo(30,40,70,80,30,60,70,60);
+		lineto(70,40);
+		lineto(30,40);
+		setfillcolor(192,192,192);
+		endpath();
+		fillandstrokepath();
+		
+		SetPenWidth(2);
+		Arc(33,15,67,65,70,40,30,40);
+		
+		SetPenWidth(2);
+		MoveTo(50,50);
+		lineto(50,70);
+	}
+}
+
+
+shape main_x
+{
+	noshadow=true;
+	
+	SetPenWidth(1);
+	rectangle(0,0,100,100);  // (x1,y1,x2,y2)
+
+	SetPenWidth(2);
+	MoveTo(10,50);
+	LineTo(40,50);
+	
+	SetPenWidth(2);
+	MoveTo(40,50);
+	LineTo(40,25);
+	LineTo(50,25);
+	
+	SetPenWidth(2);
+	MoveTo(40,50);
+	LineTo(40,75);
+	LineTo(50,75);
+	
+	startpath();
+	SetPenWidth(1);
+	moveto(50,20);
+    lineto(60,25);
+    lineto(50,30);
+	endpath();
+	setfillcolor(0,0,0);
+	fillandstrokepath();
+	
+	startpath();
+	SetPenWidth(1);
+	moveto(50,70);
+    lineto(60,75);
+    lineto(50,80);
+	endpath();
+	setfillcolor(0,0,0);
+	fillandstrokepath();
+	
+	//
+	SetPenWidth(2);
+	MoveTo(70,20);
+	ArcTo(70,30,90,50,70,40,90,40);
+	lineto(90,20);
+	lineto(70,20);
+	
+	SetPenWidth(2);
+	//Arc(75,10,85,30,85,20,75,20);
+	Arc(73,8,87,32,85,20,75,20);
+	
+	SetPenWidth(2);
+	MoveTo(80,30);
+	lineto(80,40);
+	
+}
+
+shape label
+{
+	setOrigin("SW",0,0); 
+    // define the text for the label
+	println("#name#");
+}

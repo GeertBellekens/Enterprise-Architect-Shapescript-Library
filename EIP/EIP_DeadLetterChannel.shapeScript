@@ -1,0 +1,63 @@
+// MDG Technology for EIP
+// EIP_DataLetterChannel
+// www.bobovo.eu
+
+shape main
+{
+	noshadow=true;
+		
+	SetPenWidth(2);
+	startpath();
+	
+	moveTo(10,35);
+	ArcTo(5,35,15,65,10,35,10,65);
+	lineto(90,65);
+	ArcTo(85,35,95,65,90,65,90,35);
+	ArcTo(85,35,95,65,90,45,90,65);
+	ArcTo(85,35,95,65,90,65,90,35);
+
+	endpath();
+
+	setfillcolor(192,192,192);
+	fillandstrokepath();
+	
+	SetPenWidth(2);
+	setfillcolor(255,0,0);
+
+	Polygon(50,85,8,15,23);
+}
+
+shape main_20151205
+{
+	noshadow=true;
+	
+	SetPenWidth(2);
+	setfillcolor(255,0,0);
+
+	Polygon(50,70,8,20,23);
+	
+    //Arrow
+	SetPenColor(192,192,192);
+	setPenWidth(1);
+	startpath();
+
+	moveto(75,25);
+    lineto(85,30);
+    lineto(75,35);
+	
+	endpath();
+	setfillcolor(192,192,192);
+	fillandstrokepath();
+	
+	setPenWidth(2);
+	setPenColor(192,192,192);
+	moveto(85,30);
+	lineto(15,30);
+}
+
+shape label
+{
+	setOrigin("SW",0,0); 
+    // define the text for the label
+	println("#name#");
+}

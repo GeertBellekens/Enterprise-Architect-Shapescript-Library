@@ -1,0 +1,40 @@
+// MDG Technology for EIP
+// EIP_Resequencer
+// www.bobovo.eu
+
+shape main
+{
+	SetPenWidth(1);
+	rectangle(0,0,100,100);  // (x1,y1,x2,y2)
+
+	SetPenWidth(2);
+	
+	setfillcolor(255,255,255); // (R,G,B)
+	rectangle(3,30,18,50);
+	rectangle(21,20,36,40);
+	rectangle(16,60,31,80);
+	
+	rectangle(45,40,60,60);
+	rectangle(63,40,78,60);
+	rectangle(81,40,97,60);
+	
+	MoveTo(30,50);
+	LineTo(40,50);
+	
+	startpath();
+		
+	SetPenWidth(1);
+	moveto(35,45);
+    lineto(43,50);
+    lineto(35,55);
+	endpath();
+	setfillcolor(0,0,0);
+	fillandstrokepath();
+}
+
+shape label
+{
+	setOrigin("SW",0,0); 
+    // define the text for the label
+	println("#name#");
+}

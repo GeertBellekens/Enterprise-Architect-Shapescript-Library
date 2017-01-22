@@ -1,0 +1,35 @@
+// MDG Technology for EIP
+// EIP_ContentFilter
+// www.bobovo.eu
+
+shape main
+{
+	SetPenWidth(1);
+	rectangle(0,0,100,100);  // (x1,y1,x2,y2)
+
+	SetPenWidth(2);
+	
+	setfillcolor(255,255,255); // (R,G,B)
+	rectangle(10,30,40,70);
+	rectangle(75,40,90,60);
+	
+	MoveTo(45,50);
+	LineTo(60,50);
+	
+	startpath();
+		
+	SetPenWidth(1);
+	moveto(60,45);
+    lineto(71,50);
+    lineto(60,55);
+	endpath();
+	setfillcolor(0,0,0);
+	fillandstrokepath();
+}
+
+shape label
+{
+	setOrigin("SW",0,0); 
+    // define the text for the label
+	println("#name#");
+}

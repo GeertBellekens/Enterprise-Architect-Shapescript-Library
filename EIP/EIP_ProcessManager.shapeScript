@@ -1,0 +1,48 @@
+// MDG Technology for EIP
+// EIP_ProcessManager
+// www.bobovo.eu
+
+shape main
+{
+	SetPenWidth(1);
+	rectangle(0,0,100,100);  // (x1,y1,x2,y2)
+
+	SetPenWidth(2);
+	setfillcolor(255,255,255); // (R,G,B)
+	
+	rectangle(5,70,30,90);
+	rectangle(38,70,63,90);
+	rectangle(70,70,95,90);
+	
+	startpath();
+	MoveTo(50,41);
+	LineTo(63,55);
+	LineTo(50,69);
+	LineTo(37,55);
+	endpath();
+	fillandstrokepath();
+
+	ellipse(43,10,58,25);
+	
+	MoveTo(51,24);
+	LineTo(51,41);
+
+	MoveTo(63,55);
+	LineTo(82,55);
+	
+	MoveTo(82,55);
+	LineTo(82,69);
+	
+	MoveTo(18,55);
+	LineTo(37,55);
+
+	MoveTo(18,55);
+	LineTo(18,69);
+}
+
+shape label
+{
+	setOrigin("SW",0,0); 
+    // define the text for the label
+	println("#name#");
+}

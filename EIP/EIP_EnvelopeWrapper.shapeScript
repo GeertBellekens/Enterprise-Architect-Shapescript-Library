@@ -1,0 +1,51 @@
+// MDG Technology for EIP
+// EIP_EnvelopeWrapper
+// www.bobovo.eu
+
+shape main
+{
+	fixedAspectRatio = "true";
+	
+	SetPenWidth(1);
+	rectangle(0,0,100,100);  // (x1,y1,x2,y2)
+
+
+	SetPenWidth(2);
+	SetFillColor(255,255,0);
+    Rectangle(30,30,70,70);
+	
+	if(HasTag("envelopeStatus","close"))
+	{
+		MoveTo(30,30);
+		LineTo(50,50);
+		LineTo(70,30);
+	}
+	if(HasTag("envelopeStatus","open"))
+	{
+	
+		StartPath();
+		MoveTo(30,30);
+		LineTo(50,50);
+		LineTo(70,30);
+		EndPath();
+		SetFillColor(192,192,192);
+		FillAndStrokePath();
+	
+		StartPath();
+		MoveTo(30,30);
+		LineTo(50,10);
+		LineTo(70,30);
+		EndPath();
+		SetFillColor(255,255,0);
+		FillAndStrokePath();
+	}
+}
+
+shape label
+{
+	setOrigin("SW",0,0); 
+    // define the text for the label
+	println("#name#");
+}
+
+

@@ -1,0 +1,54 @@
+// MDG Technology for EIP
+// EIP_ComposedMessageProcessor
+// www.bobovo.eu
+
+shape main
+{
+	SetPenWidth(1);
+	rectangle(0,0,100,100);  // (x1,y1,x2,y2)
+
+	SetPenWidth(2);
+	
+	setfillcolor(255,255,255); // (R,G,B)
+	rectangle(5,40,20,60);
+
+	rectangle(43,40,58,60);
+	rectangle(43,10,58,30);
+	rectangle(43,70,58,90);
+	
+	rectangle(80,40,95,60);
+	
+	MoveTo(23,50);
+	LineTo(35,50);
+	
+	MoveTo(60,50);
+	LineTo(75,50);
+	
+	startpath();
+		
+	SetPenWidth(1);
+	
+	moveto(28,45);
+    lineto(39,50);
+    lineto(28,55);
+	endpath();
+	
+	setfillcolor(0,0,0);
+	fillandstrokepath();
+	
+	startpath();
+	moveto(65,45);
+    lineto(76,50);
+    lineto(65,55);
+	endpath();
+	
+	setfillcolor(0,0,0);
+	fillandstrokepath();
+}
+
+shape label
+{
+	setOrigin("SW",0,0); 
+    // define the text for the label
+	println("#name#");
+}

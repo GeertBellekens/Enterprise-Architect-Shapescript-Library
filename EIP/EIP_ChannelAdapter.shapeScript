@@ -1,0 +1,178 @@
+// MDG Technology for EIP
+// EIP_ChannelAdapter
+// www.bobovo.eu
+
+shape main
+{
+	noshadow=true;
+	
+	if(HasTag("channelAdapterType", "inBound"))
+	{
+		if(HasTag("channelAdapterViewType", "simple"))
+		{
+			DefSize(30,70);
+			SetPenWidth(2);
+			startpath();
+			moveto(0,0);
+			lineto(0,100);
+			lineto(100,80);
+			lineto(100,20);
+			endpath();
+			setfillcolor(0,255,255);
+			fillandstrokepath();
+			return;
+		}
+	}
+	
+	if(HasTag("channelAdapterType", "outBound"))
+	{
+		if(HasTag("channelAdapterViewType", "simple"))
+		{
+			DefSize(30,70);
+			SetPenWidth(2);
+			startpath();
+			moveto(0,20);
+			lineto(0,80);
+			lineto(100,100);
+			lineto(100,0);
+			endpath();
+			setfillcolor(0,255,255);
+			fillandstrokepath();
+			return;
+		}
+	}
+	
+	if(HasTag("channelAdapterType", "inBound"))
+	{
+		if(HasTag("channelAdapterViewType", "complex"))
+		{
+			DefSize(90,70);
+			SetPenWidth(1);
+			rectangle(0,0,100,100);  // (x1,y1,x2,y2)
+
+			SetPenWidth(2);
+			//
+			setfillcolor(255,255,0);
+			rectangle(1,10,20,90);
+			
+			//
+			startpath();
+			moveto(25,10);
+			lineto(25,90);
+			lineto(45,80);
+			lineto(45,20);
+			endpath();
+			setfillcolor(0,255,255);
+			fillandstrokepath();
+				
+			//
+			moveto(20,50);
+			lineto(25,50);
+			
+			//
+			SetPenWidth(2);
+			startpath();
+				
+			moveTo(75,35);
+			ArcTo(70,35,80,65,75,35,75,65);
+			lineto(99,65);
+			lineto(99,35);
+
+			endpath();
+
+			setfillcolor(192,192,192);
+			fillandstrokepath();
+			
+			//
+			SetPenWidth(2);
+			
+			//Arrow
+			setPenWidth(1);
+			setPencolor(192,192,192);
+			startpath();
+
+			moveto(54,40);
+			lineto(69,50);
+			lineto(54,60);
+					
+			endpath();
+			setfillcolor(192,192,192);
+			fillandstrokepath();
+			
+			setPenWidth(2);
+			
+			moveto(45,50);
+			lineto(69,50);
+			return;
+		}
+	}
+	
+	if(HasTag("channelAdapterType", "outBound"))
+	{
+		if(HasTag("channelAdapterViewType", "complex"))
+		{
+			DefSize(90,70);
+			SetPenWidth(1);
+			rectangle(0,0,100,100);  // (x1,y1,x2,y2)
+
+			SetPenWidth(2);
+			
+			//
+			setfillcolor(255,255,0);
+			rectangle(99,10,80,90);
+			
+			//
+			startpath();
+			moveto(75,10);
+			lineto(75,90);
+			lineto(55,80);
+			lineto(55,20);
+			endpath();
+			setfillcolor(0,255,255);
+			fillandstrokepath();
+				
+			//
+			moveto(80,50);
+			lineto(75,50);
+			
+			//Channel
+			SetPenWidth(2);
+			startpath();
+				
+			moveTo(25,65);
+			ArcTo(20,35,30,65,25,65,25,35);
+			lineto(1,35);
+			lineto(1,65);
+
+			endpath();
+			setfillcolor(192,192,192);
+			fillandstrokepath();
+			
+			//Arrow
+			setPenWidth(1);
+			setPenColor(192,192,192);
+			startPath();
+
+			moveto(39,40);
+			lineto(54,50);
+			lineto(39,60);
+					
+			endpath();
+			setfillcolor(192,192,192);
+			fillandstrokepath();
+			
+			setPenWidth(2);
+			
+			moveto(50,50);
+			lineto(30,50);
+			return;
+		}
+	}
+}
+
+shape label
+{
+	setOrigin("SW",0,0); 
+    // define the text for the label
+	println("#name#");
+}

@@ -1,0 +1,83 @@
+// MDG Technology for EIP
+// EIP_Key
+// www.bobovo.eu
+
+shape main
+{
+	noshadow=true;
+	
+	DefSize(15,10);
+	
+	AddSubShape("key",100,100);
+	
+	shape key
+	{
+		setfillcolor(0,0,0);
+		StartPath();
+		Ellipse(0,0,45,100);
+		EndPath();
+		fillandstrokepath();
+				
+		setfillcolor(255,255,255);
+		StartPath();
+		Ellipse(5,35,30,70);
+
+		EndPath();
+		fillandstrokepath();
+
+		SetPenWidth(1);
+		setfillcolor(0,0,0);
+		StartPath();
+		MoveTo(35,40);
+		LineTo (95,40);
+		LineTo (100,45);
+		LineTo (35,45);
+		EndPath();
+		fillandstrokepath();
+		
+		SetPenWidth(1);
+		setfillcolor(0,0,0);
+		StartPath();
+		MoveTo(35,50);
+		LineTo (100,50);
+		LineTo (100,55);
+		LineTo (35,55);
+		EndPath();
+		fillandstrokepath();
+		
+		SetPenWidth(1);
+		setfillcolor(0,0,0);
+		StartPath();
+		MoveTo(100,55);
+		LineTo(95,75);
+		LineTo(90,75);
+		LineTo(85,55);
+		EndPath();
+		fillandstrokepath();
+		
+		SetPenWidth(1);
+		setfillcolor(0,0,0);
+		StartPath();
+		MoveTo(80,55);
+		LineTo(75,75);
+		LineTo(70,75);
+		LineTo(65,55);
+		EndPath();
+		fillandstrokepath();
+		
+		SetPenWidth(1);
+		setfillcolor(0,0,0);
+		StartPath();
+		MoveTo(60,55);
+		LineTo(55,75);
+		LineTo(50,75);
+		LineTo(45,55);
+		EndPath();
+		fillandstrokepath();
+
+	}
+}
+
+shape label
+{
+}

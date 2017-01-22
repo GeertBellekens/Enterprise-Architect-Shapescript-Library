@@ -1,0 +1,51 @@
+// MDG Technology for EIP
+// EIP_MessageRouter
+// www.bobovo.eu
+
+shape main
+{
+	fixedAspectRatio = "true";
+	
+	SetPenWidth(1);
+	rectangle(0,0,100,100);  // (x1,y1,x2,y2)
+
+	setfillcolor(0,0,0); // (R,G,B)
+	SetPenWidth(1);
+	ellipse(32,47,38,54);
+	
+	SetPenWidth(2);
+	MoveTo(10,50);
+	LineTo(35,50);
+	
+	SetPenWidth(1);
+	ellipse(62,47,68,54);
+	
+	SetPenWidth(2);
+	MoveTo(65,50);
+	LineTo(90,50);
+	
+	SetPenWidth(1);
+	ellipse(62,22,68,29);
+	
+	SetPenWidth(2);
+	MoveTo(65,25);
+	LineTo(90,25);
+	
+	SetPenWidth(1);
+	ellipse(62,72,68,79);
+	
+	SetPenWidth(2);
+	MoveTo(65,75);
+	LineTo(90,75);
+	
+	SetPenWidth(2);
+	MoveTo(35,50);
+	LineTo(65,25);
+}
+
+shape label
+{
+	setOrigin("SW",0,0); 
+    // define the text for the label
+	println("#name#");
+}

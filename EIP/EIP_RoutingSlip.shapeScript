@@ -1,0 +1,35 @@
+// MDG Technology for EIP
+// EIP_RoutingSlip
+// www.bobovo.eu
+
+shape main
+{
+	SetPenWidth(1);
+	rectangle(0,0,100,100);  // (x1,y1,x2,y2)
+
+	SetPenWidth(2);
+	setfillcolor(255,255,255); // (R,G,B)
+	
+	rectangle(5,40,20,60);
+	rectangle(30,40,45,60);
+	rectangle(55,40,70,60);
+	rectangle(80,40,95,60);
+	
+	//SetPenColor(192,192,192);
+	MoveTo(20,50);
+	LineTo(29,50);
+	
+	MoveTo(45,50);
+	LineTo(55,50);
+	
+	MoveTo(70,50);
+	LineTo(80,50);
+
+}
+
+shape label
+{
+	setOrigin("SW",0,0); 
+    // define the text for the label
+	println("#name#");
+}

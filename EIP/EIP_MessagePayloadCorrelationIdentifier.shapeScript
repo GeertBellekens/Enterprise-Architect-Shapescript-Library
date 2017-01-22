@@ -1,0 +1,23 @@
+// MDG Technology for EIP
+// EIP_MessagePayloadCorrelationIdentifier
+// www.bobovo.eu
+
+shape main
+{
+	noshadow=true;
+	h_align = "CENTER";
+	v_align="CENTER";
+	fixedAspectRatio = "true";
+	
+	DefSize(20,20);
+
+	SetPenWidth(2);
+	Rectangle(0,0,100,100);
+
+    print("#alias#");
+
+}
+
+shape label
+{
+}

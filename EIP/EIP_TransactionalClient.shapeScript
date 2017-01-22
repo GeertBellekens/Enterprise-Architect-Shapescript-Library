@@ -1,0 +1,42 @@
+// MDG Technology for EIP
+// EIP_TransactionalClient
+// www.bobovo.eu
+
+shape main
+{
+	noshadow=true;
+	
+	SetPenWidth(1);
+	rectangle(0,0,100,100);  // (x1,y1,x2,y2)
+
+	SetPenWidth(2);
+	
+	//
+	setfillcolor(0,255,255); 
+	Ellipse(20,15,90,85);
+	
+	setfillcolor(255,255,255); // (R,G,B)
+	rectangle(60,35,80,65);
+	
+	//
+	SetPenColor(192,192,192);
+	MoveTo(-10,50);
+	LineTo(55,50);
+	
+	startpath();
+		
+	SetPenWidth(1);
+	moveto(40,40);
+    lineto(59,50);
+    lineto(40,60);
+	endpath();
+	setfillcolor(192,192,192);
+	fillandstrokepath();
+}
+
+shape label
+{
+	setOrigin("SW",0,0); 
+    // define the text for the label
+	println("#name#");
+}

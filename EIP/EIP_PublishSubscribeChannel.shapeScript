@@ -1,0 +1,57 @@
+// MDG Technology for EIP
+// EIP_PublishSubscriberChannel
+// www.bobovo.eu
+
+shape main
+{
+	noshadow=true;
+
+	SetPenColor(192,192,192);
+	setfillcolor(192,192,192);
+	setPenWidth(1);
+	startpath();
+	moveto(75,43);
+    lineto(85,50);
+    lineto(75,57);
+	endpath();
+	
+	fillandstrokepath();
+	
+	startpath();
+	moveto(75,18);
+    lineto(85,25);
+    lineto(75,32);
+	endpath();
+	
+	fillandstrokepath();
+	
+	startpath();
+	moveto(75,68);
+    lineto(85,75);
+    lineto(75,82);
+	endpath();
+	
+	fillandstrokepath();
+	
+	setPenWidth(2);
+	setPenColor(192,192,192);
+	
+	moveto(85,50);
+	lineto(10,50);
+	
+	moveto(50,25);
+	lineto(50,75);
+	
+	moveto(50,25);
+	lineto(75,25);
+	
+	moveto(50,75);
+	lineto(75,75);
+}
+
+shape label
+{
+	setOrigin("SW",0,0); 
+    // define the text for the label
+	println("#name#");
+}

@@ -1,0 +1,18 @@
+shape main
+{
+	//SetPenWidth(1);
+	//rectangle(0,0,100,100);  // (x1,y1,x2,y2)
+	
+	noshadow=true;
+	
+	DefSize(15,10);
+	
+	image("EIP_key.bmp",0,0,100,100);
+}
+
+shape label
+{
+	//setOrigin("SW",0,0); 
+    // define the text for the label
+	//println("#name#");
+}

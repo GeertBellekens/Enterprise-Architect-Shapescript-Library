@@ -1,0 +1,27 @@
+// MDG Technology for EIP
+// EIP_MessagePayloadEnvelope
+// www.bobovo.eu
+
+shape main
+{
+	noshadow=true;
+
+	//Return address
+	DefSize(40,20);
+	
+	SetPenWidth(1);
+	SetFillColor(255,255,0);
+	Rectangle(0,0,100,100);
+	
+		
+	SetPenWidth(1);
+	MoveTo(0,0);
+	LineTo(50,50);
+	LineTo(100,0);
+	
+	return;
+}
+
+shape label
+{
+}

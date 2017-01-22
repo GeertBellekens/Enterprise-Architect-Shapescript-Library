@@ -1,0 +1,46 @@
+// MDG Technology for EIP
+// EIP_Association
+// www.bobovo.eu
+
+shape main
+
+{
+// draw a dashed line
+	noshadow=true;
+	
+	SetPenWidth(2);
+	SetPenColor(192,192,192);
+
+	moveto(1,0);
+
+	lineto(99,0);
+	
+	hidelabel("MiddleBottomLabel");
+}
+
+shape source
+{
+}
+
+shape target
+{
+// draw an arrowhead at the target end
+
+	rotatable = true;
+	//Setfillcolor(0,0,0);
+	SetPenWidth(1);
+	SetPenColor(192,192,192);
+	startpath();
+
+	moveto(1,0);
+
+	lineto(17,6);
+
+	lineto(17,-6);
+
+	endpath();
+	
+	//Setfillcolor(GetUserFillColor());
+	SetFillColor(192,192,192);
+	fillandstrokepath();
+}

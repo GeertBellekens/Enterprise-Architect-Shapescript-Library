@@ -1,0 +1,25 @@
+// MDG Technology for EIP
+// EIP_MessagePayloadExpiration
+// www.bobovo.eu
+
+shape main
+{
+	noshadow=true;
+	fixedAspectRatio = "true";
+	
+	//Expiration
+	DefSize(20,20);
+		
+	SetPenWidth(2);
+	SetFillColor(255,255,255);
+	Ellipse(0,0,100,100);
+	
+	MoveTo(50,10);
+	LineTo(50,50);
+	LineTo(90,50);
+	return;
+}
+
+shape label
+{
+}

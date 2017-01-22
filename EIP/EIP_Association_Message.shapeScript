@@ -1,0 +1,21 @@
+// MDG Technology for EIP
+// EIP_Association_Message
+// www.bobovo.eu
+
+shape main
+
+{
+// draw a dashed line
+	noshadow=true;
+	moveto(0,0);
+	lineto(100,0);
+	hidelabel("MiddleBottomLabel");
+}
+
+shape source
+{
+}
+
+shape target
+{
+}
