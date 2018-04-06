@@ -1,0 +1,10 @@
+shape main
+{
+	noshadow=true;
+	lineto(100,0);
+}
+
+label middlebottomlabel
+{
+	print("");
+}

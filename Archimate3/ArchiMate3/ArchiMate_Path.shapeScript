@@ -1,0 +1,101 @@
+shape main
+{
+	layouttype="border";
+	noshadow=true;
+	defsize(90,70);
+
+	if(hasproperty("type","association"))
+	{
+		setpenwidth(2);
+		setlinestyle("DOT");
+		moveto(0,0);
+		lineto(100,0);
+	}
+	else
+	{
+		rectangle(0,0,100,100);
+		addsubshape("padding","n");
+		addsubshape("name","center");
+
+		shape padding
+		{
+			preferredheight=20;
+		}
+
+		shape name
+		{
+			h_align="center";
+			print("#name#");
+		}
+	}
+}
+
+decoration path
+{
+	orientation="ne";
+	moveto(20,30);
+	lineto(0,50);
+	lineto(20,70);
+	moveto(80,30);
+	lineto(100,50);
+	lineto(80,70);
+	moveto(0,50);
+	lineto(20,50);
+	moveto(40,50);
+	lineto(60,50);
+	moveto(80,50);
+	lineto(100,50);
+}
+
+decoration composite
+{
+	orientation="SE";
+	if(hasproperty("iscomposite","true"))
+	{
+		ellipse(0,40,40,60);
+		ellipse(60,40,100,60);
+		moveto(30,50);
+		lineto(70,50);
+	}
+}
+
+shape source
+{
+	if(hasproperty("direction","bi-directional"))
+	{
+		setpenwidth(2);
+		moveto(16,-6);
+		lineto(0,0);
+		lineto(16,6);
+	}
+	if(hasproperty("direction","destination -> source"))
+	{
+		setpenwidth(2);
+		moveto(16,-6);
+		lineto(0,0);
+		lineto(16,6);
+	}
+}
+
+shape target
+{
+	if(hasproperty("direction","bi-directional"))
+	{
+		setpenwidth(2);
+		moveto(16,-6);
+		lineto(0,0);
+		lineto(16,6);
+	}
+	if(hasproperty("direction","source -> destination"))
+	{
+		setpenwidth(2);
+		moveto(16,-6);
+		lineto(0,0);
+		lineto(16,6);
+	}
+}
+
+label middlebottomlabel
+{
+	print("");
+}

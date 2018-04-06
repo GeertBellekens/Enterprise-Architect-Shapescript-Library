@@ -1,0 +1,42 @@
+shape main
+{
+	layouttype="border";
+	noshadow=true;
+	defsize(90,70);
+	rectangle(0,0,100,100);
+	addsubshape("padding","n");
+	addsubshape("name","center");
+	
+	shape padding
+	{
+		preferredheight=20;
+	}
+	
+	shape name
+	{
+		h_align="center";
+		print("#name#");
+	}
+}
+
+decoration location
+{
+	orientation="ne";
+	moveto(80,30);
+	arcto(20,0,80,60,80,30,20,30);
+	lineto(20,30);
+	lineto(50,100);
+	lineto(80,30);
+}
+
+decoration composite
+{
+	orientation="SE";
+	if(hasproperty("iscomposite","true"))
+	{
+		ellipse(0,40,40,60);
+		ellipse(60,40,100,60);
+		moveto(30,50);
+		lineto(70,50);
+	}
+}

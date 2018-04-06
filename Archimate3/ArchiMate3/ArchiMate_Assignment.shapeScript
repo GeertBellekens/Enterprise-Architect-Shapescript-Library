@@ -1,0 +1,22 @@
+shape source
+{
+	setfillcolor(getuserbordercolor());
+	ellipse(-4,-4,4,4);
+}
+
+shape target
+{
+	setfillcolor(getuserbordercolor());
+	startpath();
+	moveto(0,0);
+	lineto(10,4);
+	lineto(10,-4);
+	lineto(0,0);
+	endpath();
+	fillandstrokepath();
+}
+
+label middlebottomlabel
+{
+	print("");
+}

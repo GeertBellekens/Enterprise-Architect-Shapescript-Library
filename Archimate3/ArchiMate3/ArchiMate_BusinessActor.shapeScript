@@ -1,0 +1,84 @@
+shape main
+{
+	layouttype="border";
+	noshadow=true;
+	
+	if(hasproperty("rectanglenotation","0"))
+	{
+		defsize(35,70);
+		startpath();
+		ellipse(20,0,80,30);
+		endpath();
+		fillandstrokepath();
+		moveto(50,30);
+		lineto(50,70);
+		lineto(10,100);
+		moveto(50,70);
+		lineto(90,100);
+		moveto(10,50);
+		lineto(90,50);
+	}
+	else
+	{
+		defsize(90,70);
+		rectangle(0,0,100,100);
+		addsubshape("padding","n");
+		addsubshape("name","center");
+		
+		shape padding
+		{
+			preferredheight=20;
+		}
+		
+		shape name
+		{
+			h_align="center";
+			print("#name#");
+		}
+	}
+}
+
+shape label
+{
+	setorigin("sw",0,0);
+
+	if(hasproperty("rectanglenotation","0"))
+	{
+		print("#name#");
+	}
+}
+
+decoration actor
+{
+	orientation="ne";
+	
+	if(hasproperty("rectanglenotation","0"))
+	{
+	}
+	else
+	{
+		startpath();
+		ellipse(30,0,70,40);
+		endpath();
+		strokepath();
+		moveto(50,40);
+		lineto(50,70);
+		lineto(10,100);
+		moveto(50,70);
+		lineto(90,100);
+		moveto(20,50);
+		lineto(80,50);
+	}
+}
+
+decoration composite
+{
+	orientation="SE";
+	if(hasproperty("iscomposite","true"))
+	{
+		ellipse(0,40,40,60);
+		ellipse(60,40,100,60);
+		moveto(30,50);
+		lineto(70,50);
+	}
+}

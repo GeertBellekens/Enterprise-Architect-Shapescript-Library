@@ -1,0 +1,53 @@
+shape main
+{
+	layouttype="border";
+	noshadow=true;
+	
+	defsize(100,70);
+	rectangle(0,0,100,100);
+	addsubshape("padding","n");
+	addsubshape("name","center");
+	
+	shape padding
+	{
+		preferredheight=20;
+	}
+	
+	shape name
+	{
+		h_align="center";
+		print("#name#");
+	}
+}
+
+decoration resource
+{
+	orientation="ne";
+	moveto(0,0);
+	lineto(90,0);
+	lineto(90,60);
+	lineto(0,60);
+	lineto(0,0);
+	moveto(20,20);
+	lineto(20,40);
+	moveto(40,20);
+	lineto(40,40);
+	moveto(60,20);
+	lineto(60,40);
+	moveto(90,20);
+	lineto(100,20);
+	lineto(100,40);
+	lineto(90,40);
+}
+
+decoration composite
+{
+	orientation="SE";
+	if(hasproperty("iscomposite","true"))
+	{
+		ellipse(0,40,40,60);
+		ellipse(60,40,100,60);
+		moveto(30,50);
+		lineto(70,50);
+	}
+}

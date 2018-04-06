@@ -1,0 +1,19 @@
+shape main
+{
+	noshadow=true;
+	defsize(20,20);
+	if(hastag("junctionKind","OR"))
+	{
+		setfillcolor(255,255,255);
+	}
+	else
+	{
+		setfillcolor(getuserbordercolor());
+	}
+	ellipse(0,0,100,100);
+}
+
+shape label
+{
+  print("#name#");
+}

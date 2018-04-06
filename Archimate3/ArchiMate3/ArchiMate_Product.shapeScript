@@ -1,0 +1,37 @@
+shape main
+{
+	layouttype="border";
+	noshadow=true;
+	defsize(90,70);
+	rectangle(0,0,100,100);
+	addsubshape("thetop","n");
+	addsubshape("thename","center");
+	
+	shape thetop
+	{
+		preferredheight=26;
+		layouttype="border";
+		moveto(0,77);
+		lineto(70,77);
+		lineto(70,0);
+	}
+	
+	shape thename
+	{
+		h_align="center";
+		v_align="top";
+		print("#name#");
+	}
+}
+
+decoration composite
+{
+	orientation="SE";
+	if(hasproperty("iscomposite","true"))
+	{
+		ellipse(0,40,40,60);
+		ellipse(60,40,100,60);
+		moveto(30,50);
+		lineto(70,50);
+	}
+}
