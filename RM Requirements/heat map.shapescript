@@ -1,0 +1,31 @@
+shape main
+{
+	//set the fill color based on tagged value "heat map"
+	if(hastag("heat map","good"))
+	{
+		//light green
+		SetFillColor(112,255,145);
+	}
+	else if(hastag("heat map","problematic"))
+	{
+		//light yellow
+		SetFillColor(255,253,170);
+	}
+	else if(hastag("heat map","poor"))
+	{
+		//light red
+		SetFillColor(255,142,142);
+	}
+	else if(hastag("heat map","not evaluated"))
+	{
+		//white
+		SetFillColor(255,255,255);
+	}
+	else if(hastag("heat map","missing"))
+	{
+		//light purple
+		SetFillColor(227,168,255);
+	}
+	//draw the parent shape
+	DrawParentShape();
+}
