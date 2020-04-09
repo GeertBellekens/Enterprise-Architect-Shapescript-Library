@@ -1,0 +1,55 @@
+shape main {
+	// Person courtesy of Kevin L;
+	fixedAspectRatio = "true";
+	SetFillColor(GetUserFillColor()); 
+	SetPenColor(GetUserBorderColor());
+
+	DefSize(70,100);
+	
+	//head
+	Ellipse(20,0,36,25);
+	
+	//body
+	StartPath();
+	//left side
+	//left arm
+	//left shoulder
+	MoveTo(10,30);
+	LineTo(0,70);
+	LineTo(5,70);
+	//left armpit
+	LineTo(15,40);
+	//left hip
+	LineTo(15,65);
+	//left foot
+	LineTo(10,100);
+	LineTo(20,100);
+	//groin
+	LineTo(28,65);
+	//right leg
+	//right foot
+	LineTo(36,100);
+	LineTo(46,100);
+	//right hip
+	LineTo(41,65);
+	//right armpit
+	LineTo(41,40);
+	//right arm
+	//right hand
+	LineTo(51,70);
+	LineTo(56,70);
+	//right shoulder
+	LineTo(46,30);
+	LineTo(41,30);
+	EndPath();
+	FillAndStrokePath();
+}
+
+shape label {	
+	SetOrigin("s",0,-10);
+	Println("#NAME#"); // name it
+	if (HasTag("Stakeholder Type"))
+	{
+		Println("(#TAG:Stakeholder Type#)"); // add tag info
+	}
+}
