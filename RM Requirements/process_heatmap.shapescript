@@ -1,9 +1,9 @@
 shape main
-
 {
 
 	layouttype="border";
-	startpath();
+	noshadow=true;
+	
 	//set the fill color based on tagged value "heat map"
 	if(hastag("heat map","good"))
 	{
@@ -38,40 +38,40 @@ shape main
 
 	//main shape
 	setFontColor(0,0,0);
-	MoveTo(0,0);
-	LineTo(15,50);
-	LineTo(0,100);
-	LineTo(85,100);
-	LineTo(100,50);
-	LineTo(85,0);
-	endpath();
+	
+	startPath();
+	setfixedregion(80,0,100,0);
+	moveto(0,0);
+	lineto(80,0);
+	lineto(100,50);
+	lineto(80,100);
+	setfixedregion(0,0,20,0);
+	lineto(0,100);
+	lineto(20,50);
+	lineto(0,0);
+	endPath();
+	fillandstrokePath();
 
-	fillandstrokepath();     
-	//subshapes
-	addsubshape("padding","n");
+	addsubshape("topPadding","n");
+	addsubshape("leftPadding","w");
+	addsubshape("rightPadding","e");
 	addsubshape("name","center");
-
-	shape padding
-	{
-		preferredheight=10;
-	}
-
 	shape name
 	{
 		v_align="top";
 		h_align="center";
-		print("#name#");
+		printwrapped("#name#");
 	}
-}
-
-decoration composite
-{
-	orientation="SW";
-	if(hasproperty("iscomposite","true"))
+	shape topPadding
 	{
-		ellipse(0,40,40,60);
-		ellipse(60,40,100,60);
-		moveto(30,50);
-		lineto(70,50);
+		preferredheight=10;
+	}
+	shape leftPadding
+	{
+		preferredWidth = 20;
+	}
+	shape rightPadding
+	{
+		preferredWidth = 10;
 	}
 }
