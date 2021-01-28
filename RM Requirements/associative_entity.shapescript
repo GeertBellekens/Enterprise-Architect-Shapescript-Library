@@ -1,0 +1,22 @@
+shape main
+{
+	layouttype = "border";
+	h_align = "left";
+	v_align = "center";
+	DefSize(100,50);
+	Rectangle(0,0,100,100);
+	moveto(50,0);
+	lineto(100,50);
+	lineto(50,100);
+	lineto(0,50);
+	lineto(50,0);
+	AddSubShape("nameCompartment","CENTER");	
+ 
+shape nameCompartment
+{
+	h_align = "center";
+	v_align = "center";
+	editablefield = "name";
+	println("#name#");
+}
+}
