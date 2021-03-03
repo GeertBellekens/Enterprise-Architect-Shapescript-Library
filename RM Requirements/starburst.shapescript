@@ -1,0 +1,25 @@
+shape main
+{
+	fixedAspectRatio = true;
+	DefSize(50,50);
+	setpenwidth(3);
+	SetPenColor(0,0,0);
+	//start at the top, then move clockwise around
+	moveto(50,0);
+	lineto(60,32);
+	lineto(85,15);
+	lineto(69,44);
+	lineto(100,50);
+	lineto(69,56);
+	lineto(85,85);
+	lineto(60,68);
+	lineto(50,100);
+	lineto(40,68);
+	lineto(15,85);
+	lineto(31,56);
+	lineto(0,50);
+	lineto(31,44);
+	lineto(15,15);
+	lineto(40,32);
+	lineto(50,0);
+}
