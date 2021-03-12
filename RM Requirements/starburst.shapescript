@@ -2,24 +2,31 @@ shape main
 {
 	fixedAspectRatio = true;
 	DefSize(50,50);
-	setpenwidth(3);
-	SetPenColor(0,0,0);
+	setpenwidth(1);
+	SetPenColor(GetUserBorderColor());
 	//start at the top, then move clockwise around
 	moveto(50,0);
-	lineto(60,32);
-	lineto(85,15);
-	lineto(69,44);
+	lineto(60,27);
+	lineto(87,12);
+	lineto(69,40);
 	lineto(100,50);
-	lineto(69,56);
+	lineto(69,60);
 	lineto(85,85);
-	lineto(60,68);
+	lineto(60,73);
 	lineto(50,100);
-	lineto(40,68);
-	lineto(15,85);
-	lineto(31,56);
+	lineto(40,73);
+	lineto(13,88);
+	lineto(31,60);
 	lineto(0,50);
-	lineto(31,44);
-	lineto(15,15);
-	lineto(40,32);
+	lineto(31,40);
+	lineto(13,12);
+	lineto(40,27);
 	lineto(50,0);
+}
+
+//definition of a label
+shape label
+{
+ setOrigin("S",3,0); 
+ println("#NAME#"); 
 }

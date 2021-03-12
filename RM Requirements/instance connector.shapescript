@@ -1,0 +1,17 @@
+shape main
+{
+	noshadow=true;
+	setlinestyle("Solid");
+	moveto(0,0);
+	lineto(100,0);
+}
+shape target
+{
+	SetPen(0,0,0,1);
+	MoveTo(35,5);
+	BezierTo(35,5,30,5,34,0);
+	BezierTo(34,0,38,-5,33,-5);
+	MoveTo(30,5);
+	BezierTo(30,5,25,5,29,0);
+	BezierTo(29,0,33,-5,28,-5);
+}

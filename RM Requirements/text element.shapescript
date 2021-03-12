@@ -1,0 +1,37 @@
+shape main
+{
+	noshadow = true;
+	layouttype="border";
+	DefSize(75,25);
+	addsubshape("padding","W");
+	addsubshape("padding","N");
+	addsubshape("padding","S");
+	addsubshape("padding","E");
+	addSubShape("line","CENTER");
+	shape padding
+	{
+		preferredwidth=3;
+		preferredheight = 1;
+	}
+	shape line
+	{
+		v_align = "CENTER";
+		h_align = "CENTER";
+		editablefield = "name";
+		Rectangle(0,0,100,100);
+		PrintWrapped("#NAME#");
+	}
+}
+
+decoration composite
+{
+	orientation="SE";
+	noshadow=true;
+	if(hasproperty("iscomposite","true"))
+	{
+		ellipse(0,35,45,65);
+		ellipse(55,35,100,65);
+		moveto(45,50);
+		lineto(55,50);
+	}
+}
