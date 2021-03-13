@@ -1,0 +1,40 @@
+shape main
+{
+	noshadow=true;
+	setlinestyle("Solid");
+	moveto(0,0);
+	lineto(100,0);
+}
+
+
+shape target
+{
+	preferredwidth = 16;
+	preferredheight = 16;
+	noshadow = true;
+	scalable = false;
+	rotatable = false;
+	endpointx = 16;
+	endpointy = 0;
+	
+	setpenwidth(1);
+	SetPenColor(GetUserBorderColor());
+	//start at the top, then move clockwise around
+	moveto(8,-8);
+	lineto(10,-4);
+	lineto(13,-5);
+	lineto(12,-2);
+	lineto(16,0);
+	lineto(12,2);
+	lineto(13,5);
+	lineto(10,4);
+	lineto(8,8);
+	lineto(6,4);
+	lineto(3,5);
+	lineto(4,2);
+	lineto(0,0);
+	lineto(4,-2);
+	lineto(3,-5);
+	lineto(6,-4);
+	lineto(8,-8);
+}
