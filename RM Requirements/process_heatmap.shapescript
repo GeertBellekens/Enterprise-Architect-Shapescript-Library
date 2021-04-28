@@ -1,31 +1,30 @@
 shape main
 {
-
 	layouttype="border";
 	noshadow=true;
-	
-	//set the fill color based on tagged value "heat map"
-	if(hastag("heat map","good"))
+	DefSize(250,40);
+	//set the fill color based on tagged value "Heat Map"
+	if(hastag("Heat Map","good"))
 	{
 		//light green
 		SetFillColor(112,255,145);
 	}
-	else if(hastag("heat map","problematic"))
+	else if(hastag("Heat Map","problematic"))
 	{
 		//light yellow
-		SetFillColor(255,253,170);
+		SetFillColor(255,251,71);
 	}
-	else if(hastag("heat map","poor"))
+	else if(hastag("Heat Map","poor"))
 	{
 		//light red
 		SetFillColor(255,142,142);
 	}
-	else if(hastag("heat map","not evaluated"))
+	else if(hastag("Heat Map","not evaluated"))
 	{
 		//white
 		SetFillColor(255,255,255);
 	}
-	else if(hastag("heat map","missing"))
+	else if(hastag("Heat Map","missing"))
 	{
 		//light purple
 		SetFillColor(227,168,255);
@@ -38,7 +37,7 @@ shape main
 
 	//main shape
 	setFontColor(0,0,0);
-	
+
 	startPath();
 	setfixedregion(80,0,100,0);
 	moveto(0,0);
@@ -52,13 +51,13 @@ shape main
 	endPath();
 	fillandstrokePath();
 
-	addsubshape("topPadding","n");
+	//addsubshape("topPadding","n");
 	addsubshape("leftPadding","w");
 	addsubshape("rightPadding","e");
 	addsubshape("name","center");
 	shape name
 	{
-		v_align="top";
+		v_align="center";
 		h_align="center";
 		printwrapped("#name#");
 	}
