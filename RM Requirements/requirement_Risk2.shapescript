@@ -1,0 +1,176 @@
+shape main
+{
+layouttype = "border";
+h_align = "left";
+v_align = "center";
+DefSize(150,35);
+Addsubshape("borderBlock","W");
+ 
+SetFillColor(GetDefaultFillColor());
+SetPenColor(GetDefaultFillColor());  
+AddSubShape("nameCompartment","CENTER");    
+
+shape borderBlock
+{
+	layouttype = "leftright";
+	preferredWidth=30;
+	SetFillColor(GetStatusColor());
+	SetPenColor(GetUserBorderColor());    
+	rectangle(0,0,100,100);
+	AddSubShape("R",25,55,10,15);
+	AddSubShape("l_i",9,53,15,17);
+	AddSubShape("l_s",18,40,20,30);
+	AddSubShape("l_k",18,53,27,17);
+	shape l_c
+	{
+		setpencolor(0,0,0);
+		SetPenWidth(1);
+		//arc
+		moveto(85,22);
+		arcto(2,2,98,98,85,22,91,62);
+	}
+	shape l_i
+	{
+		setpencolor(0,0,0);
+		SetPenWidth(1);
+		//dot
+		moveto(50,2);
+		lineto(50,8);
+		//vertical line
+		moveto(50,29);
+		lineto(50,98);
+	}
+	shape l_k
+	{
+		setpencolor(0,0,0);
+		SetPenWidth(1);
+		//left vertical
+		moveto(2,2);
+		lineto(2,98);
+		//upper diagonal
+		moveto(2,65);
+		lineto(88,28);
+		//lower diagonal
+		moveto(98,98);
+		lineto(39,53);
+	     
+	}	    
+	shape l_s
+	{
+		setpencolor(0,0,0);
+		SetPenWidth(1);
+		//bottom arc
+		moveto(2,78);
+		arcto(2,48,98,98,10,85,50,48);
+		//top arc
+		moveto(88,23);
+		arcto(7,2,93,48,93,25,50,48);
+	}     
+	shape l_e
+	{
+		setpencolor(0,0,0);
+		SetPenWidth(1);
+		//horizontal line
+		moveto(2,50);
+		lineto(98,50);
+		//arc
+		arcto(2,2,98,98,98,49,93,72);
+	}
+	shape l_o
+	{
+		setpencolor(0,0,0);
+		SetPenWidth(1);
+		//arc
+		moveto(50,2);
+		//left arc
+		arcto(2,2,98,98,50,2,50,98);
+		//right arc
+		arcto(2,2,98,98,50,98,50,2);
+	}
+	shape l_r
+	{
+		setpencolor(0,0,0);
+		SetPenWidth(1);
+		//top arc
+		moveto(96,22);
+		arcto(13,6,99,55,98,17,26,12);
+		lineto(2,40);
+		//vertical line
+		lineto(2,2);
+		lineto(2,98);	
+	}
+	shape l_n
+	{
+		setpencolor(0,0,0);
+		SetPenWidth(1);
+		//right leg
+		moveto(92,98);
+		lineto(92,24);
+		//top arc
+		arcto(13,6,99,55,98,17,26,12);
+		lineto(2,32);
+		//left leg
+		lineto(2,2);
+		lineto(2,98);
+	}
+	shape l_d
+	{
+		DefSize(8,15);
+		setpencolor(0,0,0);
+		SetPenWidth(1);
+		// arc
+		//moveto(92,27);
+		arc(2,26,100,98,95,55,95,68);
+		//right vertical
+		moveto(98,2);
+		lineto(98,98);
+	}
+ 
+	shape S
+	{
+		setpencolor(0,0,0);
+		SetPenWidth(2);
+		//left vertical line
+		moveto(2,68);
+		lineto(2,100);
+		//bottom arc
+		moveto(2,77);
+		arcto(5,58,96,97,5,80,83,64);
+		//diagonal
+		lineto(8,25);
+		//top arc
+		moveto(82,17);
+		arcto(5,3,82,34,82,17,10,33);
+		//right vertical
+		moveto(82,0);
+		lineto(82,31);     
+	}
+    shape R
+	{
+		SetPenWidth(1);
+		setpencolor(0,0,0);
+		//right leg
+		moveto(98,98);
+		lineto(50,48);
+		moveto(2,48);
+		lineto(57,48);
+		//belly
+		arcto(24,4,89,48,57,48,57,2);
+		lineto(2,2);
+		//left vertical
+		lineto(2,98);
+	}
+}
+shape nameCompartment
+{
+	h_align = "left";
+		  v_align = "center";
+		  editablefield = "name";
+		  SetPenColor(GetUserBorderColor());
+		  SetFillColor(GetUserFillColor());
+		  Rectangle(0,0,100,100);
+		  SetFontColor(0,0,0);
+		  print("#name#");
+}
+ 
+}
