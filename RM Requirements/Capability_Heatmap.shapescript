@@ -1,0 +1,80 @@
+shape main
+{
+	layouttype="border";
+	noshadow=true;
+	
+	defsize(100,70);
+	
+	//set the fill color based on tagged value "heat map"
+	if(hastag("heat map","good"))
+	{
+		//light green
+		SetFillColor(112,255,145);
+	}
+	else if(hastag("heat map","problematic"))
+	{
+		//light yellow
+		SetFillColor(255,253,170);
+	}
+	else if(hastag("heat map","poor"))
+	{
+		//light red
+		SetFillColor(255,142,142);
+	}
+	else if(hastag("heat map","not evaluated"))
+	{
+		//white
+		SetFillColor(255,255,255);
+	}
+	else if(hastag("heat map","missing"))
+	{
+		//light purple
+		SetFillColor(227,168,255);
+	}
+	
+	startpath();
+	roundrect(0,0,100,100,20,20);
+	endpath();
+	fillandstrokepath();
+	addsubshape("padding","n");
+	addsubshape("name","center");
+	
+	shape padding
+	{
+		preferredheight=20;
+	}
+	
+	shape name
+	{
+		h_align="center";
+		print("#name#");
+	}
+}
+
+decoration capability
+{
+	orientation="ne";
+	SetOrigin("ne",-25,5);
+	moveto(75,50);
+	lineto(0,50);
+	lineto(0,75);
+	lineto(75,75);
+	lineto(75,0);
+	lineto(50,0);
+	lineto(50,75);
+	moveto(75,25);
+	lineto(25,25);
+	lineto(25,75);
+}
+
+decoration composite
+{
+	orientation="SE";
+	if(hasproperty("iscomposite","true"))
+	{
+		ellipse(0,40,40,60);
+		ellipse(60,40,100,60);
+		moveto(30,50);
+		lineto(70,50);
+	}
+}
