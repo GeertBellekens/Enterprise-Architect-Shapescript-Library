@@ -1,0 +1,59 @@
+shape main
+{
+	layouttype="border";
+	
+	ellipse(0,0,100,100);
+	addsubshape("padding","W");
+	addsubshape("topPadding","N");
+	addsubshape("padding","S");
+	addsubshape("padding","E");
+	addSubShape("line","CENTER");
+
+	shape padding
+	{
+		preferredwidth=10;
+		preferredheight = 10;
+	}
+	shape topPadding
+	{
+		preferredwidth=20;
+		preferredheight = 20;
+	}
+	
+	text line
+	{
+		v_align = "CENTER";
+		h_align = "CENTER";
+		bold = "True";
+		editablefield = "name";
+		PrintWrapped("#NAME#");
+	}
+}
+
+decoration composite
+{
+	orientation="SE";
+	noshadow=true;
+	if(hasproperty("iscomposite","true"))
+	{
+		ellipse(0,35,45,65);
+		ellipse(55,35,100,65);
+		moveto(45,50);
+		lineto(55,50);
+	}
+}
+
+decoration cross
+{
+	orientation="n";
+	AddSubShape("crossOnly",80,80, 10,50);
+	shape crossOnly
+	{
+		SetPenColor(0,0,0);
+		SetPenWidth(4);
+		lineto(100,100);
+		moveto(100,0);
+		lineto(0,100);
+	}
+	
+}
