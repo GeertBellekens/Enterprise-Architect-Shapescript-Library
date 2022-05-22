@@ -1,0 +1,52 @@
+shape main
+{
+	noshadow="true";
+	fixedAspectRatio="true";
+	
+	//set the fill color based on tagged value "Heat Map"
+	
+	 if(hastag("Event Status","Approved"))
+	{
+		//light blue
+		SetFillColor(229,242,254);
+	}
+	else if(hastag("Event Status","Busy"))
+	{
+		//light yellow
+		SetFillColor(254,254,148);
+	}
+	else if(hastag("Event Status","Funded"))
+	{
+		//light green
+		SetFillColor(112,255,145);
+	}
+	else if(hastag("Event Status","High Risk"))
+	{
+		//light purple
+		SetFillColor(227,168,255);
+	}
+	else if(hastag("Event Status","Proposed"))
+	{
+		//light grey
+		SetFillColor(220,220,220);
+	}
+
+
+	
+	setpenwidth(getuserpensize());
+	defsize(30,42);
+	startpath();
+	moveto(0,50);
+	lineto(50,0);
+	lineto(100,50);
+	lineto(50,100);
+	lineto(0,50);
+	endpath();
+	fillandstrokepath();
+}
+shape label
+{
+	setorigin("E",0,0);
+
+	print("#TAG:Date Start#");
+}
