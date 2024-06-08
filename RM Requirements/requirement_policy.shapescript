@@ -1,28 +1,40 @@
 shape main
 {
- layouttype = "border";
- h_align = "left";
- v_align = "center";
- DefSize(150,35);
- Addsubshape("borderBlock","W");
+layouttype = "border";
+h_align = "left";
+v_align = "center";
+DefSize(150,35);
+Addsubshape("borderBlock","W");
 
- SetFillColor(GetDefaultFillColor());
- SetPenColor(GetDefaultFillColor());	
- AddSubShape("nameCompartment","CENTER");	
+SetFillColor(GetDefaultFillColor());
+SetPenColor(GetDefaultFillColor()); 
+AddSubShape("nameCompartment","CENTER");   
  
 shape borderBlock
 {
 	layouttype = "leftright";
 	preferredWidth=35;
 	SetFillColor(GetStatusColor());
-	SetPenColor(GetUserBorderColor());	
+	SetPenColor(GetUserBorderColor());   
 	rectangle(0,0,100,100);
-	AddSubShape("l_p",12,55,5,28);
+	AddSubShape("P",12,55,7,15);
 	AddSubShape("l_o",12,40,12,30);
 	AddSubShape("l_l",12,55,12,15);
 	AddSubShape("l_i",12,55,8,15);
-	AddSubShape("l_c",12,40,14,30);
+	AddSubShape("l_c",12,40,11,30);
 	AddSubShape("l_y",12,55,18,30);
+	shape P
+	{
+		SetPenWidth(1);
+		setpencolor(0,0,0);
+		//belly
+		moveto(2,48);
+		lineto(57,48);
+		arcto(24,2,89,48,57,48,57,2);
+		lineto(2,2);
+		//left vertical
+		lineto(2,98);
+	}
 	shape l_l
 	{
 		setpencolor(0,0,0);
@@ -52,7 +64,7 @@ shape borderBlock
 		//vertical line
 		moveto(50,29);
 		lineto(50,98);
-	}	
+	}    
 	shape l_p
 	{
 		setpencolor(0,0,0);
@@ -62,7 +74,7 @@ shape borderBlock
 		//left vertical
 		moveto(2,2);
 		lineto(2,98);
-	}	
+	}    
 	shape l_a
 	{
 		DefSize(15,20);
@@ -86,8 +98,31 @@ shape borderBlock
 		setpencolor(0,0,0);
 		SetPenWidth(1);
 		//arc
-		moveto(85,22);
-		arcto(2,2,98,98,85,22,91,62);
+		moveto(86,33);
+		lineto(86,28);
+		lineto(85,25);
+		lineto(83,20);
+		lineto(81,16);
+		lineto(74,11);
+		lineto(62,7);
+		lineto(45,7);
+		lineto(37,8);
+		lineto(27,12);
+		lineto(17,21);
+		lineto(11,33);
+		lineto(9,50);
+		lineto(11,67);
+		lineto(17,79);
+		lineto(27,88);
+		lineto(37,92);
+		lineto(45,93);
+		lineto(62,93);
+		lineto(74,89);
+		lineto(81,84);
+		lineto(83,80);
+		lineto(85,75);
+		lineto(86,73);
+		lineto(86,67);
 	}
 	shape l_e
 	{
@@ -135,7 +170,7 @@ shape borderBlock
 		lineto(2,40);
 		//vertical line
 		lineto(2,2);
-		lineto(2,98);		
+		lineto(2,98);
 	}
 	shape l_n
 	{
@@ -181,7 +216,7 @@ shape borderBlock
 		arcto(5,3,82,34,82,17,10,33);
 		//right vertical
 		moveto(82,0);
-		lineto(82,31);	
+		lineto(82,31);    
 	}
 	shape R
 	{
