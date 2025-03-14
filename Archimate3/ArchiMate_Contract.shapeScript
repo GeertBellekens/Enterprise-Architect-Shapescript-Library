@@ -5,6 +5,8 @@ shape main
 	defsize(90,70);
 	rectangle(0,0,100,100);
 	addsubshape("thetop","n");
+	addsubshape("padding","e");
+	addsubshape("padding","w");
 	addsubshape("thebottom","S");
 	addsubshape("thename","center");
 	
@@ -12,23 +14,48 @@ shape main
 	{
 		preferredheight=26;
 		layouttype="border";
-		moveto(0,60);
-		lineto(100,60);
+		if(hasproperty("rectanglenotation","0"))
+		{
+			moveto(0,60);
+			lineto(100,60);
+		}
 	}
 
 	shape thebottom
 	{
 		preferredheight=26;
 		layouttype="border";
-		moveto(0,40);
-		lineto(100,40);
+		if(hasproperty("rectanglenotation","0"))
+		{
+			moveto(0,40);
+			lineto(100,40);
+		}
+	}
+	
+	shape padding
+	{
+		preferredwidth=4;
 	}
 
 	shape thename
 	{
+		bold=true;
 		h_align="center";
 		v_align="top";
 		print("#name#");
+	}
+}
+
+decoration contract
+{
+	orientation="NE";
+    if(hasproperty("rectanglenotation","0")) {} else
+	{
+		rectangle(0,10,100,90);
+		moveto(0,30);
+		lineto(100,30);
+		moveto(0,70);
+		lineto(100,70);
 	}
 }
 

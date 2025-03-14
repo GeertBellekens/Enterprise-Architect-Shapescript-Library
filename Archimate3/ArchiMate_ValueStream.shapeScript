@@ -2,36 +2,39 @@ shape main
 {
 	layouttype="border";
 	noshadow=true;
-	defsize(90,70);
-
+	defsize(120,70);
+	
 	if(hasproperty("rectanglenotation","0"))
 	{
-		startpath();
-		moveto(70,0);
-		lineto(0,0);
-		lineto(0,100);
-		lineto(100,100);
-		lineto(100,30);
-		lineto(70,0);
-		endpath();
-		fillandstrokepath();
-		lineto(70,30);
-		lineto(100,30);
+		SetFixedRegion(80,0,100,0);
+		StartPath();
+		MoveTo(0,0);
+		LineTo(80,0);
+		LineTo(100,50);
+		LineTo(80,100);
+		LineTo(0,100);
+		SetFixedRegion(0,0,20,0);
+		LineTo(20,50);
+		LineTo(0,0);
+		EndPath();
+		FillAndStrokePath();
+		addsubshape("padding","e");
+		addsubshape("padding","w");
 	}
 	else
 	{
-		rectangle(0,0,100,100);
+		startpath();
+		roundrect(0,0,100,100,20,20);
+		endpath();
+		fillandstrokepath();
 	}
-
 	addsubshape("padding","n");
-	addsubshape("padding","e");
-	addsubshape("padding","w");
 	addsubshape("name","center");
 	
 	shape padding
 	{
 		preferredheight=20;
-		preferredwidth=4;
+		preferredwidth=20;
 	}
 	
 	shape name
@@ -42,23 +45,21 @@ shape main
 	}
 }
 
-decoration artifact
+decoration valuestream
 {
 	orientation="ne";
-	
 	if(hasproperty("rectanglenotation","0"))
 	{
 	}
 	else
 	{
-		moveto(60,0);
-		lineto(10,0);
-		lineto(10,100);
-		lineto(90,100);
-		lineto(90,30);
-		lineto(60,0);
-		lineto(60,30);
-		lineto(90,30);
+		moveto(80,10);
+		lineto(0,10);
+		lineto(20,50);
+		lineto(0,90);
+		lineto(80,90);
+		lineto(100,50);
+		lineto(80,10);
 	}
 }
 

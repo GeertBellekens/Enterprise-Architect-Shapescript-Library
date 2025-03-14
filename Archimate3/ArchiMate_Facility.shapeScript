@@ -2,87 +2,97 @@ shape main
 {
 	layouttype="border";
 	noshadow=true;
-	defsize(90,70);
-
-	addsubshape("top","N");
-	addsubshape("side","E");
-	addsubshape("front","CENTER");
 	
-	shape top
+	if(hasproperty("rectanglenotation","0"))
 	{
-		preferredheight=10;
+		defsize(60,60);
 		startpath();
-		moveto(0,100);
-		setfixedregion(0,0,10,0);
+		moveto(0,0);
+		lineto(0,100);
+		lineto(100,100);
+		lineto(100,50);
+		lineto(70,70);
+		lineto(70,50);
+		lineto(40,70);
+		lineto(40,50);
+		lineto(10,70);
 		lineto(10,0);
-		lineto(100,0);
-		setfixedregion(90,0,100,0);
-		lineto(90,100);
-		lineto(0,100);
-		endpath();
-		fillandstrokepath();
-	}
-	
-	shape side
-	{
-		preferredwidth=10;
-		startpath();
-		moveto(0,100);
 		lineto(0,0);
-		setfixedregion(0,-10,0,0);
-		lineto(100,-10);
-		setfixedregion(0,90,0,100);
-		lineto(100,90);
-		lineto(0,100);
 		endpath();
 		fillandstrokepath();
 	}
-	
-	shape front
+	else
 	{
-			layouttype="border";
-			rectangle(0,0,100,100);
-			addsubshape("frontname","center");
-			addsubshape("frontpadding","N");
-			
-			shape frontpadding
-			{
-				preferredheight=16;
-			}
-			
-			shape frontname
-			{
-				h_align="center";
-				printwrapped("#name#");
-			}
+		defsize(90,70);
+		rectangle(0,0,100,100);
+		addsubshape("padding","N");
+		addsubshape("padding","E");
+		addsubshape("padding","W");
+		addsubshape("name","CENTER");
+	}
+	
+	shape padding
+	{
+		preferredWidth=4;
+		preferredHeight=20;
+	}
+
+	shape name
+	{
+		bold=true;
+		h_align="center";
+		v_align="top";
+		printwrapped("#name#");
+	}
+}
+
+shape label
+{
+	bold=true;
+	setorigin("sw",0,0);
+	if(hasproperty("rectanglenotation","0"))
+	{
+		printwrapped("#name#");
 	}
 }
 
 decoration facility
 {
 	orientation="ne";
-	setorigin("ne",-26,10);
-	moveto(0,0);
-	lineto(0,100);
-	lineto(100,100);
-	lineto(100,50);
-	lineto(70,70);
-	lineto(70,50);
-	lineto(40,70);
-	lineto(40,50);
-	lineto(10,70);
-	lineto(10,0);
-	lineto(0,0);
+	if(hasproperty("rectanglenotation","0"))
+	{
+	}
+	else
+	{
+		moveto(0,0);
+		lineto(0,100);
+		lineto(100,100);
+		lineto(100,50);
+		lineto(70,70);
+		lineto(70,50);
+		lineto(40,70);
+		lineto(40,50);
+		lineto(10,70);
+		lineto(10,0);
+		lineto(0,0);
+	}
 }
 
 decoration composite
 {
 	orientation="SE";
-	if(hasproperty("iscomposite","true"))
+	if(hasproperty("rectanglenotation","0"))
 	{
-		ellipse(0,40,40,60);
-		ellipse(60,40,100,60);
-		moveto(30,50);
-		lineto(70,50);
+	}
+	else
+	{
+		if(hasproperty("iscomposite","true"))
+		{
+			setorigin("se",-26,-16);
+			ellipse(0,40,40,60);
+			ellipse(60,40,100,60);
+			moveto(30,50);
+			lineto(70,50);
+		}
 	}
 }

@@ -9,4 +9,9 @@ shape source
 
 shape target
 {
+	if(hasproperty("direction","Source -> Destination"))
+	{
+		moveto(0,0);
+		lineto(14,6);
+	}
 }

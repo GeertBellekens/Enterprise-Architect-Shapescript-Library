@@ -5,22 +5,45 @@ shape main
 	defsize(90,70);
 	rectangle(0,0,100,100);
 	addsubshape("thetop","n");
+	addsubshape("thetop","e");
+	addsubshape("thetop","w");
 	addsubshape("thename","center");
 	
 	shape thetop
 	{
 		preferredheight=26;
 		layouttype="border";
-		moveto(0,77);
-		lineto(70,77);
-		lineto(70,0);
+		if(hasproperty("rectanglenotation","0"))
+		{
+			moveto(0,77);
+			lineto(70,77);
+			lineto(70,0);
+		}
+	}
+	
+	shape padding
+	{
+		preferredwidth=4;
 	}
 	
 	shape thename
 	{
+		bold=true;
 		h_align="center";
 		v_align="top";
 		print("#name#");
+	}
+}
+
+decoration product
+{
+	orientation="NE";
+	if(hasproperty("rectanglenotation","0")) {} else
+	{
+		rectangle(0,10,100,90);
+		moveto(0,30);
+		lineto(60,30);
+		lineto(60,10);
 	}
 }
 

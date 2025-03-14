@@ -1,1 +1,24 @@
-shape main{	layouttype="border";	noshadow=true;	defsize(90,70);	rectangle(0,0,100,100);	addsubshape("thetop","n");	addsubshape("thename","center");		shape thetop	{		preferredheight=26;		layouttype="border";		moveto(0,77);		lineto(100,77);	}	shape thename	{		h_align="center";		v_align="top";		print("#name#");	}}decoration composite{	orientation="SE";	if(hasproperty("iscomposite","true"))	{		ellipse(0,40,40,60);		ellipse(60,40,100,60);		moveto(30,50);		lineto(70,50);	}}
+shape main{	layouttype="border";	noshadow=true;	defsize(90,70);	rectangle(0,0,100,100);	addsubshape("thetop","n");
+	addsubshape("padding","e");
+	addsubshape("padding","w");
+	addsubshape("thename","center");		shape thetop	{		preferredheight=26;		layouttype="border";		if(hasproperty("rectanglenotation","0"))
+		{
+			moveto(0,77);			lineto(100,77);
+		}	}
+	
+	shape padding
+	{
+		preferredwidth=4;
+	}	shape thename	{
+		bold=true;		h_align="center";		v_align="top";		print("#name#");	}}
+decoration dataobject
+{
+	orientation="NE";
+	if(hasproperty("rectanglenotation","0")) {} else
+	{
+		rectangle(0,10,100,90);
+		moveto(0,30);
+		lineto(100,30);
+	}
+}
+decoration composite{	orientation="SE";	if(hasproperty("iscomposite","true"))	{		ellipse(0,40,40,60);		ellipse(60,40,100,60);		moveto(30,50);		lineto(70,50);	}}

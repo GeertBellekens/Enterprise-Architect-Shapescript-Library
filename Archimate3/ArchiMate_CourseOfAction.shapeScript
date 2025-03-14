@@ -3,22 +3,59 @@ shape main
 	layouttype="border";
 	noshadow=true;
 	
-	defsize(100,70);
-	startpath();
-	roundrect(0,0,100,100,20,20);
-	endpath();
-	fillandstrokepath();
-	addsubshape("padding","n");
-	addsubshape("name","center");
+	if(hasproperty("rectanglenotation","0"))
+	{
+		defsize(60,40);
+		startpath();
+		ellipse(50,0,100,75);
+		endpath();
+		fillandstrokepath();
+		startpath();
+		ellipse(60,15,90,60);
+		endpath();
+		strokepath();
+		setfillcolor(getuserbordercolor());
+		ellipse(70,30,80,45);
+		setpenwidth(3);
+		moveto(0,90);
+		bezierto(0,50,10,35,50,37);
+		moveto(35,22);
+		lineto(50,37);
+		lineto(35,52);
+	}
+	else
+	{
+		defsize(100,70);
+		startpath();
+		roundrect(0,0,100,100,20,20);
+		endpath();
+		fillandstrokepath();
+		addsubshape("padding","n");
+		addsubshape("padding","e");
+		addsubshape("padding","w");
+		addsubshape("name","center");
+	}
 	
 	shape padding
 	{
 		preferredheight=20;
+		preferredwidth=4;
 	}
 	
 	shape name
 	{
+		bold=true;
 		h_align="center";
+		print("#name#");
+	}
+}
+
+shape label
+{
+	bold=true;
+	setorigin("sw",0,0);
+	if(hasproperty("rectanglenotation","0"))
+	{
 		print("#name#");
 	}
 }
@@ -26,30 +63,37 @@ shape main
 decoration courseofaction
 {
 	orientation="ne";
-	SetOrigin("ne",-25,5);
-	startpath();
-	ellipse(50,0,100,50);
-	endpath();
-	strokepath();
-	startpath();
-	ellipse(65,15,85,35);
-	endpath();
-	strokepath();
-	moveto(0,80);
-	bezierto(20,100,40,100,60,50);
-	moveto(45,50);
-	lineto(60,50);
-	lineto(60,75);
+	if(hasproperty("rectanglenotation","0"))
+	{
+	}
+	else
+	{
+		setorigin("ne",-18,2);
+		ellipse(50,0,100,50);
+		setfillcolor(getuserbordercolor());
+		ellipse(70,20,80,30);
+		moveto(0,70);
+		bezierto(0,40,10,20,50,25);
+		moveto(35,10);
+		lineto(50,25);
+		lineto(35,40);
+	}
 }
 
 decoration composite
 {
 	orientation="SE";
-	if(hasproperty("iscomposite","true"))
+	if(hasproperty("rectanglenotation","0"))
 	{
-		ellipse(0,40,40,60);
-		ellipse(60,40,100,60);
-		moveto(30,50);
-		lineto(70,50);
+	}
+	else
+	{
+		if(hasproperty("iscomposite","true"))
+		{
+			ellipse(0,40,40,60);
+			ellipse(60,40,100,60);
+			moveto(30,50);
+			lineto(70,50);
+		}
 	}
 }

@@ -3,30 +3,77 @@ shape main
 	layouttype="border";
 	noshadow=true;
 	
-	defsize(100,70);
-	startpath();
-	moveto(10,0);
-	lineto(90,0);
-	lineto(100,20);
-	lineto(100,80);
-	lineto(90,100);
-	lineto(10,100);
-	lineto(0,80);
-	lineto(0,20);
-	lineto(10,0);
-	endpath();
-	fillandstrokepath();
-	addsubshape("padding","n");
-	addsubshape("name","center");
+	if(hasproperty("rectanglenotation","0"))
+	{
+		defsize(60,60);
+		startpath();
+		ellipse(0,0,100,100);
+		endpath();
+		fillandstrokepath();
+		startpath();
+		ellipse(15,15,85,85);
+		endpath();
+		strokepath();
+		startpath();
+		ellipse(30,30,70,70);
+		endpath();
+		strokepath();
+		setpenwidth(3);
+		moveto(50,50);
+		lineto(100,0);
+		moveto(95,-5);
+		lineto(90,10);
+		lineto(105,5);
+		moveto(55,35);
+		lineto(50,50);
+		lineto(65,45);
+	}
+	else
+	{
+		defsize(100,70);
+		startpath();
+		SetFixedRegion(0,0,10,10);
+		moveto(10,0);
+		SetFixedRegion(90,0,100,10);
+		lineto(90,0);
+		lineto(100,10);
+		SetFixedRegion(90,90,100,100);
+		lineto(100,90);
+		lineto(90,100);
+		SetFixedRegion(0,90,10,100);
+		lineto(10,100);
+		lineto(0,90);
+		SetFixedRegion(0,0,10,10);
+		lineto(0,10);
+		lineto(10,0);
+		endpath();
+		fillandstrokepath();
+		addsubshape("padding","n");
+		addsubshape("padding","e");
+		addsubshape("padding","w");
+		addsubshape("name","center");
+	}
 	
 	shape padding
 	{
 		preferredheight=20;
+		preferredwidth=4;
 	}
 	
 	shape name
 	{
+		bold=true;
 		h_align="center";
+		print("#name#");
+	}
+}
+
+shape label
+{
+	bold=true;
+	setorigin("sw",0,0);
+	if(hasproperty("rectanglenotation","0"))
+	{
 		print("#name#");
 	}
 }
@@ -34,40 +81,44 @@ shape main
 decoration outcome
 {
 	orientation="ne";
-	SetOrigin("ne",-25,5);
-	
-	startpath();
-	ellipse(0,0,100,100);
-	endpath();
-	strokepath();
-	startpath();
-	ellipse(15,15,85,85);
-	endpath();
-	strokepath();
-	// fill the bullseye
-	setfillcolor(getuserbordercolor());
-	startpath();
-	ellipse(30,30,70,70);
-	endpath();
-	fillandstrokepath();
-	setfillcolor(getuserfillcolor());
-	// arrow
-	moveto(50,50);
-	lineto(100,0);
-	// feathers
-	moveto(95,-5);
-	lineto(90,10);
-	lineto(105,5);
+
+	if(hasproperty("rectanglenotation","0"))
+	{
+	}
+	else
+	{
+		SetOrigin("ne",-25,5);
+		
+		ellipse(0,0,100,100);
+		ellipse(15,15,85,85);
+		// fill the bullseye
+		setfillcolor(getuserbordercolor());
+		ellipse(30,30,70,70);
+		setfillcolor(getuserfillcolor());
+		// arrow
+		moveto(50,50);
+		lineto(100,0);
+		// feathers
+		moveto(95,-5);
+		lineto(90,10);
+		lineto(105,5);
+	}
 }
 
 decoration composite
 {
 	orientation="SE";
-	if(hasproperty("iscomposite","true"))
+	if(hasproperty("rectanglenotation","0"))
 	{
-		ellipse(0,40,40,60);
-		ellipse(60,40,100,60);
-		moveto(30,50);
-		lineto(70,50);
+	}
+	else
+	{
+		if(hasproperty("iscomposite","true"))
+		{
+			ellipse(0,40,40,60);
+			ellipse(60,40,100,60);
+			moveto(30,50);
+			lineto(70,50);
+		}
 	}
 }

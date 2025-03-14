@@ -10,26 +10,15 @@ shape main
 	shape thetop
 	{
 		preferredheight=20;
-		layouttype="border";
+		bold=true;
+		h_align="left";
+		v_align="center";
 		setlinestyle("DOT");
 		moveto(0,100);
 		lineto(0,0);
 		lineto(70,0);
 		lineto(70,100);
-		addsubshape("padding","n");
-		addsubshape("name","center");
-
-		shape padding
-		{
-			preferredheight=6;
-		}
-		
-		shape name
-		{
-			h_align="left";
-			v_align="top";
-			print("#name#");
-		}
+		print("#name#");
 	}
 	
 	shape therest

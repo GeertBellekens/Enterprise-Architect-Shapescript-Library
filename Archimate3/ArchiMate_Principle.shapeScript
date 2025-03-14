@@ -3,30 +3,67 @@ shape main
 	layouttype="border";
 	noshadow=true;
 	
-	defsize(100,70);
-	startpath();
-	moveto(10,0);
-	lineto(90,0);
-	lineto(100,20);
-	lineto(100,80);
-	lineto(90,100);
-	lineto(10,100);
-	lineto(0,80);
-	lineto(0,20);
-	lineto(10,0);
-	endpath();
-	fillandstrokepath();
-	addsubshape("padding","n");
-	addsubshape("name","center");
+	if(hasproperty("rectanglenotation","0"))
+	{
+		defsize(60,60);
+		rectangle(0,0,100,100);
+		setfillcolor(getuserbordercolor());
+		setpenwidth(2);
+		startpath();
+		roundrect(45,20,55,60,5,5);
+		endpath();
+		fillandstrokepath();
+		startpath();
+		ellipse(42,74,58,90);
+		endpath();
+		fillandstrokepath();
+	}
+	else
+	{
+		defsize(100,70);
+		startpath();
+		SetFixedRegion(0,0,10,10);
+		moveto(10,0);
+		SetFixedRegion(90,0,100,10);
+		lineto(90,0);
+		lineto(100,10);
+		SetFixedRegion(90,90,100,100);
+		lineto(100,90);
+		lineto(90,100);
+		SetFixedRegion(0,90,10,100);
+		lineto(10,100);
+		lineto(0,90);
+		SetFixedRegion(0,0,10,10);
+		lineto(0,10);
+		lineto(10,0);
+		endpath();
+		fillandstrokepath();
+		addsubshape("padding","n");
+		addsubshape("padding","e");
+		addsubshape("padding","w");
+		addsubshape("name","center");
+	}
 	
 	shape padding
 	{
 		preferredheight=20;
+		preferredwidth=4;
 	}
 	
 	shape name
 	{
+		bold=true;
 		h_align="center";
+		print("#name#");
+	}
+}
+
+shape label
+{
+	bold=true;
+	setorigin("sw",0,0);
+	if(hasproperty("rectanglenotation","0"))
+	{
 		print("#name#");
 	}
 }
@@ -34,32 +71,44 @@ shape main
 decoration principle
 {
 	orientation="ne";
-	SetOrigin("ne",-25,5);
+	if(hasproperty("rectanglenotation","0"))
+	{
+	}
+	else
+	{
+		SetOrigin("ne",-25,5);
 
-	startpath();
-	rectangle(0,0,100,100);
-	endpath();
-	strokepath();
-	setfillcolor(getuserbordercolor());
-	setpenwidth(2);
-	startpath();
-	roundrect(45,20,55,60,5,5);
-	endpath();
-	fillandstrokepath();
-	startpath();
-	ellipse(42,74,58,90);
-	endpath();
-	fillandstrokepath();
+		startpath();
+		rectangle(0,0,100,100);
+		endpath();
+		strokepath();
+		setfillcolor(getuserbordercolor());
+		setpenwidth(2);
+		startpath();
+		roundrect(45,20,55,60,5,5);
+		endpath();
+		fillandstrokepath();
+		startpath();
+		ellipse(42,74,58,90);
+		endpath();
+		fillandstrokepath();
+	}
 }
 
 decoration composite
 {
 	orientation="SE";
-	if(hasproperty("iscomposite","true"))
+	if(hasproperty("rectanglenotation","0"))
 	{
-		ellipse(0,40,40,60);
-		ellipse(60,40,100,60);
-		moveto(30,50);
-		lineto(70,50);
+	}
+	else
+	{
+		if(hasproperty("iscomposite","true"))
+		{
+			ellipse(0,40,40,60);
+			ellipse(60,40,100,60);
+			moveto(30,50);
+			lineto(70,50);
+		}
 	}
 }

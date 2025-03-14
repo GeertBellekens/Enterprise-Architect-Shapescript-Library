@@ -2,82 +2,127 @@ shape main
 {
 	layouttype="border";
 	noshadow=true;
-	defsize(90,70);
+	
+	if(hasproperty("rectanglenotation","0"))
+	{
+		defsize(60,60);
+		rectangle(30,30,40,100);
+		rectangle(0,60,70,70);
+		startpath();
+		moveto(7,41);
+		lineto(14,36);
+		lineto(63,87);
+		lineto(56,92);
+		lineto(7,41);
+		endpath();
+		fillandstrokepath();
+		startpath();
+		moveto(63,41);
+		lineto(56,36);
+		lineto(7,87);
+		lineto(14,92);
+		lineto(63,41);
+		endpath();
+		fillandstrokepath();
 
-	addsubshape("top","N");
-	addsubshape("side","E");
-	addsubshape("front","CENTER");
-	
-	shape top
-	{
-		preferredheight=10;
 		startpath();
-		moveto(0,100);
-		setfixedregion(0,0,10,0);
-		lineto(10,0);
-		lineto(100,0);
-		setfixedregion(90,0,100,0);
-		lineto(90,100);
-		lineto(0,100);
+		ellipse(10,40,60,90);
 		endpath();
 		fillandstrokepath();
+		ellipse(20,50,50,80);
+
+		rectangle(50,20,100,30);
+		rectangle(70,0,80,50);
+		ellipse(60,10,90,40);
+		ellipse(70,20,80,30);
 	}
-	
-	shape side
+	else
 	{
-		preferredwidth=10;
-		startpath();
-		moveto(0,100);
-		lineto(0,0);
-		setfixedregion(0,-10,0,0);
-		lineto(100,-10);
-		setfixedregion(0,90,0,100);
-		lineto(100,90);
-		lineto(0,100);
-		endpath();
-		fillandstrokepath();
+		defsize(90,70);
+		rectangle(0,0,100,100);
+		addsubshape("padding","N");
+		addsubshape("padding","E");
+		addsubshape("padding","W");
+		addsubshape("name","CENTER");
 	}
-	
-	shape front
+
+	shape padding
 	{
-			layouttype="border";
-			rectangle(0,0,100,100);
-			addsubshape("frontname","center");
-			addsubshape("frontpadding","N");
-			
-			shape frontpadding
-			{
-				preferredheight=16;
-			}
-			
-			shape frontname
-			{
-				h_align="center";
-				printwrapped("#name#");
-			}
+		preferredHeight=20;
+		preferredWidth=4;
+	}
+
+	shape name
+	{
+		bold=true;
+		h_align="center";
+		v_align="top";
+		printwrapped("#name#");
+	}
+}
+
+shape label
+{
+	bold=true;
+	setorigin("sw",0,0);
+	if(hasproperty("rectanglenotation","0"))
+	{
+		print("#name#");
 	}
 }
 
 decoration equipment
 {
 	orientation="ne";
-	setorigin("ne",-26,10);
-	setpenwidth(2);
-	startpath();
-	ellipse(0,30,70,100);
-	ellipse(60,0,100,40);
-	endpath();
-	strokepath();
+	if(hasproperty("rectanglenotation","0"))
+	{
+	}
+	else
+	{
+		rectangle(30,30,40,100);
+		rectangle(0,60,70,70);
+		startpath();
+		moveto(7,41);
+		lineto(14,36);
+		lineto(63,87);
+		lineto(56,92);
+		lineto(7,41);
+		endpath();
+		fillandstrokepath();
+		startpath();
+		moveto(63,41);
+		lineto(56,36);
+		lineto(7,87);
+		lineto(14,92);
+		lineto(63,41);
+		endpath();
+		fillandstrokepath();
+
+		ellipse(12,42,58,88);
+		ellipse(20,50,50,80);
+
+		rectangle(50,20,100,30);
+		rectangle(70,0,80,50);
+		ellipse(60,10,90,40);
+		ellipse(70,20,80,30);
+	}
 }
 
 decoration composite
 {
 	orientation="SE";
-	if(hasproperty("iscomposite","true"))
+	if(hasproperty("rectanglenotation","0"))
 	{
-		ellipse(0,40,40,60);
-		ellipse(60,40,100,60);
-		moveto(30,50);
-		lineto(70,50);
+	}
+	else
+	{
+		if(hasproperty("iscomposite","true"))
+		{
+			setorigin("se",-26,-16);
+			ellipse(0,40,40,60);
+			ellipse(60,40,100,60);
+			moveto(30,50);
+			lineto(70,50);
+		}
 	}
 }

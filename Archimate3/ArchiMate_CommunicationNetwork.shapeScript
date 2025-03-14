@@ -2,7 +2,6 @@ shape main
 {
 	layouttype="border";
 	noshadow=true;
-	defsize(90,70);
 
 	if(hasproperty("type","association"))
 	{
@@ -12,19 +11,42 @@ shape main
 	}
 	else
 	{
-		rectangle(0,0,100,100);
-		addsubshape("padding","n");
-		addsubshape("name","center");
-
-		shape padding
+		if(hasproperty("rectanglenotation","0"))
 		{
-			preferredheight=20;
+			defsize(60,60);
+			setpenwidth(3);
+			setfillcolor(getuserbordercolor());
+			ellipse(20,20,40,40);
+			ellipse(0,80,20,100);
+			ellipse(80,20,100,40);
+			ellipse(60,80,80,100);
+			moveto(30,30);
+			lineto(90,30);
+			lineto(70,90);
+			lineto(10,90);
+			lineto(30,30);
 		}
-
-		shape name
+		else
 		{
-			h_align="center";
-			print("#name#");
+			defsize(90,70);
+			rectangle(0,0,100,100);
+			addsubshape("padding","n");
+			addsubshape("padding","e");
+			addsubshape("padding","w");
+			addsubshape("name","center");
+
+			shape padding
+			{
+				preferredheight=20;
+				preferredwidth=4;
+			}
+
+			shape name
+			{
+				bold=true;
+				h_align="center";
+				print("#name#");
+			}
 		}
 	}
 }
@@ -33,16 +55,22 @@ decoration network
 {
 	orientation="ne";
 	
-	setfillcolor(getuserbordercolor());
-	ellipse(20,0,40,20);
-	ellipse(0,80,20,100);
-	ellipse(80,0,100,20);
-	ellipse(60,80,80,100);
-	moveto(30,10);
-	lineto(90,10);
-	lineto(70,90);
-	lineto(10,90);
-	lineto(30,10);
+	if(hasproperty("rectanglenotation","0"))
+	{
+	}
+	else
+	{
+		setfillcolor(getuserbordercolor());
+		ellipse(20,20,40,40);
+		ellipse(0,80,20,100);
+		ellipse(80,20,100,40);
+		ellipse(60,80,80,100);
+		moveto(30,30);
+		lineto(90,30);
+		lineto(70,90);
+		lineto(10,90);
+		lineto(30,30);
+	}
 }
 
 decoration composite
@@ -54,6 +82,16 @@ decoration composite
 		ellipse(60,40,100,60);
 		moveto(30,50);
 		lineto(70,50);
+	}
+}
+
+shape label
+{
+	bold=true;
+	setorigin("sw",0,0);
+	if(hasproperty("rectanglenotation","0"))
+	{
+		print("#name#");
 	}
 }
 

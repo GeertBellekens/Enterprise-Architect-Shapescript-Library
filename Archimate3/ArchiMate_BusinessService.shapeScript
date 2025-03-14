@@ -30,6 +30,8 @@ shape main
 	}
 	else
 	{
+		addsubshape("rect_padding","e");
+		addsubshape("rect_padding","w");
 		addsubshape("rect_padding","n");
 	}
 	addsubshape("name","center");
@@ -37,6 +39,7 @@ shape main
 	shape rect_padding
 	{
 		preferredheight=20;
+		preferredwidth=4;
 	}
 	shape icon_padding
 	{
@@ -45,6 +48,7 @@ shape main
 	
 	shape name
 	{
+		bold=true;
 		v_align="top";
 		h_align="center";
 		print("#name#");
@@ -71,11 +75,17 @@ decoration service
 decoration composite
 {
 	orientation="SE";
-	if(hasproperty("iscomposite","true"))
+	if(hasproperty("rectanglenotation","0"))
 	{
-		ellipse(0,40,40,60);
-		ellipse(60,40,100,60);
-		moveto(30,50);
-		lineto(70,50);
+	}
+	else
+	{
+		if(hasproperty("iscomposite","true"))
+		{
+			ellipse(0,40,40,60);
+			ellipse(60,40,100,60);
+			moveto(30,50);
+			lineto(70,50);
+		}
 	}
 }

@@ -4,28 +4,58 @@ shape main
 	noshadow=true;
 	defsize(90,70);
 	
-	startpath();
-	moveto(100,80);
-	lineto(100,0);
-	lineto(0,0);
-	lineto(0,100);
-	bezierto(33,130,66,70,100,100);
-	endpath();
-	fillandstrokepath();
+	if(hasproperty("rectanglenotation","0"))
+	{
+		startpath();
+		moveto(100,80);
+		lineto(100,0);
+		lineto(0,0);
+		lineto(0,100);
+		bezierto(33,130,66,70,100,100);
+		endpath();
+		fillandstrokepath();
+	}
+	else
+	{
+		rectangle(0,0,100,100);
+	}
 	
 	addsubshape("padding","N");
+	addsubshape("padding","E");
+	addsubshape("padding","W");
 	addsubshape("name","center");
 	
 	shape padding
 	{
 		preferredheight=20;
+		preferredwidth=4;
 	}
 	
 	shape name
 	{
+		bold=true;
 		v_align="top";
 		h_align="center";
 		print("#name#");
+	}
+}
+
+decoration deliverable
+{
+	orientation="NE";
+	if(hasproperty("rectanglenotation","0"))
+	{
+	}
+	else
+	{
+		startpath();
+		moveto(100,80);
+		lineto(100,0);
+		lineto(0,0);
+		lineto(0,80);
+		bezierto(33,110,66,50,100,80);
+		endpath();
+		strokepath();
 	}
 }
 
